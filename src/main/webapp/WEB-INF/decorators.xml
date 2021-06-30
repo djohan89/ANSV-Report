@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/views/layouts">
+	<!-- Phần khách hàng -->
+	<decorator name="web" page="web.jsp">
+		<pattern>/*</pattern>
+	</decorator>
+	
+	<decorator name="login" page="web.jsp">
+		<pattern>/login</pattern>
+	</decorator>
+	
+	<decorator name="home" page="web.jsp">
+		<pattern>/home</pattern>
+	</decorator>
+	
+	<decorator name="test" page="web.jsp">
+		<pattern>/test</pattern>
+	</decorator>
+	
+	<decorator name="test_2" page="web.jsp">
+		<pattern>/test_2</pattern>
+	</decorator>
+	
+	
+	
+<!-- Đầu Decarator: Báo cáo 1 -->
+	<decorator name="sheet_1" page="web.jsp">
+		<pattern>/sheet_1</pattern>
+	</decorator>
+	
+	<decorator name="vnpt_net" page="web.jsp">
+		<pattern>/vnpt_net</pattern>
+	</decorator>
+	
+	<!-- <decorator name="vnpt_net2" page="web.jsp">
+		<pattern>/vnpt_net2</pattern>
+	</decorator> -->
+<!-- Cuối Decarator: Báo cáo 1 -->
+	
+	
+	
+<!-- Decarator: Báo cáo 2 -->
+	<decorator name="sheet_2" page="web.jsp">
+		<pattern>/sheet_2</pattern>
+	</decorator>
+<!-- Cuối Decarator: Báo cáo 2 -->
+	
+	
+	
+<!-- Decarator: Báo cáo 3 -->
+	<decorator name="sheet_3" page="web.jsp">
+		<pattern>/sheet_3</pattern>
+	</decorator>
+<!-- Cuối Decarator: Báo cáo 3 -->
+
+
+
+<!-- Decarator: Báo cáo người phụ trách -->
+	<decorator name="bao_cao_sheet_1" page="web.jsp">
+		<pattern>/bao_cao_sheet_1</pattern>
+	</decorator>
+	
+	<decorator name="bao_cao_sheet_2" page="web.jsp">
+		<pattern>/bao_cao_sheet_2</pattern>
+	</decorator>
+	
+	<decorator name="bao_cao_sheet_3" page="web.jsp">
+		<pattern>/bao_cao_sheet_3</pattern>
+	</decorator>
+	
+
+
+	<!-- Phần của admin -->
+	<decorator name="home" page="admin.jsp">
+		<pattern>/home</pattern>
+	</decorator>
+	
+</decorators>
