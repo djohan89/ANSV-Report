@@ -53,7 +53,9 @@
 		  	                    /* return '<a href="du_an_'+row["STT"]+'_sheet_1" target="_blank" style="color: white; font-weight: bold;"'+
 		  	                        'data-toggle="tooltip" data-html="true" title="'+row["Tình trạng"]+'">'+data+'</a>' */
 		  	                	
-		  	                   	if (row['Priority'] == "High") {
+		  	                    var n = format(row['Mức độ tình trạng']);
+		  	                   	 /* var check_n = ["Chậm","chậm"]; */ 
+		  	                   	if (n.match(/chậm/i) != null) {
 									var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
 													'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 													data +
@@ -102,8 +104,10 @@
 		  	            });
 		  	        },
 		  	        "createdRow": function(row, data, dataIndex) {
-		  	            if (data['Priority'] == "High") {
-		  	                $(row).addClass("highlight");
+		  	            if (format(data['Mức độ tình trạng']).includes("Chậm")==true) {
+		  	                $(row).addClass("highlight2");
+		  	            }else if(format(data['Mức độ tình trạng']).includes("rất chậm")==true){
+		  	            	$(row).addClass("highlight");
 		  	            }
 		  	        },
 		  	    });
@@ -119,9 +123,6 @@
 		  	    });
 
 		  	    //Datatable báo cáo 2
-
-
-
 
 		  	    $('div.dataTables_wrapper').addClass("change_font_size");
 		  	});
@@ -201,9 +202,9 @@
 	  	            });
 	  	        },
 	  	        "createdRow": function(row, data, dataIndex) {
-	  	            if (data['Mức độ ưu tiên'] == "1") {
+	  	            if (data['Tình trạng dự án'] == "Tiến độ rất chậm") {
 	  	                $(row).addClass("highlight");
-	  	            } else if (data['Mức độ ưu tiên'] == "2") {
+	  	            } else if (data['Tình trạng dự án'] == "Chậm tiến độ") {
 	  	                $(row).addClass("highlight2");
 	  	            }
 	  	        },
@@ -298,9 +299,9 @@
 	  	            });
 	  	        },
 	  	        "createdRow": function(row, data, dataIndex) {
-	  	            if (data['Mức độ ưu tiên'] == "1") {
+	  	        	if (data['Tình trạng dự án'] == "Tiến độ rất chậm") {
 	  	                $(row).addClass("highlight");
-	  	            } else if (data['Mức độ ưu tiên'] == "2") {
+	  	            } else if (data['Tình trạng dự án'] == "Chậm tiến độ") {
 	  	                $(row).addClass("highlight2");
 	  	            }
 	  	        },
@@ -464,7 +465,7 @@
 									<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i><b>
 										Dự án kinh doanh tuần 21.17<br>(A.Khanh + A.Tú + A.Đoàn
 										Tuấn)
-									</b>
+									</b><br>
 								</h3>
 								<!-- card tools -->
 								<div class="card-tools">
