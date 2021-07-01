@@ -148,27 +148,27 @@
 			       		 	XL_row_object.forEach(item => {
 			       		 		
 				       	        if (item["Priority"] == "High") {
-				       	            if (item["Mức độ tình trạng"] == "Đang hoàn thành" || item["Mức độ tình trạng"] == "x") {
+				       	            if (item["Mức độ tình trạng"] == "Đang hoàn thành" || item["Mức độ tình trạng"] == "x" || item["Mức độ tình trạng"] == "Hủy") {
 				       	                a1++;
 				       	            } else if (item["Mức độ tình trạng"] == "Chậm tiến độ") {
 				       	                b1++;
-				       	            } else if (item["Mức độ tình trạng"] == "Hủy") {
+				       	            } else if (item["Mức độ tình trạng"] == "Tiến độ rất chậm") {
 				       	                c1++;
 				       	            }
 				       	        } else if (item["Priority"] == "" || item["Priority"] == "x" || typeof item["Priority"] === 'undefined') {
-				       	            if (item["Mức độ tình trạng"] == "Đang hoàn thành" || item["Mức độ tình trạng"] == "x" || typeof item["Mức độ tình trạng"] === 'undefined') {
+				       	            if (item["Mức độ tình trạng"] == "Đang hoàn thành" || item["Mức độ tình trạng"] == "x" || typeof item["Mức độ tình trạng"] === 'undefined'|| item["Mức độ tình trạng"] == "Hủy") {
 				       	                d1++;
 				       	            } else if (item["Mức độ tình trạng"] == "Chậm tiến độ") {
 				       	                e1++;
-				       	            } else if (item["Mức độ tình trạng"] == "Hủy") {
+				       	            } else if (item["Mức độ tình trạng"] == "Tiến độ rất chậm") {
 				       	                f1++;
 				       	            }
 				       	        } else if (item["Priority"] == "2" || item["Priority"] == "medium") {
-				       	            if (item["Mức độ tình trạng"] == "Đang hoàn thành") {
+				       	            if (item["Mức độ tình trạng"] == "Đang hoàn thành" || item["Mức độ tình trạng"] == "Hủy") {
 				       	                g1++;
 				       	            } else if (item["Mức độ tình trạng"] == "Chậm tiến độ") {
 				       	                h1++;
-				       	            } else if (item["Mức độ tình trạng"] == "Hủy") {
+				       	            } else if (item["Mức độ tình trạng"] == "Tiến độ rất chậm") {
 				       	                i1++;
 				       	            }
 				       	        }
@@ -249,27 +249,27 @@
 				       		 	XL_row_object.forEach(item => {
 				       		 		
 				       		 	if(item["Mức độ ưu tiên"]=="1"){
-									if(item["Tình trạng dự án"]=="Đang hoàn thành" || item["Tình trạng dự án"]=="" || typeof  item["Tình trạng dự án"] === 'undefined'){
+									if(item["Tình trạng dự án"]=="Đang hoàn thành" || item["Tình trạng dự án"]=="" || typeof  item["Tình trạng dự án"] === 'undefined' || item["Tình trạng dự án"]=="Hủy"){
 										a2++;
 									}else if(item["Tình trạng dự án"]=="Chậm tiến độ"){
 										b2++;
-									}else if(item["Tình trạng dự án"]=="Hủy"){
+									}else if(item["Tình trạng dự án"]=="Tiến độ rất chậm"){
 										c2++;
 									}
 								}else if(item["Mức độ ưu tiên"]=="2"){
-									if(item["Tình trạng dự án"]=="Đang hoàn thành" || item["Tình trạng dự án"]=="" || typeof  item["Tình trạng dự án"] === 'undefined'){
+									if(item["Tình trạng dự án"]=="Đang hoàn thành" || item["Tình trạng dự án"]=="" || typeof  item["Tình trạng dự án"] === 'undefined' || item["Tình trạng dự án"]=="Hủy"){
 										d2++;
 									}else if(item["Tình trạng dự án"]=="Chậm tiến độ"){
 										e2++;
-									}else if(item["Tình trạng dự án"]=="Hủy"){
+									}else if(item["Tình trạng dự án"]=="Tiến độ rất chậm"){
 										f2++;
 									}
 								}else if(item["Mức độ ưu tiên"]=="3" || typeof  item["Mức độ ưu tiên"] === 'undefined'){
-									if(item["Tình trạng dự án"]=="Đang hoàn thành" || item["Tình trạng dự án"]=="" || typeof  item["Tình trạng dự án"] === 'undefined' ){
+									if(item["Tình trạng dự án"]=="Đang hoàn thành" || item["Tình trạng dự án"]=="" || typeof  item["Tình trạng dự án"] === 'undefined' || item["Tình trạng dự án"]=="Hủy"){
 										g2++;
 									}else if(item["Tình trạng dự án"]=="Chậm tiến độ"){
 										h2++;
-									}else if(item["Tình trạng dự án"]=="Hủy"){
+									}else if(item["Tình trạng dự án"]=="Tiến độ rất chậm"){
 										i2++;
 									}
 								}
