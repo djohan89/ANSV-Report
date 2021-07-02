@@ -176,9 +176,9 @@
         var file_month = m + 1;
         var file_year = y;
 
-        var file_name_1 = "Báo cáo sheet 1 tuần " + result + " tháng " + file_month + " năm " + file_year + ".xlsx";
-        var file_name_2 = "Báo cáo sheet 2 tuần " + result + " tháng " + file_month + " năm " + file_year + ".xlsx";
-        var file_name_3 = "Báo cáo sheet 3 tuần " + result + " tháng " + file_month + " năm " + file_year + ".xlsx";
+        var file_name_1 = "Báo_cáo_sheet_1_tuần_" + result + "_tháng_" + file_month + "_năm_" + file_year + ".xlsx";
+        var file_name_2 = "Báo_cáo_sheet_2_tuần_" + result + "_tháng_" + file_month + "_năm_" + file_year + ".xlsx";
+        var file_name_3 = "Báo_cáo_sheet_3_tuần_" + result + "_tháng_" + file_month + "_năm_" + file_year + ".xlsx";
         console.log(file_name_1, file_name_2, file_name_3);
 
         /* var file_name_new = "Báo cáo KH Triển khai và Kinh doanh tuần 27 tháng 7 năm 2021.xlsx";
