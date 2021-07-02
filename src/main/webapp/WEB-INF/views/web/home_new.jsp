@@ -104,10 +104,10 @@
 		  	            });
 		  	        },
 		  	        "createdRow": function(row, data, dataIndex) {
-		  	            if (format(data['Mức độ tình trạng']).includes("Chậm")==true) {
-		  	                $(row).addClass("highlight2");
-		  	            }else if(format(data['Mức độ tình trạng']).includes("rất chậm")==true){
-		  	            	$(row).addClass("highlight");
+		  	            if (format(data['Mức độ tình trạng']).match(/rất chậm/i) != null) {
+		  	                $(row).addClass("highlight");
+		  	            }else if(format(data['Mức độ tình trạng']).match(/chậm/i) != null){
+		  	            	$(row).addClass("highlight2");
 		  	            }
 		  	        },
 		  	    });
@@ -162,10 +162,23 @@
 	  	                render: function(data, type, row) {
 	  	                    /* return '<a href="du_an_'+row["STT"]+'_sheet_1" target="_blank" style="color: white; font-weight: bold;"'+
 	  	                        'data-toggle="tooltip" data-html="true" title="'+row["Tình trạng"]+'">'+data+'</a>' */
-	  	                    return '<a href="bao_cao_sheet_2?id_p2=' + row["STT"] + '" target="_blank" style="color: white; font-weight: bold;" data-toggle="tooltip"' +
-	  	                        'data-html="true" title="' + format(row["Tình trạng dự án"]) + '" onclick="return project_link_2(' + row["STT"] + ')">' +
-	  	                        data +
-	  	                        '</a>'
+	  	                	var n = format(row['Tình trạng dự án']);
+	  	                   	 /* var check_n = ["Chậm","chậm"]; */ 
+	  	                   	if (n.match(/chậm/i) != null) {
+								var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+												'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+												data +
+												'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
+											'</a>';
+							} else {
+								var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+												'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+												data +
+												'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
+											'</a>';
+							}
+								
+							return html;
 	  	                }
 	  	            },
 	  	            { data: 'Khách hàng' },
@@ -200,9 +213,9 @@
 	  	            });
 	  	        },
 	  	        "createdRow": function(row, data, dataIndex) {
-	  	            if (data['Tình trạng dự án'] == "Tiến độ rất chậm") {
+	  	            if (format(data['Tình trạng dự án']).match(/rất chậm/i) !=null) {
 	  	                $(row).addClass("highlight");
-	  	            } else if (data['Tình trạng dự án'] == "Chậm tiến độ") {
+	  	            } else if (format(data['Tình trạng dự án']).match(/chậm/i) !=null) {
 	  	                $(row).addClass("highlight2");
 	  	            }
 	  	        },
@@ -260,10 +273,23 @@
 	  	                render: function(data, type, row) {
 	  	                    /* return '<a href="du_an_'+row["STT"]+'_sheet_1" target="_blank" style="color: white; font-weight: bold;"'+
 	  	                        'data-toggle="tooltip" data-html="true" title="'+row["Tình trạng"]+'">'+data+'</a>' */
-	  	                    return '<a href="bao_cao_sheet_3?id_p3=' + row["STT"] + '" target="_blank" style="color: white; font-weight: bold;" data-toggle="tooltip"' +
-	  	                        'data-html="true" title="' + format(row["Tình trạng dự án"]) + '" onclick="return project_link_3(' + row["STT"] + ')">' +
-	  	                        data +
-	  	                        '</a>'
+	  	                	var n = format(row['Tình trạng dự án']);
+	  	                   	 /* var check_n = ["Chậm","chậm"]; */ 
+	  	                   	if (n.match(/chậm/i) != null) {
+								var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+												'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+												data +
+												'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
+											'</a>';
+							} else {
+								var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+												'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+												data +
+												'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
+											'</a>';
+							}
+								
+							return html;
 	  	                }
 	  	            },
 	  	            { data: 'Khách hàng' },
@@ -298,9 +324,9 @@
 	  	            });
 	  	        },
 	  	        "createdRow": function(row, data, dataIndex) {
-	  	        	if (data['Tình trạng dự án'] == "Tiến độ rất chậm") {
+	  	        	if (format(data['Tình trạng dự án']).match(/rất chậm/i) !=null) {
 	  	                $(row).addClass("highlight");
-	  	            } else if (data['Tình trạng dự án'] == "Chậm tiến độ") {
+	  	            } else if (format(data['Tình trạng dự án']).match(/chậm/i) !=null) {
 	  	                $(row).addClass("highlight2");
 	  	            }
 	  	        },
