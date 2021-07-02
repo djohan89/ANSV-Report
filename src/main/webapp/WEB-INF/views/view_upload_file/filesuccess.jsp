@@ -10,17 +10,23 @@
 <script>
 	//Bên trong function jQuery ready() gọi function .DataTable() để khởi tạo DataTable
 	$(document).ready(function() {
+		var ten_file_upload = "${filename}";
+
+		//Kiểm tra tên file theo tên quỷ chuẩn định sẵn
+	  	var compare_file_name_upload_1 = file_name_1.localeCompare(ten_file_upload);
+	  	var compare_file_name_upload_2 = file_name_2.localeCompare(ten_file_upload);
+	  	var compare_file_name_upload_3 = file_name_3.localeCompare(ten_file_upload);
 		
 		$(function () {
 		  	$('[data-toggle="tooltip"]').tooltip()
 		})
 		
-		var month_now = 1;
+		/* var month_now = 1;
 		var date_now = new Date();
 		month_now += date_now.getMonth();
 		var year_now = date_now.getFullYear();
 		var file_json_url = '<c:url value="/assets/user/upload/' + 'bao-cao-thang-' + month_now + '-' + year_now + '.json' + '" />';
-		console.log(file_json_url);
+		console.log(file_json_url); */
 		
 /* Đầu: Phần lấy ra file excel. Sau đó convert thành json rồi đổ ra datatable */
 		/* set up XMLHttpRequest */
@@ -52,66 +58,189 @@
 
 		    	jQuery( '#xlx_json' ).val( json_object );
 
+		    	
+		    	
+		    	//Kiểm tra tên file để in dữ liệu ra datatable tương ứng
 		    	var groupColumn = 1;
-				var example_1 = $('#example_1').DataTable({
-		            data: XL_row_object,
-		            columns: [
-		                { 
-		                	data: 'Dự án/Gói thầu',
-		                	render : function(data, type, row) {
-								/* return '<a href="du_an_'+row["STT"]+'_sheet_1" target="_blank" style="color: white; font-weight: bold;"'+
-									'data-toggle="tooltip" data-html="true" title="'+row["Tình trạng"]+'">'+data+'</a>' */
-								return '<a href="javascript:void(0)" target="_blank" style="color: white; font-weight: bold;" data-toggle="tooltip"' +
-											'data-html="true" title="'+row["Tình trạng"]+'" onclick="return project_link('+row["STT"]+')">' +
-											data +
-										'</a>'
+		    	if (compare_file_name_upload_1 == 0) {
+		    		var example_1 = $('#example_1').DataTable({
+			            data: XL_row_object,
+			            columns: [
+			                { 
+			                	data: 'Dự án/Gói thầu',
+			                	render : function(data, type, row) {
+									return '<a href="javascript:void(0)" target="_blank" style="color: white; font-weight: bold;" data-toggle="tooltip"' +
+												'data-html="true" title="'+row["Tình trạng"]+'" onclick="return project_link('+row["STT"]+')">' +
+												data +
+											'</a>'
+								}
+			                },
+			                { data: 'Khách hàng' },
+			                { data: 'Mức độ tình trạng' },
+			                { data: 'PIC' } 
+			            ],
+			            "scrollY": 500,
+			            "scrollX": true,
+			            "scrollCollapse": true,
+			            "paging": false,
+			            "columnDefs": [
+			                { "visible": false, "targets": groupColumn },
+			                { "targets": '_all', "defaultContent": "" }
+			            ],
+			            "order": [[ groupColumn, 'asc' ]],
+			            "displayLength": 25,
+			            "drawCallback": function ( settings ) {
+			                var api = this.api();
+			                var rows = api.rows( {page:'current'} ).nodes();
+			                var last=null;
+			     
+			                api.column(groupColumn, {page:'current'} ).data().each( function ( group, i ) {
+			                    if ( last !== group ) {
+			                        $(rows).eq( i ).before(
+			                            '<tr class="group"><td colspan="18" style="background-color: black; color: white;">'+group+'</td></tr>'
+			                        );
+			     
+			                        last = group;
+			                    }
+			                } );
+			            },
+						"createdRow" : function(row, data, dataIndex) {
+							if (data['Priority'] == "High") {
+								$(row).addClass("highlight");
 							}
-		                },
-		                { data: 'Khách hàng' },
-		                { data: 'Mức độ tình trạng' },
-		                { data: 'PIC' } 
-		            ],
-		            "scrollY": 500,
-		            "scrollX": true,
-		            "scrollCollapse": true,
-		            "paging": false,
-		            "columnDefs": [
-		                { "visible": false, "targets": groupColumn },
-		                { "targets": '_all', "defaultContent": "" }
-		            ],
-		            "order": [[ groupColumn, 'asc' ]],
-		            "displayLength": 25,
-		            "drawCallback": function ( settings ) {
-		                var api = this.api();
-		                var rows = api.rows( {page:'current'} ).nodes();
-		                var last=null;
-		     
-		                api.column(groupColumn, {page:'current'} ).data().each( function ( group, i ) {
-		                    if ( last !== group ) {
-		                        $(rows).eq( i ).before(
-		                            '<tr class="group"><td colspan="18" style="background-color: black; color: white;">'+group+'</td></tr>'
-		                        );
-		     
-		                        last = group;
-		                    }
-		                } );
-		            },
-					"createdRow" : function(row, data, dataIndex) {
-						if (data['Priority'] == "High") {
-							$(row).addClass("highlight");
-						}
-					},
-		        });
+						},
+			        });
 
-				// Order by the grouping
-				$('#example_1 tbody').on('click','tr.group',function() {
-					var currentOrder = table_1.order()[0];
-					if (currentOrder[0] === groupColumn && currentOrder[1] === 'asc') {
-						table_1.order([ groupColumn, 'desc' ]).draw();
-					} else {
-						table_1.order([ groupColumn, 'asc' ]).draw();
-					}
-				});
+					// Order by the grouping
+					$('#example_1 tbody').on('click','tr.group',function() {
+						var currentOrder = example_1.order()[0];
+						if (currentOrder[0] === groupColumn && currentOrder[1] === 'asc') {
+							example_1.order([ groupColumn, 'desc' ]).draw();
+						} else {
+							example_1.order([ groupColumn, 'asc' ]).draw();
+						}
+					});
+		    	} else if (compare_file_name_upload_2 == 0) {
+		    		var example_2 = $('#example_2').DataTable({
+			            data: XL_row_object,
+			            columns: [
+			                { 
+			                	data: 'Dự án/Gói thầu',
+			                	render : function(data, type, row) {
+									/* return '<a href="du_an_'+row["STT"]+'_sheet_1" target="_blank" style="color: white; font-weight: bold;"'+
+										'data-toggle="tooltip" data-html="true" title="'+row["Tình trạng"]+'">'+data+'</a>' */
+									return '<a href="javascript:void(0)" target="_blank" style="color: white; font-weight: bold;" data-toggle="tooltip"' +
+												'data-html="true" title="'+row["Tình trạng"]+'" onclick="return project_link('+row["STT"]+')">' +
+												data +
+											'</a>'
+								}
+			                },
+			                { data: 'Khách hàng' },
+			                { data: 'Mức độ tình trạng' },
+			                { data: 'PIC' } 
+			            ],
+			            "scrollY": 500,
+			            "scrollX": true,
+			            "scrollCollapse": true,
+			            "paging": false,
+			            "columnDefs": [
+			                { "visible": false, "targets": groupColumn },
+			                { "targets": '_all', "defaultContent": "" }
+			            ],
+			            "order": [[ groupColumn, 'asc' ]],
+			            "displayLength": 25,
+			            "drawCallback": function ( settings ) {
+			                var api = this.api();
+			                var rows = api.rows( {page:'current'} ).nodes();
+			                var last=null;
+			     
+			                api.column(groupColumn, {page:'current'} ).data().each( function ( group, i ) {
+			                    if ( last !== group ) {
+			                        $(rows).eq( i ).before(
+			                            '<tr class="group"><td colspan="18" style="background-color: black; color: white;">'+group+'</td></tr>'
+			                        );
+			     
+			                        last = group;
+			                    }
+			                } );
+			            },
+						"createdRow" : function(row, data, dataIndex) {
+							if (data['Priority'] == "High") {
+								$(row).addClass("highlight");
+							}
+						},
+			        });
+
+					// Order by the grouping
+					$('#example_2 tbody').on('click','tr.group',function() {
+						var currentOrder = example_2.order()[0];
+						if (currentOrder[0] === groupColumn && currentOrder[1] === 'asc') {
+							example_2.order([ groupColumn, 'desc' ]).draw();
+						} else {
+							example_2.order([ groupColumn, 'asc' ]).draw();
+						}
+					});
+		    	} else {
+		    		var example_3 = $('#example_3').DataTable({
+			            data: XL_row_object,
+			            columns: [
+			                { 
+			                	data: 'Dự án/Gói thầu',
+			                	render : function(data, type, row) {
+									/* return '<a href="du_an_'+row["STT"]+'_sheet_1" target="_blank" style="color: white; font-weight: bold;"'+
+										'data-toggle="tooltip" data-html="true" title="'+row["Tình trạng"]+'">'+data+'</a>' */
+									return '<a href="javascript:void(0)" target="_blank" style="color: white; font-weight: bold;" data-toggle="tooltip"' +
+												'data-html="true" title="'+row["Tình trạng"]+'" onclick="return project_link('+row["STT"]+')">' +
+												data +
+											'</a>'
+								}
+			                },
+			                { data: 'Khách hàng' },
+			                { data: 'Mức độ tình trạng' },
+			                { data: 'PIC' } 
+			            ],
+			            "scrollY": 500,
+			            "scrollX": true,
+			            "scrollCollapse": true,
+			            "paging": false,
+			            "columnDefs": [
+			                { "visible": false, "targets": groupColumn },
+			                { "targets": '_all', "defaultContent": "" }
+			            ],
+			            "order": [[ groupColumn, 'asc' ]],
+			            "displayLength": 25,
+			            "drawCallback": function ( settings ) {
+			                var api = this.api();
+			                var rows = api.rows( {page:'current'} ).nodes();
+			                var last=null;
+			     
+			                api.column(groupColumn, {page:'current'} ).data().each( function ( group, i ) {
+			                    if ( last !== group ) {
+			                        $(rows).eq( i ).before(
+			                            '<tr class="group"><td colspan="18" style="background-color: black; color: white;">'+group+'</td></tr>'
+			                        );
+			     
+			                        last = group;
+			                    }
+			                } );
+			            },
+						"createdRow" : function(row, data, dataIndex) {
+							if (data['Priority'] == "High") {
+								$(row).addClass("highlight");
+							}
+						},
+			        });
+
+					// Order by the grouping
+					$('#example_3 tbody').on('click','tr.group',function() {
+						var currentOrder = example_3.order()[0];
+						if (currentOrder[0] === groupColumn && currentOrder[1] === 'asc') {
+							example_3.order([ groupColumn, 'desc' ]).draw();
+						} else {
+							example_3.order([ groupColumn, 'asc' ]).draw();
+						}
+					});
+		    	}
 				
 				$('div.dataTables_wrapper').addClass("change_font_size");
 		  	})

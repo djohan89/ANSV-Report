@@ -8,13 +8,13 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 	
-	@RequestMapping(value = { "/", "/login" }, method = RequestMethod.GET)
-	public ModelAndView login() {
-		ModelAndView mav = new ModelAndView("web/login");
-		return mav;
-	}
+	/*
+	 * @RequestMapping(value = { "/", "/login" }, method = RequestMethod.GET) public
+	 * ModelAndView login() { ModelAndView mav = new ModelAndView("web/login");
+	 * return mav; }
+	 */
 	
-	@RequestMapping(value = { "/trang_chu" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/", "/trang_chu" }, method = RequestMethod.GET)
 	public ModelAndView webHome() {
 		ModelAndView mav = new ModelAndView("web/home_new");
 		return mav;
@@ -27,7 +27,7 @@ public class HomeController {
 	 */
 	
 	
-/* Đầu: Báo cáo 1 */
+/* Ä�áº§u: BÃ¡o cÃ¡o 1 */
 	@RequestMapping(value = { "/sheet_1" }, method = RequestMethod.GET)
 	public ModelAndView sheet_1() {
 		ModelAndView mav = new ModelAndView("web/sheet_1");
@@ -45,31 +45,31 @@ public class HomeController {
 	 * ModelAndView vnpt_net2() { ModelAndView mav = new
 	 * ModelAndView("web/vnpt_net2"); return mav; }
 	 */
-/* Cuối: Báo cáo 1 */
+/* Cuá»‘i: BÃ¡o cÃ¡o 1 */
 	
 	
 	
-/* Đầu: Báo cáo 2 */
+/* Ä�áº§u: BÃ¡o cÃ¡o 2 */
 	@RequestMapping(value = { "/sheet_2" }, method = RequestMethod.GET)
 	public ModelAndView sheet_2() {
 		ModelAndView mav = new ModelAndView("web/sheet_2");
 		return mav;
 	}
-/* Cuối: Báo cáo 2 */
+/* Cuá»‘i: BÃ¡o cÃ¡o 2 */
 	
 	
 	
-/* Đầu: Báo cáo 3 */
+/* Ä�áº§u: BÃ¡o cÃ¡o 3 */
 	@RequestMapping(value = { "/sheet_3" }, method = RequestMethod.GET)
 	public ModelAndView sheet_3() {
 		ModelAndView mav = new ModelAndView("web/sheet_3");
 		return mav;
 	}
-/* Cuối: Báo cáo 3 */
+/* Cuá»‘i: BÃ¡o cÃ¡o 3 */
 	
 	
 	
-/* Đầu: Báo cáo người phụ trách */
+/* Ä�áº§u: BÃ¡o cÃ¡o ngÆ°á»�i phá»¥ trÃ¡ch */
 	@RequestMapping(value = { "/bao_cao_sheet_1" }, method = RequestMethod.GET)
 	public ModelAndView bao_cao_sheet_1() {
 		ModelAndView mav = new ModelAndView("web/bao_cao_sheet_1");
@@ -87,6 +87,6 @@ public class HomeController {
 		ModelAndView mav = new ModelAndView("web/bao_cao_sheet_3");
 		return mav;
 	}
-/* Cuối: Báo cáo người phụ trách */
+/* Cuá»‘i: BÃ¡o cÃ¡o ngÆ°á»�i phá»¥ trÃ¡ch */
 	
 }

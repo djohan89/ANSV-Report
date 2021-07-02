@@ -76,7 +76,7 @@
 		  	            { data: 'Mức độ tình trạng' },
 		  	            { data: 'PIC' }
 		  	        ],
-		  	        "scrollY": 500,
+		  	        "scrollY": 530,
 		  	        "scrollX": true,
 		  	        "scrollCollapse": true,
 		  	        "paging": false,
@@ -114,15 +114,13 @@
 
 		  	    // Order by the grouping
 		  	    $('#example_1 tbody').on('click', 'tr.group', function() {
-		  	        var currentOrder = table_1.order()[0];
+		  	        var currentOrder = example_1.order()[0];
 		  	        if (currentOrder[0] === groupColumn && currentOrder[1] === 'asc') {
-		  	            table_1.order([groupColumn, 'desc']).draw();
+		  	            example_1.order([groupColumn, 'desc']).draw();
 		  	        } else {
-		  	            table_1.order([groupColumn, 'asc']).draw();
+		  	            example_1.order([groupColumn, 'asc']).draw();
 		  	        }
 		  	    });
-
-		  	    //Datatable báo cáo 2
 
 		  	    $('div.dataTables_wrapper').addClass("change_font_size");
 		  	});
@@ -174,7 +172,7 @@
 	  	            { data: 'Mức độ khả thi' },
 	  	            { data: 'Phụ trách' }
 	  	        ],
-	  	        "scrollY": 500,
+	  	        "scrollY": 530,
 	  	        "scrollX": true,
 	  	        "scrollCollapse": true,
 	  	        "paging": false,
@@ -212,13 +210,14 @@
 
 	  	    // Order by the grouping
 	  	    $('#example_2 tbody').on('click', 'tr.group', function() {
-	  	        var currentOrder = table_1.order()[0];
+	  	        var currentOrder = example_2.order()[0];
 	  	        if (currentOrder[0] === groupColumn && currentOrder[1] === 'asc') {
-	  	            table_1.order([groupColumn, 'desc']).draw();
+	  	            example_2.order([groupColumn, 'desc']).draw();
 	  	        } else {
-	  	            table_1.order([groupColumn, 'asc']).draw();
+	  	            example_2.order([groupColumn, 'asc']).draw();
 	  	        }
 	  	    });
+
 	  	    $('div.dataTables_wrapper').addClass("change_font_size");
 	  	});
 	};
@@ -271,7 +270,7 @@
 	  	            { data: 'Mức độ khả thi' },
 	  	            { data: 'Phụ trách' }
 	  	        ],
-	  	        "scrollY": 500,
+	  	        "scrollY": 530,
 	  	        "scrollX": true,
 	  	        "scrollCollapse": true,
 	  	        "paging": false,
@@ -309,11 +308,11 @@
 
 	  	    // Order by the grouping
 	  	    $('#example_3 tbody').on('click', 'tr.group', function() {
-	  	        var currentOrder = table_1.order()[0];
+	  	        var currentOrder = example_3.order()[0];
 	  	        if (currentOrder[0] === groupColumn && currentOrder[1] === 'asc') {
-	  	            table_1.order([groupColumn, 'desc']).draw();
+	  	            example_3.order([groupColumn, 'desc']).draw();
 	  	        } else {
-	  	            table_1.order([groupColumn, 'asc']).draw();
+	  	            example_3.order([groupColumn, 'asc']).draw();
 	  	        }
 	  	    });
 	  	    $('div.dataTables_wrapper').addClass("change_font_size");
@@ -413,7 +412,7 @@
 										<th><b>Dự án</b></th>
 										<th><b>Nhóm</b></th>
 										<th><b>Tình trạng</b></th>
-										<th><b>Phụ trách</b></th>
+										<th style="width: 22%;"><b>PIC</b></th>
 									</tr>
 								</thead>
 							</table>
@@ -446,8 +445,8 @@
 									<tr>
 										<th><b>Dự án</b></th>
 										<th><b>Nhóm</b></th>
-										<th width="39px;"><b>Khả thi</b></th>
-										<th><b>Phụ trách</b></th>
+										<th style="width: 22%;"><b>Khả thi</b></th>
+										<th><b>PIC</b></th>
 									</tr>
 								</thead>
 							</table>
@@ -482,8 +481,8 @@
 									<tr>
 										<th><b>Dự án</b></th>
 										<th><b>Nhóm</b></th>
-										<th width="39px;"><b>Khả thi</b></th>
-										<th><b>Phụ trách</b></th>
+										<th style="width: 22%;"><b>Khả thi</b></th>
+										<th><b>PIC</b></th>
 									</tr>
 								</thead>
 							</table>

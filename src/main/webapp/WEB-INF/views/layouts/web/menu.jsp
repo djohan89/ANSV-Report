@@ -34,25 +34,18 @@
 	<div class="sidebar">
 		<!-- Sidebar user panel (optional) -->
 		<div class="user-panel mt-2 pb-1 mb-3 d-flex">
-			<%-- <div class="image">
-				<img src="<c:url value="/assets/user/dist/img/user2-160x160.jpg" />"
-					class="img-circle elevation-2" alt="User Image">
-			</div>
-			<div class="info">
-				<a href="#" class="d-block">Alexander Pierce</a>
-			</div> --%>
-			
 			<ul class="nav nav-list nav-menu-list-style">
                 <li>
                 	<label class="tree-toggle nav-header">
                 		<div class="image">
-							<%-- <img src="<c:url value="/assets/user/dist/img/user2-160x160.jpg" />"
-								class="img-circle elevation-2" alt="User Image"> --%>
 							<img src="<c:url value="/assets/user/img/tong-giam-doc-new.jpg" />"
 								class="img-circle elevation-2" alt="User Image">
 						</div>
 						<div class="info" style="overflow: visible;">
-							<a href="javascript:void(0)" class="d-block">Nguyễn Văn Nam</a>
+							<a href="javascript:void(0)" class="d-block" onclick="change_icon()">
+								Nguyễn Văn Nam
+								<i class="right fas fa-angle-left" id="arrow_icon" style="margin-left: 13px;"></i>
+							</a>
 						</div>
                 	</label>
                     <ul class="nav nav-list tree">
@@ -138,6 +131,20 @@
                 </li>
             </ul>
 		</div>
+		
+		<script>
+			function change_icon() {
+				var element = document.getElementById("arrow_icon");
+				var check_class = element.classList.contains('fa-angle-left');
+				if (check_class == true) {
+					element.classList.remove("fa-angle-left");
+					element.classList.add("fa-angle-down");
+				} else {
+					element.classList.remove("fa-angle-down");
+					element.classList.add("fa-angle-left");
+				}
+			}
+		</script>
 
 		<!-- SidebarSearch Form -->
 		<!-- <div class="form-inline">

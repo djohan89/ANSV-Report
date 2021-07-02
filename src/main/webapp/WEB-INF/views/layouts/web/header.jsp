@@ -408,153 +408,36 @@
 			</table>
 		</div>
 	</div>
-
-	<!-- === Thống kê 3 sheet === -->
-	<!-- <div class="row" style="width: 50%; float: right; margin-left: 43%; margin-bottom: -1%;">
-		<div class="col-lg-4 col-6">
-			<div class="small-box bg-light box_radius">
-				<div class="inner">
-					<div class="d-flex">
-						<div class="uu_tien">
-							<font color="#dc3545">Ưu tiên 1:</font>
-						</div>
-						<div style="width: 50%;">
-							<div style="float: right;">
-								<span class="badge badge-info right">1</span>
-								<span class="badge badge-warning right">1</span>
-								<span class="badge badge-danger right">1</span>
-							</div>
-						</div>	
-					</div><hr style="margin-top: 3%; margin-bottom: 3%;">
-					
-					<div class="d-flex">
-						<div class="uu_tien">
-							<font color="#ffc107">Ưu tiên 2:</font>
-						</div>
-						<div style="width: 50%;">
-							<div style="float: right;">
-								<span class="badge badge-info right">1</span>
-								<span class="badge badge-warning right">1</span>
-								<span class="badge badge-danger right">1</span>
-							</div>
-						</div>	
-					</div><hr style="margin-top: 3%; margin-bottom: 3%;">
-					
-					<div class="d-flex">
-						<div class="uu_tien">
-							<font color="#17a2b8">Ưu tiên 3:</font>
-						</div>
-						<div style="width: 50%;">
-							<div style="float: right;">
-								<span class="badge badge-info right">1</span>
-								<span class="badge badge-warning right">1</span>
-								<span class="badge badge-danger right">1</span>
-							</div>
-						</div>	
-					</div>
-				</div>
-				<div class="small-box-footer bg-gradient-dark footer_radius"><b>BÁO CÁO VƯỚNG MẮC<br>TUẦN 4-THÁNG 4</b></div>
-			</div>
-		</div>
-		
-		<div class="col-lg-4 col-6">
-			<div class="small-box bg-light box_radius">
-				<div class="inner">
-					<div class="d-flex">
-						<div class="uu_tien">
-							<font color="#dc3545">Ưu tiên 1:</font>
-						</div>
-						<div style="width: 50%;">
-							<div style="float: right;">
-								<span class="badge badge-info right">1</span>
-								<span class="badge badge-warning right">1</span>
-								<span class="badge badge-danger right">1</span>
-							</div>
-						</div>	
-					</div><hr style="margin-top: 3%; margin-bottom: 3%;">
-					
-					<div class="d-flex">
-						<div class="uu_tien">
-							<font color="#ffc107">Ưu tiên 2:</font>
-						</div>
-						<div style="width: 50%;">
-							<div style="float: right;">
-								<span class="badge badge-info right">1</span>
-								<span class="badge badge-warning right">1</span>
-								<span class="badge badge-danger right">1</span>
-							</div>
-						</div>	
-					</div><hr style="margin-top: 3%; margin-bottom: 3%;">
-					
-					<div class="d-flex">
-						<div class="uu_tien">
-							<font color="#17a2b8">Ưu tiên 3:</font>
-						</div>
-						<div style="width: 50%;">
-							<div style="float: right;">
-								<span class="badge badge-info right">1</span>
-								<span class="badge badge-warning right">1</span>
-								<span class="badge badge-danger right">1</span>
-							</div>
-						</div>	
-					</div>
-				</div>
-				<div class="small-box-footer bg-gradient-dark footer_radius">
-					<b>DỰ ÁN KINH DOANH TUẦN 21.17 (AM-BDC)</b>
-				</div>
-			</div>
-		</div>
-		
-		<div class="col-lg-4 col-6">
-			<div class="small-box bg-light box_radius">
-				<div class="inner">
-					<div class="d-flex">
-						<div class="uu_tien">
-							<font color="#dc3545">Ưu tiên 1:</font>
-						</div>
-						<div style="width: 50%;">
-							<div style="float: right;">
-								<span class="badge badge-info right">1</span>
-								<span class="badge badge-warning right">1</span>
-								<span class="badge badge-danger right">1</span>
-							</div>
-						</div>	
-					</div><hr style="margin-top: 3%; margin-bottom: 3%;">
-					
-					<div class="d-flex">
-						<div class="uu_tien">
-							<font color="#ffc107">Ưu tiên 2:</font>
-						</div>
-						<div style="width: 50%;">
-							<div style="float: right;">
-								<span class="badge badge-info right">1</span>
-								<span class="badge badge-warning right">1</span>
-								<span class="badge badge-danger right">1</span>
-							</div>
-						</div>	
-					</div><hr style="margin-top: 3%; margin-bottom: 3%;">
-					
-					<div class="d-flex">
-						<div class="uu_tien">
-							<font color="#17a2b8">Ưu tiên 3:</font>
-						</div>
-						<div style="width: 50%;">
-							<div style="float: right;">
-								<span class="badge badge-info right">1</span>
-								<span class="badge badge-warning right">1</span>
-								<span class="badge badge-danger right">1</span>
-							</div>
-						</div>	
-					</div>
-				</div>
-				<div class="small-box-footer bg-gradient-dark footer_radius">
-					<b>DỰ ÁN KINH DOANH TUẦN 21.17 (A.Khanh + A.Tú + A. Đoàn Tuấn)</b>
-				</div>
-			</div>
-		</div>
-	</div> -->
-	
-	
-	
 </nav>
+
+<script>
+	//define a date object variable that will take the current system date
+	todaydate = new Date();
+	
+	//find the year of the current date
+	var oneJan =  new Date(todaydate.getFullYear(), 0, 1); 
+	
+	// calculating number of days in given year before a given date 
+	var numberOfDays =  Math.floor((todaydate - oneJan) / (24 * 60 * 60 * 1000)); 
+	
+	// adding 1 since to current date and returns value starting from 0 
+	var result = Math.ceil(( todaydate.getDay() + 1 + numberOfDays) / 7);   
+	
+	var d = new Date();
+	var m = d.getMonth();
+	var y = d.getFullYear();
+	
+	var file_month = m + 1;
+	var file_year = y;
+	
+	var file_name_1 = "Báo cáo sheet 1 tuần " + result + " tháng " + file_month + " năm " + file_year + ".xlsx";
+	var file_name_2 = "Báo cáo sheet 2 tuần " + result + " tháng " + file_month + " năm " + file_year + ".xlsx";
+	var file_name_3 = "Báo cáo sheet 3 tuần " + result + " tháng " + file_month + " năm " + file_year + ".xlsx";
+	console.log(file_name_1, file_name_2, file_name_3);
+	
+	/* var file_name_new = "Báo cáo KH Triển khai và Kinh doanh tuần 27 tháng 7 năm 2021.xlsx";
+	var check_name = file_name.localeCompare(file_name_new);
+	console.log(check_name); */
+
+</script>
 <!-- End Header -->

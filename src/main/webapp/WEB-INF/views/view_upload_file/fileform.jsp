@@ -166,8 +166,15 @@
 	  	filextension = filename.split(".");
 	  	filext = "." + filextension.slice(-1)[0];
 	  	valid = [".xlsx"];
+	  	
+	  	//Kiểm tra tên file theo tên quỷ chuẩn định sẵn
+	  	var compare_file_name_1 = file_name_1.localeCompare(filename);
+	  	var compare_file_name_2 = file_name_2.localeCompare(filename);
+	  	var compare_file_name_3 = file_name_3.localeCompare(filename);
+	  	
   		//if file is not valid we show the error icon, the red alert, and hide the submit button
 	  	if (valid.indexOf(filext.toLowerCase()) == -1) {
+	  		//Trường hợp không đúng đuôi file (định dạng file) -> Trả về lỗi
 		    $(".imgupload").hide("slow");
 		    $(".imgupload.ok").hide("slow");
 		    $(".imgupload.stop").show("slow");
@@ -177,8 +184,9 @@
 
 		    $("#submitbtn").hide();
 		    $("#fakebtn").show();
-	  	} else {
-		    //if file is valid we show the green alert and show the valid submit
+	  	} else if (compare_file_name_1 == 0 || compare_file_name_2 == 0 || compare_file_name_3 == 0) {
+	  		//Trường hợp so sánh đúng với 1 trong 3 file đã định sẵn -> Cho phép thực hiện đẩy file
+	  		//if file is valid we show the green alert and show the valid submit
 		    $(".imgupload").hide("slow");
 		    $(".imgupload.stop").hide("slow");
 		    $(".imgupload.ok").show("slow");
@@ -188,6 +196,18 @@
 
 		    $("#submitbtn").show();
 		    $("#fakebtn").hide();
+	  	} else {
+	  		//Không thuộc các trường hợp trên -> auto lỗi thôi!!!
+	  		$(".imgupload").hide("slow");
+		    $(".imgupload.ok").hide("slow");
+		    $(".imgupload.stop").show("slow");
+
+		    $("#namefile").css({ color: "red", "font-weight": 700 });
+		    $("#namefile").html("Tên File " + filename + " không đúng!");
+
+		    $("#submitbtn").hide();
+		    $("#fakebtn").show();
 	  	}
+  		console.log(filename);
 	});
 </script>
