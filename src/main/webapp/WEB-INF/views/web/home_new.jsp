@@ -10,6 +10,26 @@
 <script>
 	//Bên trong function jQuery ready() gọi function .DataTable() để khởi tạo DataTable
 	$(document).ready(function() {
+		// Hiển thị tiêu đề cho datatable 1
+		var str_1 = file_name_1; 
+		var sheet_1_fix_1 = str_1.replaceAll("_", " ");
+		var sheet_1_fix_2 = sheet_1_fix_1.replaceAll("tuần", "<br>Tuần");
+		var sheet_1_fix_3 = sheet_1_fix_2.replaceAll(".xlsx", "");
+		document.getElementById("name_sheet_1").innerHTML = sheet_1_fix_3;
+		
+		// Hiển thị tiêu đề cho datatable 2
+		var str_2 = file_name_2; 
+		var sheet_2_fix_1 = str_2.replaceAll("_", " ");
+		var sheet_2_fix_2 = sheet_2_fix_1.replaceAll("tuần", "<br>Tuần");
+		var sheet_2_fix_3 = sheet_2_fix_2.replaceAll(".xlsx", "");
+		document.getElementById("name_sheet_2").innerHTML = sheet_2_fix_3;
+		
+		// Hiển thị tiêu đề cho datatable 3
+		var str_3 = file_name_3; 
+		var sheet_3_fix_1 = str_3.replaceAll("_", " ");
+		var sheet_3_fix_2 = sheet_3_fix_1.replaceAll("tuần", "<br>Tuần");
+		var sheet_3_fix_3 = sheet_3_fix_2.replaceAll(".xlsx", "");
+		document.getElementById("name_sheet_3").innerHTML = sheet_3_fix_3;
 		
 		/* var result = new Date('1899-12-30');
 			days = 44286;
@@ -424,9 +444,11 @@
 						<div class="card"
 							style="margin-left: -2%; margin-right: -2%; background: rgba(192, 192, 192, 0.3); color: white;">
 							<div class="card-header border-0">
-								<h3 class="card-title">
-									<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i><b>
-										Báo cáo vướng mắc tuần 4 - tháng 4</b><br> <br>
+								<h3 class="card-title d-flex">
+									<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i>
+									<b id="name_sheet_1">
+										Báo cáo vướng mắc tuần 4 - tháng 4
+									</b><br><br>
 								</h3>
 								<div class="card-tools"></div>
 							</div>
@@ -451,9 +473,11 @@
 						<div class="card"
 							style="margin-left: -2%; margin-right: -2%; background: rgba(192, 192, 192, 0.3); color: white;">
 							<div class="card-header border-0">
-								<h3 class="card-title">
-									<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i><b>
-										Dự án kinh doanh tuần 21.17 (AM-BDC)</b><br> <br>
+								<h3 class="card-title d-flex">
+									<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i>
+									<b id="name_sheet_2">
+										Dự án kinh doanh tuần 21.17 (AM-BDC)
+									</b><br>
 								</h3>
 								<!-- card tools -->
 								<div class="card-tools">
@@ -486,10 +510,10 @@
 						<div class="card"
 							style="margin-left: -2%; margin-right: -2%; background: rgba(192, 192, 192, 0.3); color: white;">
 							<div class="card-header border-0">
-								<h3 class="card-title">
-									<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i><b>
-										Dự án kinh doanh tuần 21.17<br>(A.Khanh + A.Tú + A.Đoàn
-										Tuấn)
+								<h3 class="card-title d-flex">
+									<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i>
+									<b id="name_sheet_3">
+										Dự án kinh doanh tuần 21.17<br>(A.Khanh + A.Tú + A.Đoàn Tuấn)
 									</b><br>
 								</h3>
 								<!-- card tools -->

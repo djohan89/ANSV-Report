@@ -49,8 +49,7 @@
         }
         
         .font-size-thong-ke {
-            font-size: 15px;
-            text-transform: uppercase;
+            font-size: 80%;
         }
         
         .badge {
@@ -81,7 +80,7 @@
             <div class="col-lg-12 col-6">
                 <table class="table">
                     <tr>
-                        <td class="font-size-thong-ke pt-1 pb-1" id="name_sheet_header_1">
+                        <td class="font-size-thong-ke pt-1 pb-1">
                             BÁO CÁO VƯỚNG MẮC TUẦN 4-THÁNG 4
                         </td>
                         <td class="pt-0 pb-1">
@@ -104,7 +103,7 @@
 
 
                     <tr>
-                        <td class="font-size-thong-ke pt-1 pb-1" id="name_sheet_header_2">
+                        <td class="font-size-thong-ke pt-1 pb-1">
                             DỰ ÁN KINH DOANH TUẦN 21.17 (AM-BDC)
                         </td>
                         <td class="pt-0 pb-1">
@@ -127,7 +126,7 @@
 
 
                     <tr>
-                        <td class="font-size-thong-ke pt-1 pb-1" id="name_sheet_header_3">
+                        <td class="font-size-thong-ke pt-1 pb-1">
                             DỰ ÁN KINH DOANH TUẦN 21.17 (A.Khanh + A.Tú + A. Đoàn Tuấn)
                         </td>
                         <td class="pt-0 pb-1">
@@ -181,21 +180,6 @@
         var file_name_2 = "Báo_cáo_sheet_2_tuần_" + result + "_tháng_" + file_month + "_năm_" + file_year + ".xlsx";
         var file_name_3 = "Báo_cáo_sheet_3_tuần_" + result + "_tháng_" + file_month + "_năm_" + file_year + ".xlsx";
         console.log(file_name_1, file_name_2, file_name_3);
-        
-     	// Hiển thị tiêu đề cho thống kê 1
-		var header_sheet_1_fix_1 = file_name_1.replaceAll("_", " ");
-		var header_sheet_1_fix_2 = header_sheet_1_fix_1.replaceAll(".xlsx", "");
-		document.getElementById("name_sheet_header_1").innerHTML = header_sheet_1_fix_2;
-		
-		// Hiển thị tiêu đề cho thống kê 2
-		var header_sheet_2_fix_1 = file_name_2.replaceAll("_", " ");
-		var header_sheet_2_fix_2 = header_sheet_2_fix_1.replaceAll(".xlsx", "");
-		document.getElementById("name_sheet_header_2").innerHTML = header_sheet_2_fix_2;
-		
-		// Hiển thị tiêu đề cho thống kê 3
-		var header_sheet_3_fix_1 = file_name_3.replaceAll("_", " ");
-		var header_sheet_3_fix_2 = header_sheet_3_fix_1.replaceAll(".xlsx", "");
-		document.getElementById("name_sheet_header_3").innerHTML = header_sheet_3_fix_2;
 
         /* var file_name_new = "Báo cáo KH Triển khai và Kinh doanh tuần 27 tháng 7 năm 2021.xlsx";
         var check_name = file_name.localeCompare(file_name_new);
@@ -249,29 +233,29 @@
                 var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
                 XL_row_object.forEach(item => {
 
-                    if (item["Priority"] == "High" || item["Priority"] == "1") {
-                        if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || item["Mức độ tình trạng"] == "x" || format(item["Mức độ tình trạng"]).match(/hủy/i) != null ) {
+                    if (item["Priority"] == "High") {
+                        if (item["Mức độ tình trạng"] == "Đang hoàn thành" || item["Mức độ tình trạng"] == "x" || item["Mức độ tình trạng"] == "Hủy") {
                             a1++;
-                        } else if (format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null) {
-                            c1++;
-                        } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
+                        } else if (item["Mức độ tình trạng"] == "Chậm tiến độ") {
                             b1++;
+                        } else if (item["Mức độ tình trạng"] == "Tiến độ rất chậm") {
+                            c1++;
                         }
-                    } else if (item["Priority"] == "" || item["Priority"] == "2" || item["Priority"] == "Medium" || item["Priority"] == "x" || typeof item["Priority"] === 'undefined') {
-                        if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || item["Mức độ tình trạng"] == "x" || typeof item["Mức độ tình trạng"] === 'undefined' || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
+                    } else if (item["Priority"] == "" || item["Priority"] == "x" || typeof item["Priority"] === 'undefined') {
+                        if (item["Mức độ tình trạng"] == "Đang hoàn thành" || item["Mức độ tình trạng"] == "x" || typeof item["Mức độ tình trạng"] === 'undefined' || item["Mức độ tình trạng"] == "Hủy") {
                             d1++;
-                        } else if (format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null) {
-                            f1++;
-                        } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
+                        } else if (item["Mức độ tình trạng"] == "Chậm tiến độ") {
                             e1++;
+                        } else if (item["Mức độ tình trạng"] == "Tiến độ rất chậm") {
+                            f1++;
                         }
-                    } else if (item["Priority"] == "3" || item["Priority"] == "Low") {
-                        if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
+                    } else if (item["Priority"] == "2" || item["Priority"] == "medium") {
+                        if (item["Mức độ tình trạng"] == "Đang hoàn thành" || item["Mức độ tình trạng"] == "Hủy") {
                             g1++;
-                        } else if (format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null) {
-                            i1++;
-                        } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
+                        } else if (item["Mức độ tình trạng"] == "Chậm tiến độ") {
                             h1++;
+                        } else if (item["Mức độ tình trạng"] == "Tiến độ rất chậm") {
+                            i1++;
                         }
                     }
 
@@ -344,28 +328,28 @@
                 XL_row_object.forEach(item => {
 
                     if (item["Mức độ ưu tiên"] == "1") {
-                        if (format(item["Tình trạng dự án"]).match(/hoàn thành/i) != null || item["Tình trạng dự án"] == "" || typeof item["Tình trạng dự án"] === 'undefined' || format(item["Tình trạng dự án"]).match(/hủy/i) != null) {
+                        if (item["Tình trạng dự án"] == "Đang hoàn thành" || item["Tình trạng dự án"] == "" || typeof item["Tình trạng dự án"] === 'undefined' || item["Tình trạng dự án"] == "Hủy") {
                             a2++;
-                        } else if (format(item["Tình trạng dự án"]).match(/rất chậm/i) != null ) {
-                            c2++;
-                        } else if (format(item["Tình trạng dự án"]).match(/chậm/i) != null ) {
+                        } else if (item["Tình trạng dự án"] == "Chậm tiến độ") {
                             b2++;
+                        } else if (item["Tình trạng dự án"] == "Tiến độ rất chậm") {
+                            c2++;
                         }
                     } else if (item["Mức độ ưu tiên"] == "2") {
-                        if (format(item["Tình trạng dự án"]).match(/hoàn thành/i) != null || item["Tình trạng dự án"] == "" || typeof item["Tình trạng dự án"] === 'undefined' || format(item["Tình trạng dự án"]).match(/hủy/i) != null) {
+                        if (item["Tình trạng dự án"] == "Đang hoàn thành" || item["Tình trạng dự án"] == "" || typeof item["Tình trạng dự án"] === 'undefined' || item["Tình trạng dự án"] == "Hủy") {
                             d2++;
-                        } else if (format(item["Tình trạng dự án"]).match(/rất chậm/i) != null ) {
-                            f2++;
-                        } else if (format(item["Tình trạng dự án"]).match(/chậm/i) != null ) {
+                        } else if (item["Tình trạng dự án"] == "Chậm tiến độ") {
                             e2++;
+                        } else if (item["Tình trạng dự án"] == "Tiến độ rất chậm") {
+                            f2++;
                         }
                     } else if (item["Mức độ ưu tiên"] == "3" || typeof item["Mức độ ưu tiên"] === 'undefined') {
-                        if (format(item["Tình trạng dự án"]).match(/hoàn thành/i) != null || item["Tình trạng dự án"] == "" || typeof item["Tình trạng dự án"] === 'undefined' || format(item["Tình trạng dự án"]).match(/hủy/i) != null) {
+                        if (item["Tình trạng dự án"] == "Đang hoàn thành" || item["Tình trạng dự án"] == "" || typeof item["Tình trạng dự án"] === 'undefined' || item["Tình trạng dự án"] == "Hủy") {
                             g2++;
-                        } else if (format(item["Tình trạng dự án"]).match(/rất chậm/i) != null ) {
-                            i2++;
-                        } else if (format(item["Tình trạng dự án"]).match(/chậm/i) != null ) {
+                        } else if (item["Tình trạng dự án"] == "Chậm tiến độ") {
                             h2++;
+                        } else if (item["Tình trạng dự án"] == "Tiến độ rất chậm") {
+                            i2++;
                         }
                     }
 
@@ -436,30 +420,30 @@
                 var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
                 XL_row_object.forEach(item => {
                     if (item["Mức độ ưu tiên"] == "1") {
-                        if (item["Tình trạng dự án"] == "" || format(item["Tình trạng dự án"]).match(/hoàn thành/i) != null || typeof item["Tình trạng dự án"] === "undefined" || format(item["Tình trạng dự án"]).match(/hủy/i) != null) {
+                        if (item["Tình trạng dự án"] == "" || item["Tình trạng dự án"] == "Đang hoàn thành" || typeof item["Tình trạng dự án"] === "undefined") {
                             a3++;
-                        } else if ( format(item["Tình trạng dự án"]).match(/rất chậm/i) != null) {
-                            c3++;
-                        } else if ( format(item["Tình trạng dự án"]).match(/chậm/i) != null) {
+                        } else if (item["Tình trạng dự án"] == "Chậm tiến độ") {
                             b3++;
+                        } else if (item["Tình trang dự án"] == "Hủy") {
+                            c3++;
                         }
                     } else if (item["Mức độ ưu tiên"] == "2" || typeof item["Mức độ ưu tiên"] === "undefined") {
-                        if (item["Tình trạng dự án"] == "" || format(item["Tình trạng dự án"]).match(/hoàn thành/i) != null || typeof item["Tình trạng dự án"] === "undefined" || format(item["Tình trạng dự án"]).match(/hủy/i) != null) {
+                        if (item["Tình trạng dự án"] == "" || item["Tình trạng dự án"] == "Đang hoàn thành" || typeof item["Tình trạng dự án"] === "undefined") {
                             d3++;
-                        } else if ( format(item["Tình trạng dự án"]).match(/rất chậm/i) != null) {
-                            f3++;
-                        } else if ( format(item["Tình trạng dự án"]).match(/chậm/i) != null) {
+                        } else if (item["Tình trạng dự án"] == "Chậm tiến độ") {
                             e3++;
+                        } else if (item["TÌnh trạng dự án"] == "Hủy") {
+                            f3++;
                         }
                     } else if (item["Mức độ ưu tiên"] == "3") {
-                        if (item["Tình trạng dự án"] == "" || format(item["Tình trạng dự án"]).match(/hoàn thành/i) != null || typeof item["Tình trạng dự án"] === "undefined" || format(item["Tình trạng dự án"]).match(/hủy/i) != null ) {
+                        if (item["Tình trạng dự án"] == "" || item["Tình trạng dự án"] == "Đang hoàn thành" || typeof item["TÌnh trạng dự án"] === "undefined") {
                             g3++;
                         }
-                        else if (format(item["Tình trạng dự án"]).match(/rất chậm/i) != null ) {
-                            i3++;
-                        }
-                        else if (format(item["Tình trạng dự án"]).match(/chậm/i) != null ) {
+                        if (item["Mức độ ưu tiên"] == "Chậm tiến độ") {
                             h3++;
+                        }
+                        if (item["Mức độ ưu tiên"] == "Hủy") {
+                            i3++;
                         }
                     }
 
@@ -481,13 +465,5 @@
 
         }
         oReqh_3.send();
-        
-        function format(value){ 
-        	if(value == 'x' ||value =="null" || value =="" || typeof value === 'undefined'){
-        		return " ";
-        	}else{
-        		return value;
-            }		
-        }
     </script>
     <!-- End Header -->
