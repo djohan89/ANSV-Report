@@ -171,11 +171,14 @@
 					class="nav-link d-flex active"> <i class="nav-icon fas fa-table"></i> -->
 				<li class="nav-item">
 					<a href="#" class="nav-link d-flex"> 
-					<i class="nav-icon fas fa-table"></i>
-						<p class="text-capitalize">
-							Báo cáo tồn tại vướng mắc các dự án triển khai tuần 4 - tháng 4
-							<i class="right fas fa-angle-left"></i> 
-							<span class="badge badge-info" id="num_sheet_1"></span>
+					<i class="nav-icon fas fa-table pt-2"></i>
+						<p class="text-capitalize" id="name_menu_sheet_1">
+							<script>
+							let name_menu_1 = header_sheet_1_fix_2+
+											'<i class="right fas fa-angle-left" style="right:10px;"></i>'+
+											'<span class="badge badge-info ml-2" id="num_sheet_1"></span>';
+							document.getElementById("name_menu_sheet_1").innerHTML += name_menu_1;
+							</script>							
 						</p>
 					</a>
 					<ul class="nav nav-treeview" id="data_sheet_1">
@@ -246,12 +249,15 @@
 					
 				<li class="nav-item">
 					<a href="#" class="nav-link d-flex"> 
-						<i class="nav-icon fas fa-table"></i>
-						<p class="text-capitalize">
-							Báo cáo tình hình thực hiện các dự án kinh doanh tuần
-							22.11(AM-BDC) 
-							<i class="fas fa-angle-left right"></i> 
-							<span class="badge badge-info" id="num_sheet_2"></span>
+						<i class="nav-icon fas fa-table pt-2"></i>
+						<p class="text-capitalize" id="name_menu_sheet_2">
+							<script>
+							let name_menu_2 = header_sheet_2_fix_2+
+											'<i class="right fas fa-angle-left" style="right:10px;"></i>'+
+											'<span class="badge badge-info ml-2" id="num_sheet_2"></span>';
+							document.getElementById("name_menu_sheet_2").innerHTML += name_menu_2;
+							</script> 
+							
 						</p>
 					</a>
 					<ul class="nav nav-treeview" id="data_sheet_2">
@@ -320,15 +326,19 @@
 						</script>
 					</ul>
 				</li>
-				<li class="nav-item"><a href="#" class="nav-link d-flex"> <i
-						class="nav-icon fas fa-table"></i>
-						<p class="text-capitalize">
-							Báo các tình hình thực hiện các dự án kinh doanh tuần 21.17
-							(A.Khanh + A.Tú + A. Đoàn Tuấn) <i
-								class="right fas fa-angle-left"></i> <span
-								class="badge badge-info" id="num_sheet_3"></span>
+				<li class="nav-item">
+					<a href="#" class="nav-link d-flex"> 
+						<i class="nav-icon fas fa-table pt-2"></i>
+						<p class="text-capitalize" id="name_menu_sheet_3">
+							<script>
+							let name_menu_3 = header_sheet_3_fix_2+
+											'<i class="right fas fa-angle-left" style="right:10px;"></i>'+
+											'<span class="badge badge-info ml-2" id="num_sheet_3"></span>';
+							document.getElementById("name_menu_sheet_3").innerHTML += name_menu_3;
+							</script> 
+							
 						</p>
-				</a>
+					</a>
 					<ul class="nav nav-treeview" style="font-size: 13px;" id="data_sheet_3">
 						<script>
 							var data_sheet_3 = document.getElementById("data_sheet_3");
