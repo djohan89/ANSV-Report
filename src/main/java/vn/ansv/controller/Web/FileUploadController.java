@@ -40,8 +40,7 @@ public class FileUploadController {
 		try {
 			FileOutputStream fos = new FileOutputStream(path);
 			
-			
-			
+			//Tiến hành lưu file
 			fos.write(data);
 			fos.close();
 			System.out.println("File uploaded");

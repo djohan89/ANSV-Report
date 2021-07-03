@@ -647,4 +647,6 @@
     $(function () {
         $(".tree-toggle").parent().children("ul.tree").toggle(200);
     });
+    
+    document.getElementById("name_sheet_header_1").innerHTML = header_sheet_1_fix_2;
 </script>
