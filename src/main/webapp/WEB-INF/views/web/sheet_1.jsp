@@ -138,7 +138,7 @@ color: #fff;}
 		                                '<td>' + format_date(item["PAC"]) + '</td>' +
 		                                '<td>' + format_date(item["FAC"]) + '</td>' +
 		                                '<!--Kế hoạch nghiệm thu -->' +
-		                                '<td>' + format(item["Số tiền thanh toán tạm ưng"]) + '</td>' +
+		                                '<td>' + format(item["Số tiền thanh toán tạm ứng"]) + '</td>' +
 		                                '<td>' + format_date(item["Kế hoạch tạm ứng"]) + '</td>'
 
 		                            <!-- Thanh toán tạm ứng -->

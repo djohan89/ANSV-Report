@@ -251,9 +251,9 @@
             workbook.SheetNames.forEach(function(sheetName) {
                 var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
                 XL_row_object.forEach(item => {
-
+						
                     if (item["Priority"] == "High" || item["Priority"] == "1") {
-                        if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || item["Mức độ tình trạng"] == "x" || format(item["Mức độ tình trạng"]).match(/hủy/i) != null ) {
+                        if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || item["Mức độ tình trạng"] == "x" || format(item["Mức độ tình trạng"]).match(/hủy/i) != null ) {
                             a1++;
                         } else if (format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null) {
                             c1++;
@@ -261,7 +261,7 @@
                             b1++;
                         }
                     } else if (item["Priority"] == "" || item["Priority"] == "2" || item["Priority"] == "Medium" || item["Priority"] == "x" || typeof item["Priority"] === 'undefined') {
-                        if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || item["Mức độ tình trạng"] == "x" || typeof item["Mức độ tình trạng"] === 'undefined' || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
+                        if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || item["Mức độ tình trạng"] == "x" || typeof item["Mức độ tình trạng"] === 'undefined' || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                             d1++;
                         } else if (format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null) {
                             f1++;
@@ -269,7 +269,7 @@
                             e1++;
                         }
                     } else if (item["Priority"] == "3" || item["Priority"] == "Low") {
-                        if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
+                        if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || format(item["Mức độ tình trạng"]).match(/hủy/i) != null || typeof item["Mức độ tình trạng"] === 'undefined') {
                             g1++;
                         } else if (format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null) {
                             i1++;
@@ -345,29 +345,29 @@
                 var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
 
                 XL_row_object.forEach(item => {
-
+						
                     if (item["Mức độ ưu tiên"] == "1") {
-                        if (format(item["Tình trạng dự án"]).match(/hoàn thành/i) != null || item["Tình trạng dự án"] == "" || typeof item["Tình trạng dự án"] === 'undefined' || format(item["Tình trạng dự án"]).match(/hủy/i) != null) {
+                        if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null ||  item["Mức độ tình trạng"] == "" || typeof item["Mức độ tình trạng"] === 'undefined' || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                             a2++;
-                        } else if (format(item["Tình trạng dự án"]).match(/rất chậm/i) != null ) {
+                        } else if (format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null ) {
                             c2++;
-                        } else if (format(item["Tình trạng dự án"]).match(/chậm/i) != null ) {
+                        } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null ) {
                             b2++;
                         }
                     } else if (item["Mức độ ưu tiên"] == "2") {
-                        if (format(item["Tình trạng dự án"]).match(/hoàn thành/i) != null || item["Tình trạng dự án"] == "" || typeof item["Tình trạng dự án"] === 'undefined' || format(item["Tình trạng dự án"]).match(/hủy/i) != null) {
+                        if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || item["Mức độ tình trạng"] == "" || typeof item["Mức độ tình trạng"] === 'undefined' || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                             d2++;
-                        } else if (format(item["Tình trạng dự án"]).match(/rất chậm/i) != null ) {
+                        } else if (format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null ) {
                             f2++;
-                        } else if (format(item["Tình trạng dự án"]).match(/chậm/i) != null ) {
+                        } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null ) {
                             e2++;
                         }
                     } else if (item["Mức độ ưu tiên"] == "3" || typeof item["Mức độ ưu tiên"] === 'undefined') {
-                        if (format(item["Tình trạng dự án"]).match(/hoàn thành/i) != null || item["Tình trạng dự án"] == "" || typeof item["Tình trạng dự án"] === 'undefined' || format(item["Tình trạng dự án"]).match(/hủy/i) != null) {
+                        if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || item["Mức độ tình trạng"] == "" || typeof item["Mức độ tình trạng"] === 'undefined' || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                             g2++;
-                        } else if (format(item["Tình trạng dự án"]).match(/rất chậm/i) != null ) {
+                        } else if (format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null ) {
                             i2++;
-                        } else if (format(item["Tình trạng dự án"]).match(/chậm/i) != null ) {
+                        } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null ) {
                             h2++;
                         }
                     }
@@ -439,29 +439,29 @@
                 var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
                 XL_row_object.forEach(item => {
                     if (item["Mức độ ưu tiên"] == "1") {
-                        if (item["Tình trạng dự án"] == "" || format(item["Tình trạng dự án"]).match(/hoàn thành/i) != null || typeof item["Tình trạng dự án"] === "undefined" || format(item["Tình trạng dự án"]).match(/hủy/i) != null) {
+                        if (item["Mức độ tình trạng"] == "" || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || typeof item["Mức độ tình trạng"] === "undefined" || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                             a3++;
-                        } else if ( format(item["Tình trạng dự án"]).match(/rất chậm/i) != null) {
+                        } else if ( format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null) {
                             c3++;
-                        } else if ( format(item["Tình trạng dự án"]).match(/chậm/i) != null) {
+                        } else if ( format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
                             b3++;
                         }
                     } else if (item["Mức độ ưu tiên"] == "2" || typeof item["Mức độ ưu tiên"] === "undefined") {
-                        if (item["Tình trạng dự án"] == "" || format(item["Tình trạng dự án"]).match(/hoàn thành/i) != null || typeof item["Tình trạng dự án"] === "undefined" || format(item["Tình trạng dự án"]).match(/hủy/i) != null) {
+                        if (item["Mức độ tình trạng"] == "" || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || typeof item["Mức độ tình trạng"] === "undefined" || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                             d3++;
-                        } else if ( format(item["Tình trạng dự án"]).match(/rất chậm/i) != null) {
+                        } else if ( format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null) {
                             f3++;
-                        } else if ( format(item["Tình trạng dự án"]).match(/chậm/i) != null) {
+                        } else if ( format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
                             e3++;
                         }
                     } else if (item["Mức độ ưu tiên"] == "3") {
-                        if (item["Tình trạng dự án"] == "" || format(item["Tình trạng dự án"]).match(/hoàn thành/i) != null || typeof item["Tình trạng dự án"] === "undefined" || format(item["Tình trạng dự án"]).match(/hủy/i) != null ) {
+                        if (item["Mức độ tình trạng"] == "" || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || typeof item["Mức độ tình trạng"] === "undefined" || format(item["Mức độ tình trạng"]).match(/hủy/i) != null ) {
                             g3++;
                         }
-                        else if (format(item["Tình trạng dự án"]).match(/rất chậm/i) != null ) {
+                        else if (format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null ) {
                             i3++;
                         }
-                        else if (format(item["Tình trạng dự án"]).match(/chậm/i) != null ) {
+                        else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null ) {
                             h3++;
                         }
                     }

@@ -100,7 +100,7 @@
 		                                   +'<tr>'
 		                                       +'<th rowspan="2">Thanh toán tạm ứng</th>'
 		                                       +'<th>Số tiền</th>'
-		                                       +'<td>'+format(item["Số tiền thanh toán tạm ưng"])+'</td>'
+		                                       +'<td>'+format(item["Số tiền thanh toán tạm ứng"])+'</td>'
 		                                   +'</tr>'
 		                                   +'<tr>'
 		                                       +'<th>Kế hoạch</th>'

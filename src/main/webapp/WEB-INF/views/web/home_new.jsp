@@ -182,7 +182,7 @@
 	  	                render: function(data, type, row) {
 	  	                    /* return '<a href="du_an_'+row["STT"]+'_sheet_1" target="_blank" style="color: white; font-weight: bold;"'+
 	  	                        'data-toggle="tooltip" data-html="true" title="'+row["Tình trạng"]+'">'+data+'</a>' */
-	  	                	var n = format(row['Tình trạng dự án']);
+	  	                	var n = format(row['Mức độ tình trạng']);
 	  	                   	 /* var check_n = ["Chậm","chậm"]; */ 
 	  	                   	if (n.match(/chậm/i) != null) {
 								var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
@@ -233,9 +233,9 @@
 	  	            });
 	  	        },
 	  	        "createdRow": function(row, data, dataIndex) {
-	  	            if (format(data['Tình trạng dự án']).match(/rất chậm/i) !=null) {
+	  	            if (format(data['Mức độ tình trạng']).match(/rất chậm/i) !=null) {
 	  	                $(row).addClass("highlight");
-	  	            } else if (format(data['Tình trạng dự án']).match(/chậm/i) !=null) {
+	  	            } else if (format(data['Mức độ tình trạng']).match(/chậm/i) !=null) {
 	  	                $(row).addClass("highlight2");
 	  	            }
 	  	        },
@@ -293,7 +293,7 @@
 	  	                render: function(data, type, row) {
 	  	                    /* return '<a href="du_an_'+row["STT"]+'_sheet_1" target="_blank" style="color: white; font-weight: bold;"'+
 	  	                        'data-toggle="tooltip" data-html="true" title="'+row["Tình trạng"]+'">'+data+'</a>' */
-	  	                	var n = format(row['Tình trạng dự án']);
+	  	                	var n = format(row['Mức độ tình trạng']);
 	  	                   	 /* var check_n = ["Chậm","chậm"]; */ 
 	  	                   	if (n.match(/chậm/i) != null) {
 								var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
@@ -344,9 +344,9 @@
 	  	            });
 	  	        },
 	  	        "createdRow": function(row, data, dataIndex) {
-	  	        	if (format(data['Tình trạng dự án']).match(/rất chậm/i) !=null) {
+	  	        	if (format(data['Mức độ tình trạng']).match(/rất chậm/i) !=null) {
 	  	                $(row).addClass("highlight");
-	  	            } else if (format(data['Tình trạng dự án']).match(/chậm/i) !=null) {
+	  	            } else if (format(data['Mức độ tình trạng']).match(/chậm/i) !=null) {
 	  	                $(row).addClass("highlight2");
 	  	            }
 	  	        },
