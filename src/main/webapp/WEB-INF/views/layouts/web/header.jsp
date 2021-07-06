@@ -77,7 +77,7 @@
         </ul>
 
         <!-- === Thống kê === -->
-        <div class="row" style="margin-left: 37%; width: 100%;">
+        <div class="row" style="margin-left: 32%; width: 100%;">
             <div class="col-lg-12 col-6">
                 <table class="table">
                     <tr>
@@ -180,9 +180,9 @@
         /* var file_name_1 = "Báo_cáo_sheet_1_tuần_" + result + "_tháng_" + file_month + "_năm_" + file_year + ".xlsx";
         var file_name_2 = "Báo_cáo_sheet_2_tuần_" + result + "_tháng_" + file_month + "_năm_" + file_year + ".xlsx";
         var file_name_3 = "Báo_cáo_sheet_3_tuần_" + result + "_tháng_" + file_month + "_năm_" + file_year + ".xlsx"; */
-        var file_name_1 = "Báo cáo triển khai tuần " + result + " tháng " + file_month + " năm " + file_year + ".xlsx";
-        var file_name_2 = "Báo cáo KD AM tuần " + result + " tháng " + file_month + " năm " + file_year + ".xlsx";
-        var file_name_3 = "Báo cáo KH-TT tuần " + result + " tháng " + file_month + " năm " + file_year + ".xlsx";
+        var file_name_1 = "Báo cáo KH Triển khai tuần " + result + " tháng " + file_month + " năm " + file_year + ".xlsx";
+        var file_name_2 = "Báo cáo KH KD Viễn thông tuần " + result + " tháng " + file_month + " năm " + file_year + ".xlsx";
+        var file_name_3 = "Báo cáo KH KD Chuyển đổi số tuần " + result + " tháng " + file_month + " năm " + file_year + ".xlsx";
         console.log(file_name_1, file_name_2, file_name_3);
         
      	// Hiển thị tiêu đề cho thống kê 1
