@@ -377,6 +377,9 @@
 							   		var item3 = Object.keys(groupedPeople3);
 
 							   		for (let i = 0; i < dem3; i++) {
+							   			if(item3[i].match(/&/i) != null){
+							   		    	item3[i] = item3[i].replace('&','và');
+							   		    }
 							   		    let row ='<li class="nav-item">' +
 									   		        '<a href="sheet_3?kh_s3_id=' + item3[i] + '" class="nav-link d-flex"' +
 									   		        'id="sheet3-' + item3[i] + '" data-toggle="tooltip"  data-html="true"' +
@@ -393,6 +396,7 @@
 									   		        '</a>' +
 							   		       		 '</li>';
 							   		    data_sheet_3.innerHTML += row;
+							   		    
 							   		}
 					   		  	});
 				    		}

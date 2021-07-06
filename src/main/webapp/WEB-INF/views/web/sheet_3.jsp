@@ -45,6 +45,9 @@ color: #fff;}
        
         <script>
         function return_id(id){
+        	if(id.match(/và/i) !=null){
+        		id = id.replace('và','&');
+        	}
    		 var title = document.getElementById('title');
             var data_ul = document.getElementById("data_ul");
             var detail_data = document.getElementById("detail");
@@ -137,7 +140,6 @@ color: #fff;}
 		                        }
 		                        detail_data.innerHTML += row2;
 		                    }
-
 		                });
    		  	});
     		}
