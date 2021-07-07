@@ -158,18 +158,52 @@
     </nav>
 
     <script>
-        //define a date object variable that will take the current system date
-        todaydate = new Date();
+	    Date.prototype.getWeek = function() {
+	        var onejan = new Date(this.getFullYear(), 0, 1);
+	        return Math.ceil((((this - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+	    }
+	
+	    var weekNumber = (new Date()).getWeek();
+	
+	    var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+	    var now = new Date();
+	    console.log("Hôm nay thứ: " + dayNames[now.getDay()] + " (" + weekNumber + ").");
+        
+        
+        
+        /* const today = new Date();
+        const firstDayOfYear = new Date(today.getFullYear(), 0, 1);
+        const pastDaysOfYear = (today - firstDayOfYear) / 86400000;
+        var result = Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+        console.log(""); */
+        
+        /* currentdate = new Date();
+        var oneJan = new Date(currentdate.getFullYear(),0,1);
+        var numberOfDays = Math.floor((currentdate - oneJan) / (24 * 60 * 60 * 1000));
+        var result = Math.ceil(( currentdate.getDay() + 1 + numberOfDays) / 7);
+        console.log("The week number of the current date (" + currentdate + ") is " + result); */
+        
+        function getWeekNumber(d) {
+            // Copy date so don't modify original
+            d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+            // Set to nearest Thursday: current date + 4 - current day number
+            // Make Sunday's day number 7
+            d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
+            // Get first day of year
+            var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+            // Calculate full weeks to nearest Thursday
+            var weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+            	weekNo++;
+            // Return array of year and week number
+            return weekNo;
+        }
 
-        //find the year of the current date
-        var oneJan = new Date(todaydate.getFullYear(), 0, 1);
+        var result = getWeekNumber(new Date());
+        console.log('Tuần này là tuần: ' + result);
+        
+        
 
-        // calculating number of days in given year before a given date 
-        var numberOfDays = Math.floor((todaydate - oneJan) / (24 * 60 * 60 * 1000));
-
-        // adding 1 since to current date and returns value starting from 0 
-        var result = Math.ceil((todaydate.getDay() + 1 + numberOfDays) / 7);
-
+        // Lấy ra tháng và năm của ngày hiện tại
         var d = new Date();
         var m = d.getMonth();
         var y = d.getFullYear();
