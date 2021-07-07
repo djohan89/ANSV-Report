@@ -460,8 +460,8 @@
 				   	        for (let j = 0; j < project_1[i].length; j++) { //Mảng đa triều
 	
 				   	            let row2 = '<li class="nav-item ">' +
-							   	                '<a href="bao_cao_sheet_1?id_p1=' + project_1[i][j]["STT"] + '"' +
-							   	                'target="_blank" onclick = "return project_link_menu_1(' + project_1[i][j]["STT"] + ') "' + //Lấy phần tử thứ i truongef dữ liệu thứ j
+							   	                '<a href="#"' +
+							   	                'onclick = "return project_link_menu_1(' + project_1[i][j]["STT"] + ') "' + //Lấy phần tử thứ i truongef dữ liệu thứ j
 							   	                'class="nav-link d-flex" id="project1-' + project_1[i][j]["STT"] + '">' +
 								   	                '<i class="far fa-hand-point-right nav-icon" style="font-size: 1rem; margin-left: 6%;"></i>' +
 								   	                '<p>' +
@@ -540,8 +540,8 @@
 			   		        for (let j = 0; j < project_2[i].length; j++) { //Mảng đa triều
 	
 			   		            let row2 = '<li class="nav-item ">' +
-						   		                '<a href="bao_cao_sheet_2?id_p2=' + project_2[i][j]["STT"] + '"' +
-						   		                'target="_blank" onclick = "return project_link_menu_2(' + project_2[i][j]["STT"] + ') "' + //Lấy phần tử thứ i truongef dữ liệu thứ j
+						   		                '<a href="#"' +
+						   		                'onclick = "return project_link_menu_2(' + project_2[i][j]["STT"] + ') "' + //Lấy phần tử thứ i truongef dữ liệu thứ j
 						   		                'class="nav-link d-flex" id="project2-' + project_2[i][j]["STT"] + '">' +
 							   		                '<i class="far fa-hand-point-right nav-icon" style="font-size: 1rem; margin-left: 6%;"></i>' +
 							   		                '<p>' +
@@ -623,8 +623,8 @@
 			   		        for (let j = 0; j < project_3[i].length; j++) { //Mảng đa triều
 	
 			   		            let row2 = '<li class="nav-item ">' +
-			   		                '<a href="bao_cao_sheet_3?id_p3=' + project_3[i][j]["STT"] + '"' +
-			   		                'target="_blank" onclick = "return project_link_menu_3(' + project_3[i][j]["STT"] + ') "' + //Lấy phần tử thứ i truongef dữ liệu thứ j
+			   		                '<a href="#"' +
+			   		                'onclick = "return project_link_menu_3(' + project_3[i][j]["STT"] + ') "' + //Lấy phần tử thứ i truongef dữ liệu thứ j
 			   		                'class="nav-link d-flex" id="project3-' + project_3[i][j]["STT"] + '">' +
 			   		                '<i class="far fa-hand-point-right nav-icon" style="font-size: 1rem; margin-left: 6%;"></i>' +
 			   		                '<p>' +
