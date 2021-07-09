@@ -17,6 +17,13 @@
 	  	var compare_file_name_upload_2 = file_name_2.localeCompare(ten_file_upload);
 	  	var compare_file_name_upload_3 = file_name_3.localeCompare(ten_file_upload);
 		
+	  	var name_upload_1 = document.getElementById("name_upload_1");
+	  	name_upload_1.innerHTML = file_name_1.replaceAll(".xlsx","");
+	  	var name_upload_2 = document.getElementById("name_upload_2");
+	  	name_upload_2.innerHTML = file_name_2.replaceAll(".xlsx","");
+	  	var name_upload_3 = document.getElementById("name_upload_3");
+	  	name_upload_3.innerHTML = file_name_3.replaceAll(".xlsx","");
+	  	
 		$(function () {
 		  	$('[data-toggle="tooltip"]').tooltip()
 		})
@@ -52,9 +59,9 @@
 		  	workbook.SheetNames.forEach(function(sheetName) {
 		    	// Here is your object
 		    	var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
-				console.log(XL_row_object);
+				/* console.log(XL_row_object); */
 		    	var json_object = JSON.stringify(XL_row_object);
-		    	console.log(JSON.parse(json_object));
+		    	/* console.log(JSON.parse(json_object)); */
 
 		    	jQuery( '#xlx_json' ).val( json_object );
 
@@ -69,10 +76,27 @@
 			                { 
 			                	data: 'Dự án/Gói thầu',
 			                	render : function(data, type, row) {
-									return '<a href="javascript:void(0)" target="_blank" style="color: white; font-weight: bold;" data-toggle="tooltip"' +
+									/* return '<a href="javascript:void(0)" target="_blank" style="color: white; font-weight: bold;" data-toggle="tooltip"' +
 												'data-html="true" title="'+row["Tình trạng"]+'" onclick="return project_link('+row["STT"]+')">' +
 												data +
-											'</a>'
+											'</a>' */
+			                		var n = format(row['Mức độ tình trạng']);
+			  	                   	 /* var check_n = ["Chậm","chậm"]; */ 
+			  	                   	if (n.match(/chậm/i) != null) {
+										var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+														'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+														data +
+														'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tình trạng"]) + '</span>' +
+													'</a>';
+									} else {
+										var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+														'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+														data +
+														'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tình trạng"]) + '</span>' +
+													'</a>';
+									}
+										
+									return html;
 								}
 			                },
 			                { data: 'Khách hàng' },
@@ -105,9 +129,13 @@
 			                } );
 			            },
 						"createdRow" : function(row, data, dataIndex) {
-							if (data['Priority'] == "High") {
-								$(row).addClass("highlight");
-							}
+							if (format(data['Mức độ tình trạng']).match(/sắp chậm/i) != null) {
+			  	                $(row).addClass("highlight2");
+			  	            }else if(format(data['Mức độ tình trạng']).match(/chậm/i) != null){
+			  	            	$(row).addClass("highlight");
+			  	            }else{
+			  	            	$(row).addClass("highlight3");
+			  	            }
 						},
 			        });
 
@@ -129,10 +157,27 @@
 			                	render : function(data, type, row) {
 									/* return '<a href="du_an_'+row["STT"]+'_sheet_1" target="_blank" style="color: white; font-weight: bold;"'+
 										'data-toggle="tooltip" data-html="true" title="'+row["Tình trạng"]+'">'+data+'</a>' */
-									return '<a href="javascript:void(0)" target="_blank" style="color: white; font-weight: bold;" data-toggle="tooltip"' +
+									/* return '<a href="javascript:void(0)" target="_blank" style="color: white; font-weight: bold;" data-toggle="tooltip"' +
 												'data-html="true" title="'+row["Tình trạng"]+'" onclick="return project_link('+row["STT"]+')">' +
 												data +
-											'</a>'
+											'</a>' */
+			                		var n = format(row['Mức độ tình trạng']);
+			  	                   	 /* var check_n = ["Chậm","chậm"]; */ 
+			  	                   	if (n.match(/chậm/i) != null) {
+										var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+														'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+														data +
+														'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
+													'</a>';
+									} else {
+										var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+														'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+														data +
+														'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
+													'</a>';
+									}
+										
+									return html;
 								}
 			                },
 			                { data: 'Khách hàng' },
@@ -165,9 +210,13 @@
 			                } );
 			            },
 						"createdRow" : function(row, data, dataIndex) {
-							if (data['Priority'] == "High") {
-								$(row).addClass("highlight");
-							}
+							if (format(data['Mức độ tình trạng']).match(/rất chậm/i) !=null) {
+			  	                $(row).addClass("highlight");
+			  	            } else if (format(data['Mức độ tình trạng']).match(/chậm/i) !=null) {
+			  	                $(row).addClass("highlight2");
+			  	            }else{
+			  	            	$(row).addClass("highlight3");
+			  	            }
 						},
 			        });
 
@@ -189,10 +238,27 @@
 			                	render : function(data, type, row) {
 									/* return '<a href="du_an_'+row["STT"]+'_sheet_1" target="_blank" style="color: white; font-weight: bold;"'+
 										'data-toggle="tooltip" data-html="true" title="'+row["Tình trạng"]+'">'+data+'</a>' */
-									return '<a href="javascript:void(0)" target="_blank" style="color: white; font-weight: bold;" data-toggle="tooltip"' +
+									/* return '<a href="javascript:void(0)" target="_blank" style="color: white; font-weight: bold;" data-toggle="tooltip"' +
 												'data-html="true" title="'+row["Tình trạng"]+'" onclick="return project_link('+row["STT"]+')">' +
 												data +
-											'</a>'
+											'</a>' */
+			                		var n = format(row['Mức độ tình trạng']);
+			  	                   	 /* var check_n = ["Chậm","chậm"]; */ 
+			  	                   	if (n.match(/chậm/i) != null) {
+										var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+														'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+														data +
+														'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
+													'</a>';
+									} else {
+										var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+														'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+														data +
+														'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
+													'</a>';
+									}
+										
+									return html;
 								}
 			                },
 			                { data: 'Khách hàng' },
@@ -225,9 +291,13 @@
 			                } );
 			            },
 						"createdRow" : function(row, data, dataIndex) {
-							if (data['Priority'] == "High") {
-								$(row).addClass("highlight");
-							}
+							if (format(data['Mức độ tình trạng']).match(/rất chậm/i) !=null) {
+			  	                $(row).addClass("highlight");
+			  	            } else if (format(data['Mức độ tình trạng']).match(/chậm/i) !=null) {
+			  	                $(row).addClass("highlight2");
+			  	            }else{
+			  	            	$(row).addClass("highlight3");
+			  	            }
 						},
 			        });
 
@@ -259,6 +329,10 @@
 </script>
 
 <style>
+	.group{
+		font-weight: bold;
+		font-size: 12px;
+	}
 	text-align {
 		display: flex;
 		justify-content: center;
@@ -271,6 +345,14 @@
 		/* color: #FE2E2E; */
 		background-color: #FE2E2E;
 	}
+	.highlight2 {
+		font-weight: bold;
+		background-color: #ff9900;
+	}
+	.highlight3 {
+		font-weight: bold;
+		background-color: #17a2b8;
+	}
 
 	.change_font_size {
 		font-size: 11px;
@@ -282,6 +364,34 @@
 
 	.table {
 		min-width: 100%;
+	}
+	
+	.tooltip_css {
+	  	color: black;
+	}
+	
+	.tooltip_css .tooltiptext {
+	  	visibility: hidden;
+	  	width: 93%;
+	  	color: #fff;
+	  	text-align: left;
+	  	border-radius: 6px;
+	  	padding: 5px 6px;
+	
+	  	/* Position the tooltip */
+	  	position: absolute;
+	  	z-index: 1;
+	  	
+	  	/* Xuống dòng */
+	  	white-space: pre-wrap;
+	  	
+	  	/* Khung viền */
+	  	border: 2px solid;
+	  	border-color: black;
+	}
+	
+	.tooltip_css:hover .tooltiptext {
+	  	visibility: visible;
 	}
 </style>
 
@@ -297,7 +407,7 @@
 							style="margin-left: -2%; margin-right: -2%; background: rgba(192, 192, 192, 0.3); color: white;">
 							<div class="card-header border-0">
 								<h3 class="card-title">
-									<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i><b>
+									<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i><b id="name_upload_1">
 										Báo cáo vướng mắc tuần 4 - tháng 4</b><br> <br>
 								</h3>
 								<div class="card-tools"></div>
@@ -324,7 +434,7 @@
 							style="margin-left: -2%; margin-right: -2%; background: rgba(192, 192, 192, 0.3); color: white;">
 							<div class="card-header border-0">
 								<h3 class="card-title">
-									<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i><b>
+									<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i><b id="name_upload_2">
 										Dự án kinh doanh tuần 21.17 (AM-BDC)</b><br> <br>
 								</h3>
 								<!-- card tools -->
@@ -359,7 +469,7 @@
 							style="margin-left: -2%; margin-right: -2%; background: rgba(192, 192, 192, 0.3); color: white;">
 							<div class="card-header border-0">
 								<h3 class="card-title">
-									<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i><b>
+									<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i><b id="name_upload_3">
 										Dự án kinh doanh tuần 21.17<br>(A.Khanh + A.Tú + A.Đoàn
 										Tuấn)
 									</b>
