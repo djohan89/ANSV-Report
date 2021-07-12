@@ -460,8 +460,8 @@
 				   	        for (let j = 0; j < project_1[i].length; j++) { //Mảng đa triều
 	
 				   	            let row2 = '<li class="nav-item ">' +
-							   	                '<a href="bao_cao_sheet_1?id_p1=' + project_1[i][j]["STT"] + '"' +
-							   	                'target="_blank" onclick = "return project_link_menu_1(' + project_1[i][j]["STT"] + ') "' + //Lấy phần tử thứ i truongef dữ liệu thứ j
+							   	                '<a href="#"' +
+							   	                ' onclick = "return project_link_menu_1(' + project_1[i][j]["STT"] + ') "' + //Lấy phần tử thứ i truongef dữ liệu thứ j
 							   	                'class="nav-link d-flex" id="project1-' + project_1[i][j]["STT"] + '">' +
 								   	                '<i class="far fa-hand-point-right nav-icon" style="font-size: 1rem; margin-left: 6%;"></i>' +
 								   	                '<p>' +
@@ -477,8 +477,8 @@
 	    		}
 	    		oReqp1.send();
 	            function project_link_menu_1(id) {
-	        		window.open("bao_cao_sheet_1?id_p1="+id); //Link đến trang khác với tab mới
-	        		//window.location.href = "http://www.w3schools.com"; //Link đến trang khác ở tab hiện tại
+	        		//window.open("bao_cao_sheet_1?id_p1="+id); //Link đến trang khác với tab mới
+	        		window.location.href = "bao_cao_sheet_1?id_p1="+id; //Link đến trang khác ở tab hiện tại
 	        	  	//location.replace("https://www.w3schools.com"); //Link đến trang khác thay thế trang hiện tại
 	        	}
 				</script>
@@ -540,8 +540,8 @@
 			   		        for (let j = 0; j < project_2[i].length; j++) { //Mảng đa triều
 	
 			   		            let row2 = '<li class="nav-item ">' +
-						   		                '<a href="bao_cao_sheet_2?id_p2=' + project_2[i][j]["STT"] + '"' +
-						   		                'target="_blank" onclick = "return project_link_menu_2(' + project_2[i][j]["STT"] + ') "' + //Lấy phần tử thứ i truongef dữ liệu thứ j
+						   		                '<a href="#"' +
+						   		                'onclick = "return project_link_menu_2(' + project_2[i][j]["STT"] + ') "' + //Lấy phần tử thứ i truongef dữ liệu thứ j
 						   		                'class="nav-link d-flex" id="project2-' + project_2[i][j]["STT"] + '">' +
 							   		                '<i class="far fa-hand-point-right nav-icon" style="font-size: 1rem; margin-left: 6%;"></i>' +
 							   		                '<p>' +
@@ -557,8 +557,8 @@
 	    		};
 	    		oReqp2.send();
 	            function project_link_menu_2(id) {
-	        		window.open("bao_cao_sheet_2?id_p2="+id); //Link đến trang khác với tab mới
-	        		//window.location.href = "http://www.w3schools.com"; //Link đến trang khác ở tab hiện tại
+	        		//window.open("bao_cao_sheet_2?id_p2="+id); //Link đến trang khác với tab mới
+	        		window.location.href = "bao_cao_sheet_2?id_p2="+id; //Link đến trang khác ở tab hiện tại
 	        	  	//location.replace("https://www.w3schools.com"); //Link đến trang khác thay thế trang hiện tại
 	        	};
 				</script>
@@ -623,8 +623,8 @@
 			   		        for (let j = 0; j < project_3[i].length; j++) { //Mảng đa triều
 	
 			   		            let row2 = '<li class="nav-item ">' +
-			   		                '<a href="bao_cao_sheet_3?id_p3=' + project_3[i][j]["STT"] + '"' +
-			   		                'target="_blank" onclick = "return project_link_menu_3(' + project_3[i][j]["STT"] + ') "' + //Lấy phần tử thứ i truongef dữ liệu thứ j
+			   		                '<a href="#"' +
+			   		                'onclick = "return project_link_menu_3(' + project_3[i][j]["STT"] + ') "' + //Lấy phần tử thứ i truongef dữ liệu thứ j
 			   		                'class="nav-link d-flex" id="project3-' + project_3[i][j]["STT"] + '">' +
 			   		                '<i class="far fa-hand-point-right nav-icon" style="font-size: 1rem; margin-left: 6%;"></i>' +
 			   		                '<p>' +
@@ -640,8 +640,8 @@
 	    		};
 	    		oReqp3.send();
 	            function project_link_menu_3(id) {
-	        		window.open("bao_cao_sheet_3?id_p3="+id); //Link đến trang khác với tab mới
-	        		//window.location.href = "http://www.w3schools.com"; //Link đến trang khác ở tab hiện tại
+	        		//window.open("bao_cao_sheet_3?id_p3="+id); //Link đến trang khác với tab mới
+	        		window.location.href = "bao_cao_sheet_3?id_p3="+id; //Link đến trang khác ở tab hiện tại
 	        	  	//location.replace("https://www.w3schools.com"); //Link đến trang khác thay thế trang hiện tại
 	        	};
 				</script>
@@ -662,5 +662,5 @@
         $(".tree-toggle").parent().children("ul.tree").toggle(200);
     });
     
-    document.getElementById("name_sheet_header_1").innerHTML = header_sheet_1_fix_2;
+    /* document.getElementById("name_sheet_header_1").innerHTML = header_sheet_1_fix_2; */
 </script>
