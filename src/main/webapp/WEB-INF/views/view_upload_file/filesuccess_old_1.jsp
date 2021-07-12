@@ -11,16 +11,22 @@
 	//Bên trong function jQuery ready() gọi function .DataTable() để khởi tạo DataTable
 	$(document).ready(function() {
 		var ten_file_upload = "${filename}";
-		console.log("File upload thành công: " + ten_file_upload);
-		
-		//Kiểm tra tên file theo tên quỷ chuẩn định sẵn. Nhằm đưa đúng thông tin (file) vào đúng phần hiển thị
-	  	var compare_file_name_upload_1 = file_upload_accept_1.localeCompare(ten_file_upload);
-	  	var compare_file_name_upload_2 = file_upload_accept_2.localeCompare(ten_file_upload);
-	  	var compare_file_name_upload_3 = file_upload_accept_3.localeCompare(ten_file_upload);
+
+		//Kiểm tra tên file theo tên quỷ chuẩn định sẵn
+	  	var compare_file_name_upload_1 = file_name_1.localeCompare(ten_file_upload);
+	  	var compare_file_name_upload_2 = file_name_2.localeCompare(ten_file_upload);
+	  	var compare_file_name_upload_3 = file_name_3.localeCompare(ten_file_upload);
 		
 		$(function () {
 		  	$('[data-toggle="tooltip"]').tooltip()
 		})
+		
+		/* var month_now = 1;
+		var date_now = new Date();
+		month_now += date_now.getMonth();
+		var year_now = date_now.getFullYear();
+		var file_json_url = '<c:url value="/assets/user/upload/' + 'bao-cao-thang-' + month_now + '-' + year_now + '.json' + '" />';
+		console.log(file_json_url); */
 		
 /* Đầu: Phần lấy ra file excel. Sau đó convert thành json rồi đổ ra datatable */
 		/* set up XMLHttpRequest */

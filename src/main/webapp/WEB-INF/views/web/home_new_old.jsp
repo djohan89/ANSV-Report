@@ -11,30 +11,40 @@
 	//Bên trong function jQuery ready() gọi function .DataTable() để khởi tạo DataTable
 	$(document).ready(function() {
 		// Hiển thị tiêu đề cho datatable 1
-		var str_1 = file_view_1; 
+		var str_1 = file_name_1; 
 		var sheet_1_fix_1 = str_1.replaceAll("_", " ");
 		var sheet_1_fix_2 = sheet_1_fix_1.replaceAll("tuần", "<br>Tuần");
 		var sheet_1_fix_3 = sheet_1_fix_2.replaceAll(".xlsx", "");
 		document.getElementById("name_sheet_1").innerHTML = sheet_1_fix_3;
 		
 		// Hiển thị tiêu đề cho datatable 2
-		var str_2 = file_view_2; 
+		var str_2 = file_name_2; 
 		var sheet_2_fix_1 = str_2.replaceAll("_", " ");
 		var sheet_2_fix_2 = sheet_2_fix_1.replaceAll("tuần", "<br>Tuần");
 		var sheet_2_fix_3 = sheet_2_fix_2.replaceAll(".xlsx", "");
 		document.getElementById("name_sheet_2").innerHTML = sheet_2_fix_3;
 		
 		// Hiển thị tiêu đề cho datatable 3
-		var str_3 = file_view_3; 
+		var str_3 = file_name_3; 
 		var sheet_3_fix_1 = str_3.replaceAll("_", " ");
 		var sheet_3_fix_2 = sheet_3_fix_1.replaceAll("tuần", "<br>Tuần");
 		var sheet_3_fix_3 = sheet_3_fix_2.replaceAll(".xlsx", "");
 		document.getElementById("name_sheet_3").innerHTML = sheet_3_fix_3;
 		
-		console.log("home_new.jsp: ");
-		console.log(url1);
-		console.log(url2);
-		console.log(url3);
+		/* var result = new Date('1899-12-30');
+			days = 44286;
+			console.log(result);
+		result.setDate(result.getDate() + days);
+		console.log(result);
+		
+		console.log(result.toLocaleDateString("en-US")); */
+		
+		var month_now = 1;
+		var date_now = new Date();
+		month_now += date_now.getMonth();
+		var year_now = date_now.getFullYear();
+		var file_json_url = '<c:url value="/assets/user/upload/' + 'bao-cao-thang-' + month_now + '-' + year_now + '.json' + '" />';
+		/* console.log(file_json_url); */
 		
 		var oReqs1 = new XMLHttpRequest();
 		oReqs1.open("GET", url1, true);
@@ -425,7 +435,7 @@
 
 	<div class="content-wrapper">
 		<!-- Main content -->
-		<section class="content" id="content_dashboard"
+		<section class="content"
 			style="background-image: url('assets/user/img/5.jpg'); background-position: center; min-height: 576px;">
 			<div class="container-fluid">
 				<div class="row">

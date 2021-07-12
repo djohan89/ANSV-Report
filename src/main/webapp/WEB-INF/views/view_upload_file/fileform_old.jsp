@@ -168,12 +168,9 @@
 	  	valid = [".xlsx"];
 	  	
 	  	//Kiểm tra tên file theo tên quỷ chuẩn định sẵn
-	  	var compare_file_name_1 = file_upload_accept_1.localeCompare(filename);
-	  	var compare_file_name_2 = file_upload_accept_2.localeCompare(filename);
-	  	var compare_file_name_3 = file_upload_accept_3.localeCompare(filename);
-	  	/* var compare_file_name_1 = file_view_1.localeCompare(filename);
-	  	var compare_file_name_2 = file_view_2.localeCompare(filename);
-	  	var compare_file_name_3 = file_view_3.localeCompare(filename); */
+	  	var compare_file_name_1 = file_name_1.localeCompare(filename);
+	  	var compare_file_name_2 = file_name_2.localeCompare(filename);
+	  	var compare_file_name_3 = file_name_3.localeCompare(filename);
 	  	
   		//if file is not valid we show the error icon, the red alert, and hide the submit button
 	  	if (valid.indexOf(filext.toLowerCase()) == -1) {

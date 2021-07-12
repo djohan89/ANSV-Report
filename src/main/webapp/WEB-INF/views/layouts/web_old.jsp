@@ -57,7 +57,6 @@
 	<script type="text/javascript" src="<c:url value="/assets/user/vendor/datatables/js/jquery.dataTables.min.js" />"></script>
 	<script type="text/javascript" src="<c:url value="/assets/user/vendor/datatables/js/dataTables.bootstrap4.min.js" />"></script>
 	
-<!-- === Thư viện đọc dữ liệu file Excel (XLSX) === -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
 </head>

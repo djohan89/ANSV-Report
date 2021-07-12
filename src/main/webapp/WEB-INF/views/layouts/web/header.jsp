@@ -56,6 +56,20 @@
         .badge {
             width: 20px;
         }
+        
+        .select2-container--default .select2-selection--single{
+        	margin-left: 10px;
+		    padding: 2px 0;
+		    height: 30px;
+		    width: 65px; 
+		    font-size: 1.2em;  
+		    position: relative;
+		}
+		
+		.select2-container--default .select2-dropdown.select2-dropdown--below {
+			margin-left: 10px;
+			width: 65px !important;
+		}
     </style>
 
     <!-- ======= Header ======= -->
@@ -77,8 +91,15 @@
         </ul>
 
         <!-- === Thống kê === -->
-        <div class="row" style="margin-left: 32%; width: 100%;">
-            <div class="col-lg-12 col-6">
+        <div class="row" style="width: 100%;">
+        	<div class="col-lg-1 col-6"></div>
+        	<div class="col-lg-3 d-flex" style="height: 30px;">
+        		<font color="orange" style="font-size: 18px; padding-top: 1px">
+        			<b>Báo cáo tuần:</b>
+        		</font>
+        		<select id="select_week"></select>
+        	</div>
+            <div class="col-lg-8 col-6">
                 <table class="table">
                     <tr>
                         <td class="font-size-thong-ke pt-1 pb-1" id="name_sheet_header_1">
@@ -158,52 +179,18 @@
     </nav>
 
     <script>
-	    Date.prototype.getWeek = function() {
-	        var onejan = new Date(this.getFullYear(), 0, 1);
-	        return Math.ceil((((this - onejan) / 86400000) + onejan.getDay() + 1) / 7);
-	    }
-	
-	    var weekNumber = (new Date()).getWeek();
-	
-	    var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-	    var now = new Date();
-	    console.log("Hôm nay thứ: " + dayNames[now.getDay()] + " (" + weekNumber + ").");
-        
-        
-        
-        /* const today = new Date();
-        const firstDayOfYear = new Date(today.getFullYear(), 0, 1);
-        const pastDaysOfYear = (today - firstDayOfYear) / 86400000;
-        var result = Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
-        console.log(""); */
-        
-        /* currentdate = new Date();
-        var oneJan = new Date(currentdate.getFullYear(),0,1);
-        var numberOfDays = Math.floor((currentdate - oneJan) / (24 * 60 * 60 * 1000));
-        var result = Math.ceil(( currentdate.getDay() + 1 + numberOfDays) / 7);
-        console.log("The week number of the current date (" + currentdate + ") is " + result); */
-        
-        function getWeekNumber(d) {
-            // Copy date so don't modify original
-            d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
-            // Set to nearest Thursday: current date + 4 - current day number
-            // Make Sunday's day number 7
-            d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
-            // Get first day of year
-            var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-            // Calculate full weeks to nearest Thursday
-            var weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
-            	weekNo++;
-            // Return array of year and week number
-            return weekNo;
-        }
+    	//define a date object variable that will take the current system date
+        todaydate = new Date();
 
-        var result = getWeekNumber(new Date());
-        console.log('Tuần này là tuần: ' + result);
-        
-        
+        //find the year of the current date
+        var oneJan = new Date(todaydate.getFullYear(), 0, 1);
 
-        // Lấy ra tháng và năm của ngày hiện tại
+        // calculating number of days in given year before a given date 
+        var numberOfDays = Math.floor((todaydate - oneJan) / (24 * 60 * 60 * 1000));
+
+        // adding 1 since to current date and returns value starting from 0 
+        var result = Math.ceil((todaydate.getDay() + 1 + numberOfDays) / 7);
+
         var d = new Date();
         var m = d.getMonth();
         var y = d.getFullYear();
@@ -211,26 +198,75 @@
         var file_month = m + 1;
         var file_year = y;
 
-        /* var file_name_1 = "Báo_cáo_sheet_1_tuần_" + result + "_tháng_" + file_month + "_năm_" + file_year + ".xlsx";
-        var file_name_2 = "Báo_cáo_sheet_2_tuần_" + result + "_tháng_" + file_month + "_năm_" + file_year + ".xlsx";
-        var file_name_3 = "Báo_cáo_sheet_3_tuần_" + result + "_tháng_" + file_month + "_năm_" + file_year + ".xlsx"; */
-        var file_name_1 = "Báo cáo KH Triển khai tuần " + result + " tháng " + file_month + " năm " + file_year + ".xlsx";
-        var file_name_2 = "Báo cáo KH KD Viễn thông tuần " + result + " tháng " + file_month + " năm " + file_year + ".xlsx";
-        var file_name_3 = "Báo cáo KH KD Chuyển đổi số tuần " + result + " tháng " + file_month + " năm " + file_year + ".xlsx";
-        console.log(file_name_1, file_name_2, file_name_3);
+    // Khai báo tuần hiện tại
+    	var tuan_nay = result + 1;
+    
+    // Đầu: Tạo select 2 cho phần chọn tuần
+    	$('#select_week').select2();
+    
+    	var week_option = "";
+    	for (let i = tuan_nay; i >= 25; i--) {
+    		if (i == tuan_nay - 1) {
+    			week_option += '<option value="' + i + '" selected>' + i + '</option>';
+    		} else {
+    			week_option += '<option value="' + i + '">' + i + '</option>';
+    		}
+   		}
+    	document.getElementById("select_week").innerHTML = week_option;
+    	
+    	$('#select_week').on('select2:select', function (e) {
+    		tuan_nay = document.getElementById("select_week").value;
+   		  	console.log(file_upload_accept_1);
+   		  	
+	   		$.ajax({
+	 			url : 'change_content',
+	 			data : {
+	 				file_data : tuan_nay
+	 			},
+	 			success : function(responseText) {
+	 				console.log("Đã vào đc controller r đó, 10 điểm về chỗ!");
+	 			}
+	 		}).done(function(response){
+	 			ContentReplace(response);
+				alertify.success('Chào người thành công!!!');
+	 	   	});
+   		});
+    // Cuối: Tạo select 2 cho phần chọn tuần
+        
+   	// Khai báo tên đúng của file muốn thực hiện upload: File muốn upload là báo cáo của tuần này
+        var file_upload_accept_1 = "Báo cáo KH Triển khai tuần " + tuan_nay + " tháng " + file_month + " năm " + file_year + ".xlsx";
+        var file_upload_accept_2 = "Báo cáo KH KD Viễn thông tuần " + tuan_nay + " tháng " + file_month + " năm " + file_year + ".xlsx";
+        var file_upload_accept_3 = "Báo cáo KH KD Chuyển đổi số tuần " + tuan_nay + " tháng " + file_month + " năm " + file_year + ".xlsx";
+        // Console thông tin để fix bug
+        console.log("(*) Tuần này:");
+        console.log(file_upload_accept_1);
+        console.log(file_upload_accept_2);
+        console.log(file_upload_accept_3);
+        console.log("");
+        
+ 	// Khai báo tên đúng của file muốn thực hiện lấy dữ liệu: File muốn hiển thị thông tin là báo cáo của tuần trước
+        var file_view_1 = "Báo cáo KH Triển khai tuần " + result + " tháng " + file_month + " năm " + file_year + ".xlsx";
+        var file_view_2 = "Báo cáo KH KD Viễn thông tuần " + result + " tháng " + file_month + " năm " + file_year + ".xlsx";
+        var file_view_3 = "Báo cáo KH KD Chuyển đổi số tuần " + result + " tháng " + file_month + " năm " + file_year + ".xlsx";
+     	// Console thông tin để fix bug
+        console.log("(*) Tuần trước:");
+        console.log(file_view_1);
+        console.log(file_view_2);
+        console.log(file_view_3);
+        console.log("");
         
      	// Hiển thị tiêu đề cho thống kê 1
-		var header_sheet_1_fix_1 = file_name_1.replaceAll("_", " ");
+		var header_sheet_1_fix_1 = file_view_1.replaceAll("_", " ");
 		var header_sheet_1_fix_2 = header_sheet_1_fix_1.replaceAll(".xlsx", "");
 		document.getElementById("name_sheet_header_1").innerHTML = header_sheet_1_fix_2;
 		
 		// Hiển thị tiêu đề cho thống kê 2
-		var header_sheet_2_fix_1 = file_name_2.replaceAll("_", " ");
+		var header_sheet_2_fix_1 = file_view_2.replaceAll("_", " ");
 		var header_sheet_2_fix_2 = header_sheet_2_fix_1.replaceAll(".xlsx", "");
 		document.getElementById("name_sheet_header_2").innerHTML = header_sheet_2_fix_2;
 		
 		// Hiển thị tiêu đề cho thống kê 3
-		var header_sheet_3_fix_1 = file_name_3.replaceAll("_", " ");
+		var header_sheet_3_fix_1 = file_view_3.replaceAll("_", " ");
 		var header_sheet_3_fix_2 = header_sheet_3_fix_1.replaceAll(".xlsx", "");
 		document.getElementById("name_sheet_header_3").innerHTML = header_sheet_3_fix_2;
 
@@ -261,8 +297,8 @@
         var g1 = 0,
             h1 = 0,
             i1 = 0;
-
-        var url1 = '<c:url value="/assets/user/upload/' + file_name_1 + '" />';
+        
+        var url1 = '<c:url value="/assets/user/upload/' + file_view_1 + '" />';
         var oReqh_1 = new XMLHttpRequest();
 
         oReqh_1.open("GET", url1, true);
@@ -355,7 +391,7 @@
             h2 = 0,
             i2 = 0;
 
-        var url2 = '<c:url value="/assets/user/upload/' + file_name_2 + '" />';
+        var url2 = '<c:url value="/assets/user/upload/' + file_view_2 + '" />';
         var oReqh_2 = new XMLHttpRequest();
 
         oReqh_2.open("GET", url2, true);
@@ -449,9 +485,9 @@
             h3 = 0,
             i3 = 0;
 
-        var url3 = '<c:url value="/assets/user/upload/' + file_name_3 + '" />';
+        var url3 = '<c:url value="/assets/user/upload/' + file_view_3 + '" />';
         var oReqh_3 = new XMLHttpRequest();
-
+        
         oReqh_3.open("GET", url3, true);
         oReqh_3.responseType = "arraybuffer";
         oReqh_3.onload = function(e) {
@@ -526,5 +562,10 @@
         		return value;
             }		
         }
+        
+        function ContentReplace(response) {
+	        $("#content_dashboard").empty();
+	        $("#content_dashboard").html(response);
+       	}
     </script>
     <!-- End Header -->
