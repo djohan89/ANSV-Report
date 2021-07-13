@@ -9,14 +9,16 @@
 
 <div class="content-wrapper">
 	<!-- Main content -->
-	<section class="content" id="content_dashboard"
-		style="background-image: url('assets/user/img/10.jpg'); background-position: center; min-height: 576px;">
+	<!-- <section class="content pt-3" id="content_dashboard"
+		style="background-image: url('assets/user/img/10.jpg'); background-position: center; min-height: 576px;"> -->
+	<section class="content pt-3" id="content_dashboard"
+		style="background-image: url('assets/user/img/10.jpg'); background-position: center; min-height: 576px;">												
 		<div class="container-fluid">
 			<div class="row">
 				<section class="col-lg-4">
 					<!-- Sheet 1 card -->
 					<div class="card"
-						style="margin-left: -2%; margin-right: -2%; background: rgba(192, 192, 192, 0.3); color: white;">
+						style="margin-left: -2%; margin-right: -2%; background: rgba(192, 192, 192, 0.3);">
 						<div class="card-header border-0">
 							<h3 class="card-title d-flex">
 								<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i>
@@ -45,7 +47,7 @@
 				<section class="col-lg-4">
 					<!-- Sheet 2 card -->
 					<div class="card"
-						style="margin-left: -2%; margin-right: -2%; background: rgba(192, 192, 192, 0.3); color: white;">
+						style="margin-left: -2%; margin-right: -2%; background: rgba(192, 192, 192, 0.3);">
 						<div class="card-header border-0">
 							<h3 class="card-title d-flex">
 								<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i>
@@ -82,7 +84,7 @@
 				<section class="col-lg-4">
 					<!-- Sheet 3 card -->
 					<div class="card"
-						style="margin-left: -2%; margin-right: -2%; background: rgba(192, 192, 192, 0.3); color: white;">
+						style="margin-left: -2%; margin-right: -2%; background: rgba(192, 192, 192, 0.3);">
 						<div class="card-header border-0">
 							<h3 class="card-title d-flex">
 								<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i>

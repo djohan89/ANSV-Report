@@ -4,8 +4,8 @@
 
 <!-- ======= Header ======= -->
 <!-- <nav class="main-header navbar navbar-expand navbar-white navbar-light bg-dark"> -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light bg-dark pb-0" 
-	style="border-bottom: 0px solid #343a40;">
+<nav class="main-header navbar navbar-expand navbar-white navbar-light bg-dark pb-0 mb-0" 
+	style="border-bottom: 0px solid #343a40; height: 130px;">
     <!-- Left navbar links -->
     <ul class="navbar-nav" style="margin-top: -6%;">
         <li class="nav-item">
@@ -24,15 +24,15 @@
     </ul>
 
     <!-- === Thống kê === -->
-    <div class="row" style="width: 100%;">
-    	<div class="col-lg-1 col-6"></div>
+    <div class="row" style="width: 100%; height: 120px;">
+    	<div class="col-lg-1"></div>
     	<div class="col-lg-3 d-flex" style="height: 30px;">
     		<font color="orange" style="font-size: 18px; padding-top: 1px">
     			<b>Báo cáo tuần:</b>
     		</font>
     		<select id="select_week"></select>
     	</div>
-        <div class="col-lg-8 col-6">
+        <div class="col-lg-8">
             <table class="table">
                 <tr>
                     <td class="font-size-thong-ke pt-1 pb-1" id="name_sheet_header_1">
