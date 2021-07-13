@@ -130,6 +130,10 @@
 		flex-direction: column;
 		height: auto;
 	}
+	.group{
+		font-weight: bold;
+		font-size: 12px;
+	}
 
 	.highlight {
 		font-weight: bold;
@@ -140,7 +144,11 @@
 		font-weight: bold;
 		background-color: #ff9900;
 	}
-
+	
+	.highlight3 {
+		font-weight: bold;
+		background-color: #17a2b8;
+	}
 	.change_font_size {
 		font-size: 11px;
 	}
@@ -247,10 +255,12 @@
             });
         },
         "createdRow": function(row, data, dataIndex) {
-            if (format(data['Mức độ tình trạng']).match(/rất chậm/i) != null) {
-                $(row).addClass("highlight");
+            if (format(data['Mức độ tình trạng']).match(/sắp chậm/i) != null) {
+                $(row).addClass("highlight2");
             }else if(format(data['Mức độ tình trạng']).match(/chậm/i) != null){
-            	$(row).addClass("highlight2");
+            	$(row).addClass("highlight");
+            }else {
+            	$(row).addClass("highlight3");
             }
         },
     });
@@ -329,6 +339,8 @@
                 $(row).addClass("highlight");
             } else if (format(data['Mức độ tình trạng']).match(/chậm/i) !=null) {
                 $(row).addClass("highlight2");
+            }else{
+            	$(row).addClass("highlight3");
             }
         },
     });
@@ -406,6 +418,8 @@
                 $(row).addClass("highlight");
             } else if (format(data['Mức độ tình trạng']).match(/chậm/i) !=null) {
                 $(row).addClass("highlight2");
+            }else {
+            	$(row).addClass("highlight3");
             }
         },
     });
