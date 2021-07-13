@@ -10,7 +10,7 @@
 <div class="content-wrapper">
 	<!-- Main content -->
 	<section class="content" id="content_dashboard"
-		style="background-image: url('assets/user/img/5.jpg'); background-position: center; min-height: 576px;">
+		style="background-image: url('assets/user/img/10.jpg'); background-position: center; min-height: 576px;">
 		<div class="container-fluid">
 			<div class="row">
 				<section class="col-lg-4">

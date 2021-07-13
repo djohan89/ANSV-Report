@@ -4,18 +4,21 @@
 
 <!-- ======= Header ======= -->
 <!-- <nav class="main-header navbar navbar-expand navbar-white navbar-light bg-dark"> -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light bg-dark pb-0" style="border-bottom: 0px solid #343a40; background-image: url('assets/user/img/5.jpg'); background-position: center;">
+<nav class="main-header navbar navbar-expand navbar-white navbar-light bg-dark pb-0" 
+	style="border-bottom: 0px solid #343a40;">
     <!-- Left navbar links -->
     <ul class="navbar-nav" style="margin-top: -6%;">
         <li class="nav-item">
-            <a class="nav-link" data-widget="pushmenu" href="#" role="button"> <i class="fas fa-bars" style="color: white; font-size: 25px;"></i>
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button">
+            	<i class="fas fa-bars" style="color: white; font-size: 25px;"></i>
             </a>
     </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav" style="margin-top: -6%;">
         <li class="nav-item">
-            <a class="nav-link" data-widget="fullscreen" href="#" role="button"> <i class="fas fa-expand-arrows-alt" style="color: white; font-size: 25px;"></i>
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+            	<i class="fas fa-expand-arrows-alt" style="color: white; font-size: 25px;"></i>
             </a>
         </li>
     </ul>
