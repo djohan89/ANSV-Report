@@ -5,6 +5,12 @@
 
 <title>Trang chủ</title>
 
+<link rel="stylesheet"
+	href="<c:url value="/assets/user/vendor/dist/assets/owl.theme.default.min.css" />">
+<link rel="stylesheet"
+	href="<c:url value="/assets/user/vendor/dist/assets/owl.carousel.min.css" />">
+<script src="<c:url value="/assets/user/vendor/dist/owl.carousel.min.js" />"></script>
+<script src="<c:url value="/assets/user/vendor/dist/jquery.mousewheel.min.js" />"></script> <!-- Thư viện sử dụng con lăn chuột -->
 
 
 <div class="content-wrapper">
@@ -26,7 +32,45 @@
 									Báo cáo vướng mắc tuần 4 - tháng 4
 								</b><br><br>
 							</h3>
-							<div class="card-tools"></div>
+							<div class="card-tools">
+								<div class="container">
+									<!-- Trigger the modal with a button -->
+									<button type="button" class="btn btn-danger btn-sm"
+										data-toggle="modal" data-target="#myModal">
+										<i class="fas fa-exclamation-triangle"></i>
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="myModal" role="dialog">
+										<div class="modal-dialog">
+
+											<!-- Modal content-->
+											<div class="modal-content" style="color: black;">
+												<div class="modal-header" style="border-bottom: none">
+												<!-- <h5 class="modal-title" id="modal_title">Các dự án chậm tiến độ</h5> -->
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+												</div>
+												<div class="modal-body" style="font-size: 15px; color: black">
+													<div class="owl-carousel owl-theme" id="detail_slide">
+
+														<!-- ===== Phần chèn thêm HTML ===== -->
+
+													</div>
+												</div>
+												<div class="modal-footer" style="border-top: none">
+													<button type="button" class="btn btn-secondary"
+														data-dismiss="modal">Close</button>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default"
+													data-dismiss="modal">Close</button>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
 						</div>
 
 						<table id="example_1" class="table bg-gradient-dark"
@@ -189,6 +233,16 @@
 	
 	.tooltip_css:hover .tooltiptext {
 	  	visibility: visible;
+	}
+	
+	.modal-body a:hover{
+		text-decoration: none;
+	}
+
+	body .modal-content {
+		width: 245%;
+		position: absolute;
+		left: -67%;
 	}
 </style>
 
@@ -603,4 +657,135 @@
 		//window.location.href = "http://www.w3schools.com"; //Link đến trang khác ở tab hiện tại
 	  	//location.replace("https://www.w3schools.com"); //Link đến trang khác thay thế trang hiện tại
 	}
+</script>
+<script type="text/javascript">
+var detail_slide = document.getElementById("detail_slide");
+var modal_title = document.getElementById("modal_title");
+
+var oReq_slide = new XMLHttpRequest();
+
+oReq_slide.open("GET", url1, true);
+oReq_slide.responseType = "arraybuffer";
+
+oReq_slide.onload = function(e) {
+	var arraybuffer = oReq_slide.response;
+
+		  	/* convert data to binary string */
+		  	var data = new Uint8Array(arraybuffer);
+		  	var arr = new Array();
+		  	for(let i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
+		  	var bstr = arr.join("");
+
+		  	/* Call XLSX */
+		  	var workbook = XLSX.read(bstr, {type:"binary"});
+		  	/* DO SOMETHING WITH workbook HERE */
+		  	workbook.SheetNames.forEach(function(sheetName) {
+		  		var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+		  		XL_row_object.forEach(item=>{
+		  			if(format(item["Mức độ tình trạng"]).match(/chậm/i) != null){
+		  				let row1 = '<div class="container tab-pane" ><br>' +
+                        '<div>' +
+                        '<h5 class="pb-3"><b>Tên dự án:</b> <a href="bao_cao_sheet_1?id_p1=' + item["STT"] + '" onclick="return project_link_sheet_1(' + item["STT"] + ')"' +
+                        'target="_blank"> ' + format(item["Dự án/Gói thầu"]) + '</a></h5>' +
+                        '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
+                        '<p style="white-space: pre-wrap;"><b>Phạm vi cung cấp:</b> ' + format(item["Phạm vi cung cấp"]) + '</p>' +
+                        '<p><b>Tổng giá trị:</b> ' + format(item["Tổng giá trị"]) + '</p>' +
+                        '<p><b>Mức độ ưu tiên:</b> ' + format(item["Priority"]) + '</p>'
+
+                    +
+                    '</div>' +
+                    '<div class="table-responsive">' +
+                    '<table class="table table-bordered table-dark">' +
+                    '<thead>' +
+                    '<tr>' +
+                    '<th colspan="3">Kế hoạch nghiệm thu</th>' +
+                    '<th colspan="2">Thanh toán tạm ứng</th>' +
+                    '<th colspan="2">Thanh toán DAC</th>' +
+                    '<th colspan="2">Thanh toán PAC</th>' +
+                    '<th colspan="2">Thanh toán FAC</th>' +
+                    '</tr>' +
+                    '<tr>' +
+                    '<th>DAC</th>' +
+                    '<th>PAC</th>' +
+                    '<th>FAC</th>' +
+                    '<th>Số tiền</th>' +
+                    '<th>Kế hoạch</th>' +
+                    '<th>Số tiền</th>' +
+                    '<th>Kế hoạch</th>' +
+                    '<th>Số tiền</th>' +
+                    '<th>Kế hoạch</th>' +
+                    '<th>Số tiền</th>' +
+                    '<th>Kế hoạch</th>' +
+                    '</tr>' +
+                    '</thead>' +
+                    '<tbody>' +
+                    '<td>' + format_date(item["DAC"]) + '</td>' +
+                        '<td>' + format_date(item["PAC"]) + '</td>' +
+                        '<td>' + format_date(item["FAC"]) + '</td>' +
+                        '<!--Kế hoạch nghiệm thu -->' +
+                        '<td>' + format(item["Số tiền thanh toán tạm ứng"]) + '</td>' +
+                        '<td>' + format_date(item["Kế hoạch tạm ứng"]) + '</td>'
+
+                    <!-- Thanh toán tạm ứng -->
+                    +
+                    '<td>' + format(item["Số tiền thanh toán DAC"]) + '</td>' +
+                        '<td>' + format_date(item["Kế hoạch Thanh toán DAC"]) + '</td>'
+
+                    <!-- Thanh toán DAC -->
+                    +
+                    '<td>' + format(item["Số tiền Thanh toán PAC"]) + '</td>' +
+                        '<td>' + format_date(item["Kế hoạch Thanh toán PAC"]) + '</td>'
+
+                    <!-- Thanh toán PAC -->
+                    +
+                    '<td>' + format(item["Số tiền Thanh toán FAC"]) + '</td>' +
+                        '<td>' + format_date(item["Kế hoạch Thanh toán FAC"]) + '</td>'
+
+                    <!-- Thanh toán FAC -->
+                    +
+                    '</tbody>' +
+                    '</table>' +
+                    '</div>' +
+                    '<div class="d-flex">' +
+                    '<div >' +
+                    '<p><b>Tình trạng:</b> </p>' +
+                    '<p style="white-space: pre-wrap;"> ' + format(item["Tình trạng"]) + '</p>' +
+                        '</div>' +
+                        '<div class="pl-5">' +
+                        '<p><b>Kết quả thực hiện kế hoạch:</b> </p>' +
+                        '<p style="white-space: pre-wrap;"> ' + format(item["Kết quả thực hiện kế hoạch"]) + '</p>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>';
+	                   detail_slide.innerHTML += row1;
+	                 }
+		  			
+		  		});
+		  	});
+}
+oReq_slide.send();
+
+$(document).ready(function(){
+	$('#myModal').modal('show');
+    
+    var owl = $('.owl-carousel');
+    owl.owlCarousel({
+       items: 1,
+       loop: true,
+       nav: true,
+       margin: 10,
+       autoplay: true,
+       autoplayTimeout: 5000,
+       responsiveClass: true,
+       autoplayHoverPause: true
+   });
+    owl.on('mousewheel', '.owl-stage', function (e) {
+        if (e.deltaY>0) {
+            owl.trigger('next.owl');
+        } else {
+            owl.trigger('prev.owl');
+        }
+        e.preventDefault();
+    });
+});
 </script>
