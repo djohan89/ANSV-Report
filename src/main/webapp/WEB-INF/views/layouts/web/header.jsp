@@ -407,22 +407,50 @@
             });
 
         });
-        u1_t1_s1.innerHTML = a1;
-        u1_t2_s1.innerHTML = b1;
-        u1_t3_s1.innerHTML = c1;
+        u1_t1_s1.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_a1('+ a1 +')">'+ a1 + '</a>';
+        u1_t2_s1.innerHTML = '<a style="color:black;" href="#" onclick="return header_link_b1('+ b1 +')">'+ b1 + '</a>';
+        u1_t3_s1.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_c1('+ c1 +')">'+ c1 + '</a>';
 
-        u2_t1_s1.innerHTML = d1;
-        u2_t2_s1.innerHTML = e1;
-        u2_t3_s1.innerHTML = f1;
+        u2_t1_s1.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_d1('+ d1 +')">'+ d1 + '</a>';
+        u2_t2_s1.innerHTML = '<a style="color:black;" href="#" onclick="return header_link_e1('+ e1 +')">'+ e1 + '</a>';
+        u2_t3_s1.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_f1('+ f1 +')">'+ f1 + '</a>';
 
-        u3_t1_s1.innerHTML = g1;
-        u3_t2_s1.innerHTML = h1;
-        u3_t3_s1.innerHTML = i1;
+        u3_t1_s1.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_g1('+ g1 +')">'+ g1 + '</a>';
+        u3_t2_s1.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_h1('+ h1 +')">'+ h1 + '</a>';
+        u3_t3_s1.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_i1('+ i1 +')">'+ gi1 + '</a>';
 
     }
     oReqh_1.send();
 
-
+    function header_link_a1(sl){
+    	window.open("h1_s1?u=1&t=1&sl="+sl);
+    };
+    function header_link_b1(sl){
+    	window.open("h1_s1?u=1&t=2&sl="+sl);
+    };
+    function header_link_c1(sl){
+    	window.open("h1_s1?u=1&t=3&sl="+sl);
+    };
+	
+    function header_link_d1(sl){
+    	window.open("h1_s1?u=2&t=1&sl="+sl);
+    };
+    function header_link_e1(sl){
+    	window.open("h1_s1?u=2&t=2&sl="+sl);
+    };
+    function header_link_f1(sl){
+    	window.open("h1_s1?u=2&t=3&sl="+sl);
+    };
+    
+    function header_link_g1(sl){
+    	window.open("h1_s1?u=3&t=1&sl="+sl);
+    };
+    function header_link_h1(sl){
+    	window.open("h1_s1?u=3&t=2&sl="+sl);
+    };
+    function header_link_i1(sl){
+    	window.open("h1_s1?u=3&t=3&sl="+sl);
+    };
 
     // Thống kê Sheet 2:
     let u1_t1_s2 = document.getElementById("u1_t1_s2");

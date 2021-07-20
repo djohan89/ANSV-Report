@@ -243,6 +243,7 @@
 		width: 245%;
 		position: absolute;
 		left: -67%;
+		top: -40%; 
 	}
 </style>
 
@@ -251,7 +252,6 @@
 <script>
 	var data_view = ""; //Tạo biến data giả trước khi có data mới để truyền vào datatable
 	var groupColumn = 1; //Cột nhóm dữ liệu (cột số 2)
-
 
 
 	/* ===== Đầu: Datatable 1 - Báo cáo 1 ===== */
@@ -263,7 +263,7 @@
                 var n = format(row['Mức độ tình trạng']);
                	 /* var check_n = ["Chậm","chậm"]; */ 
                	if (n.match(/chậm/i) != null) {
-					var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+					var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["STT"]+'" class="tooltip_css"' + 
 								'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link_1('+row["STT"]+')">' +
 								data +
 								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tình trạng"]) + '</span>' +
@@ -343,7 +343,7 @@
             	var n = format(row['Mức độ tình trạng']);
                	 /* var check_n = ["Chậm","chậm"]; */ 
                	if (n.match(/chậm/i) != null) {
-					var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+					var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css"' + 
 								'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 								data +
 								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
@@ -422,7 +422,7 @@
             render: function(data, type, row) {
             	var n = format(row['Mức độ tình trạng']); 
                	if (n.match(/chậm/i) != null) {
-					var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+					var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css"' + 
 								'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 								data +
 								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
@@ -637,24 +637,24 @@
 
 
 	function project_link_1(id) {
-		window.open("bao_cao_sheet_1?id_p1="+id); //Link đến trang khác với tab mới
-		//window.location.href = "http://www.w3schools.com"; //Link đến trang khác ở tab hiện tại
+		//window.open("bao_cao_sheet_1?id_p1="+id); //Link đến trang khác với tab mới
+		window.location.href = "bao_cao_sheet_1?id_p1="+id; //Link đến trang khác ở tab hiện tại
 	  	//location.replace("https://www.w3schools.com"); //Link đến trang khác thay thế trang hiện tại
 	}
 
 
 
 	function project_link_2(id) {
-		window.open("bao_cao_sheet_2?id_p2="+id); //Link đến trang khác với tab mới
-		//window.location.href = "http://www.w3schools.com"; //Link đến trang khác ở tab hiện tại
+		//window.open("bao_cao_sheet_2?id_p2="+id); //Link đến trang khác với tab mới
+		window.location.href = "bao_cao_sheet_2?id_p2="+id; //Link đến trang khác ở tab hiện tại
 	  	//location.replace("https://www.w3schools.com"); //Link đến trang khác thay thế trang hiện tại
 	}
 
 
 
 	function project_link_3(id) {
-		window.open("bao_cao_sheet_3?id_p3="+id); //Link đến trang khác với tab mới
-		//window.location.href = "http://www.w3schools.com"; //Link đến trang khác ở tab hiện tại
+		//window.open("bao_cao_sheet_3?id_p3="+id); //Link đến trang khác với tab mới
+		window.location.href = "bao_cao_sheet_3?id_p3="+id; //Link đến trang khác ở tab hiện tại
 	  	//location.replace("https://www.w3schools.com"); //Link đến trang khác thay thế trang hiện tại
 	}
 </script>
@@ -695,7 +695,7 @@ oReq_slide.onload = function(e) {
                     +
                     '</div>' +
                     '<div class="table-responsive">' +
-                    '<table class="table table-bordered table-dark">' +
+                    '<table class="table table-bordered table-hover">' +
                     '<thead>' +
                     '<tr>' +
                     '<th colspan="3">Kế hoạch nghiệm thu</th>' +

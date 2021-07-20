@@ -100,7 +100,7 @@ color: #fff;}
 			                                '<div class="row ">' +
 			                                '<div class="text-center col-md-12">' +
 			                                '<h4><a href="bao_cao_sheet_2?id_p2=' + item["STT"] + '" onclick="return project_link_2(' + item["STT"] + ')"' +
-			                                'target="_blank"> ' + format(item["Dự án/Gói thầu"]) + '</a></h4>' +
+			                                '> ' + format(item["Dự án/Gói thầu"]) + '</a></h4>' +
 			                                '</div>' +
 			                                '</div>'
 
@@ -122,7 +122,7 @@ color: #fff;}
 			                                '<div class="row ">' +
 			                                '<div class="text-center col-md-12">' +
 			                                '<h4><a href="bao_cao_sheet_2?id_p2=' + item["STT"] + '" onclick="return project_link_2(' + item["STT"] + ')"' +
-			                                'target="_blank"> ' + format(item["Dự án/Gói thầu"]) + '</a></h4>' +
+			                                '> ' + format(item["Dự án/Gói thầu"]) + '</a></h4>' +
 			                                '</div>' +
 			                                '</div>'
 
@@ -148,8 +148,8 @@ color: #fff;}
          		}
          		oReq.send();
                 function project_link_2(id) {
-             		window.open("bao_cao_sheet_2?id_p2="+id); //Link đến trang khác với tab mới
-             		//window.location.href = "http://www.w3schools.com"; //Link đến trang khác ở tab hiện tại
+             		//window.open("bao_cao_sheet_2?id_p2="+id); //Link đến trang khác với tab mới
+             		window.location.href = "bao_cao_sheet_2?id_p2="+id; //Link đến trang khác ở tab hiện tại
              	  	//location.replace("https://www.w3schools.com"); //Link đến trang khác thay thế trang hiện tại
              	}
         	}

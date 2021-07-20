@@ -102,7 +102,7 @@ color: #fff;}
 		                                '<div>' +
 		                                '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
 		                                '<p><b>Tên dự án:</b> <a href="bao_cao_sheet_1?id_p1=' + item["STT"] + '" onclick="return project_link_sheet_1(' + item["STT"] + ')"' +
-		                                'target="_blank"> ' + format(item["Dự án/Gói thầu"]) + '</a></p>' +
+		                                '> ' + format(item["Dự án/Gói thầu"]) + '</a></p>' +
 		                                '<p style="white-space: pre-wrap;"><b>Phạm vi cung cấp:</b> ' + format(item["Phạm vi cung cấp"]) + '</p>' +
 		                                '<p><b>Tổng giá trị:</b> ' + format(item["Tổng giá trị"]) + '</p>' +
 		                                '<p><b>Mức độ ưu tiên:</b> ' + format(item["Priority"]) + '</p>'
@@ -178,7 +178,7 @@ color: #fff;}
 			                                '<div>' +
 			                                '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
 			                                '<p><b>Tên dự án:</b><a href="bao_cao_sheet_1?id_p1=' + item["STT"] + '" onclick="return project_link_sheet_1(' + item["STT"] + ')"' +
-			                                'target="_blank"> ' + format(item["Dự án/Gói thầu"]) + '</a></p>' +
+			                                '> ' + format(item["Dự án/Gói thầu"]) + '</a></p>' +
 			                                '<p style="white-space: pre-wrap;"><b>Phạm vi cung cấp:</b> ' + format(item["Phạm vi cung cấp"]) + '</p>' +
 			                                '<p><b>Tổng giá trị:</b> ' + format(item["Tổng giá trị"]) + '</p>' +
 			                                '<p><b>Mức độ ưu tiên:</b> ' + format(item["Priority"]) + '</p>'
@@ -257,8 +257,8 @@ color: #fff;}
          		}
          		oReq.send();
          		function project_link_sheet_1(id) {
-         		    window.open("bao_cao_sheet_1?id_p1=" + id); //Link đến trang khác với tab mới
-         		    //window.location.href = "http://www.w3schools.com"; //Link đến trang khác ở tab hiện tại
+         		    //window.open("bao_cao_sheet_1?id_p1=" + id); //Link đến trang khác với tab mới
+         		    window.location.href = "bao_cao_sheet_1?id_p1=" + id; //Link đến trang khác ở tab hiện tại
          		    //location.replace("https://www.w3schools.com"); //Link đến trang khác thay thế trang hiện tại
          		}
                  
