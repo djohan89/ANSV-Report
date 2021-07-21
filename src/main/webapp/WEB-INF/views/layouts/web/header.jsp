@@ -380,7 +380,7 @@
                 if (item["Priority"] == "High" || item["Priority"] == "1") {
                     if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || item["Mức độ tình trạng"] == "x" || format(item["Mức độ tình trạng"]).match(/hủy/i) != null ) {
                         a1++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/sắp chậm/i) != null) {
+                    } else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null) {
                         b1++;
                     } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
                         c1++;
@@ -388,7 +388,7 @@
                 } else if (item["Priority"] == "" || item["Priority"] == "2" || item["Priority"] == "Medium" || item["Priority"] == "x" || typeof item["Priority"] === 'undefined') {
                     if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || item["Mức độ tình trạng"] == "x" || typeof item["Mức độ tình trạng"] === 'undefined' || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                         d1++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/sắp chậm/i) != null) {
+                    } else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null) {
                         e1++;
                     } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
                         f1++;
@@ -396,7 +396,7 @@
                 } else if (item["Priority"] == "3" || item["Priority"] == "Low") {
                     if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || format(item["Mức độ tình trạng"]).match(/hủy/i) != null || typeof item["Mức độ tình trạng"] === 'undefined') {
                         g1++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/sắp chậm/i) != null) {
+                    } else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null) {
                         h1++;
                     } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
                         i1++;
@@ -416,8 +416,8 @@
         u2_t3_s1.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_f1('+ f1 +')">'+ f1 + '</a>';
 
         u3_t1_s1.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_g1('+ g1 +')">'+ g1 + '</a>';
-        u3_t2_s1.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_h1('+ h1 +')">'+ h1 + '</a>';
-        u3_t3_s1.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_i1('+ i1 +')">'+ gi1 + '</a>';
+        u3_t2_s1.innerHTML = '<a style="color:black;" href="#" onclick="return header_link_h1('+ h1 +')">'+ h1 + '</a>';
+        u3_t3_s1.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_i1('+ i1 +')">'+ i1 + '</a>';
 
     }
     oReqh_1.send();
@@ -502,26 +502,26 @@
                 if (item["Mức độ ưu tiên"] == "1") {
                     if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null ||  item["Mức độ tình trạng"] == "" || typeof item["Mức độ tình trạng"] === 'undefined' || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                         a2++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null ) {
-                        c2++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null ) {
+                    } else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null ) {
                         b2++;
+                    } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null ) {
+                        c2++;
                     }
                 } else if (item["Mức độ ưu tiên"] == "2") {
                     if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || item["Mức độ tình trạng"] == "" || typeof item["Mức độ tình trạng"] === 'undefined' || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                         d2++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null ) {
-                        f2++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null ) {
+                    } else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null ) {
                         e2++;
+                    } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null ) {
+                        f2++;
                     }
                 } else if (item["Mức độ ưu tiên"] == "3" || typeof item["Mức độ ưu tiên"] === 'undefined') {
                     if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || item["Mức độ tình trạng"] == "" || typeof item["Mức độ tình trạng"] === 'undefined' || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                         g2++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null ) {
-                        i2++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null ) {
+                    } else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null ) {
                         h2++;
+                    } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null ) {
+                        i2++;
                     }
                 }
 
@@ -594,28 +594,28 @@
                 if (item["Mức độ ưu tiên"] == "1") {
                     if (item["Mức độ tình trạng"] == "" || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || typeof item["Mức độ tình trạng"] === "undefined" || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                         a3++;
-                    } else if ( format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null) {
-                        c3++;
-                    } else if ( format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
+                    } else if ( format(item["Mức độ tình trạng"]).match(/sắp/i) != null) {
                         b3++;
+                    } else if ( format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
+                        c3++;
                     }
-                } else if (item["Mức độ ưu tiên"] == "2" || typeof item["Mức độ ưu tiên"] === "undefined") {
+                } else if (item["Mức độ ưu tiên"] == "2" ) {
                     if (item["Mức độ tình trạng"] == "" || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || typeof item["Mức độ tình trạng"] === "undefined" || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                         d3++;
-                    } else if ( format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null) {
-                        f3++;
-                    } else if ( format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
+                    } else if ( format(item["Mức độ tình trạng"]).match(/sắp/i) != null) {
                         e3++;
+                    } else if ( format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
+                        f3++;
                     }
-                } else if (item["Mức độ ưu tiên"] == "3") {
+                } else if (item["Mức độ ưu tiên"] == "3" || typeof item["Mức độ ưu tiên"] === "undefined") {
                     if (item["Mức độ tình trạng"] == "" || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || typeof item["Mức độ tình trạng"] === "undefined" || format(item["Mức độ tình trạng"]).match(/hủy/i) != null ) {
                         g3++;
                     }
-                    else if (format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null ) {
-                        i3++;
+                    else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null ) {
+                        h3++;
                     }
                     else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null ) {
-                        h3++;
+                        i3++;
                     }
                 }
 
