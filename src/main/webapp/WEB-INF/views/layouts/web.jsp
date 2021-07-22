@@ -80,6 +80,8 @@
 	<!-- Bootstrap theme -->
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 <!-- ===== Cuối: Thư viện Alertify ===== -->
+<!-- JS viết tay -->
+	<script src="<c:url value="/assets/user/js/main.js" />"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -170,7 +172,6 @@
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/assets/user/dist/js/demo.js" />"></script>
 	
-	<!-- JS viết tay -->
-	<script src="<c:url value="/assets/user/js/main.js" />"></script>
+	
 </body>
 </html>

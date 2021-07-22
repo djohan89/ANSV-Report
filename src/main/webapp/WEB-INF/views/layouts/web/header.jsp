@@ -25,14 +25,14 @@
 
     <!-- === Thống kê === -->
     <div class="row" style="width: 100%; height: 120px;">
-    	<div class="col-lg-1"></div>
+    	
     	<div class="col-lg-3 d-flex" style="height: 30px;">
     		<font color="orange" style="font-size: 18px; padding-top: 1px">
     			<b>Báo cáo tuần:</b>
     		</font>
     		<select id="select_week"></select>
     	</div>
-        <div class="col-lg-8">
+        <div class="col-lg-9">
             <table class="table">
                 <tr>
                     <td class="font-size-thong-ke pt-1 pb-1" id="name_sheet_header_1">
@@ -114,32 +114,7 @@
 
 
 <style>
-    .btn-circle.btn-sm {
-        width: 30px;
-        height: 30px;
-        padding: 6px 11px;
-        font-size: 12px;
-        line-height: 1.33;
-        border-radius: 50%;
-    }
-    
-    .btn-circle.btn-lg {
-        width: 50px;
-        height: 50px;
-        padding: 10px 16px;
-        font-size: 18px;
-        line-height: 1.33;
-        border-radius: 50%;
-    }
-    
-    .btn-circle.btn-xl {
-        width: 70px;
-        height: 70px;
-        padding: 10px 16px;
-        font-size: 24px;
-        line-height: 1.33;
-        border-radius: 50%;
-    }
+  
     
     .box_radius {
         border-radius: 15px 15px;
@@ -423,33 +398,33 @@
     oReqh_1.send();
 
     function header_link_a1(sl){
-    	window.open("h1_s1?u=1&t=1&sl="+sl);
+    	window.location.href = "h1_s1?u=1&t=1&sl="+sl;
     };
     function header_link_b1(sl){
-    	window.open("h1_s1?u=1&t=2&sl="+sl);
+    	window.location.href = "h1_s1?u=1&t=2&sl="+sl;
     };
     function header_link_c1(sl){
-    	window.open("h1_s1?u=1&t=3&sl="+sl);
+    	window.location.href = "h1_s1?u=1&t=3&sl="+sl;
     };
 	
     function header_link_d1(sl){
-    	window.open("h1_s1?u=2&t=1&sl="+sl);
+    	window.location.href ="h1_s1?u=2&t=1&sl="+sl;
     };
     function header_link_e1(sl){
-    	window.open("h1_s1?u=2&t=2&sl="+sl);
+    	window.location.href ="h1_s1?u=2&t=2&sl="+sl;
     };
     function header_link_f1(sl){
-    	window.open("h1_s1?u=2&t=3&sl="+sl);
+    	window.location.href ="h1_s1?u=2&t=3&sl="+sl;
     };
     
     function header_link_g1(sl){
-    	window.open("h1_s1?u=3&t=1&sl="+sl);
+    	window.location.href ="h1_s1?u=3&t=1&sl="+sl;
     };
     function header_link_h1(sl){
-    	window.open("h1_s1?u=3&t=2&sl="+sl);
+    	window.location.href ="h1_s1?u=3&t=2&sl="+sl;
     };
     function header_link_i1(sl){
-    	window.open("h1_s1?u=3&t=3&sl="+sl);
+    	window.location.href ="h1_s1?u=3&t=3&sl="+sl;
     };
 
     // Thống kê Sheet 2:
