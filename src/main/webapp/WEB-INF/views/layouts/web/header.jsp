@@ -25,14 +25,14 @@
 
     <!-- === Thống kê === -->
     <div class="row" style="width: 100%; height: 120px;">
-    	<div class="col-lg-1"></div>
+    	
     	<div class="col-lg-3 d-flex" style="height: 30px;">
     		<font color="orange" style="font-size: 18px; padding-top: 1px">
     			<b>Báo cáo tuần:</b>
     		</font>
     		<select id="select_week"></select>
     	</div>
-        <div class="col-lg-8">
+        <div class="col-lg-9">
             <table class="table">
                 <tr>
                     <td class="font-size-thong-ke pt-1 pb-1" id="name_sheet_header_1">
@@ -114,32 +114,7 @@
 
 
 <style>
-    .btn-circle.btn-sm {
-        width: 30px;
-        height: 30px;
-        padding: 6px 11px;
-        font-size: 12px;
-        line-height: 1.33;
-        border-radius: 50%;
-    }
-    
-    .btn-circle.btn-lg {
-        width: 50px;
-        height: 50px;
-        padding: 10px 16px;
-        font-size: 18px;
-        line-height: 1.33;
-        border-radius: 50%;
-    }
-    
-    .btn-circle.btn-xl {
-        width: 70px;
-        height: 70px;
-        padding: 10px 16px;
-        font-size: 24px;
-        line-height: 1.33;
-        border-radius: 50%;
-    }
+  
     
     .box_radius {
         border-radius: 15px 15px;
@@ -380,7 +355,7 @@
                 if (item["Priority"] == "High" || item["Priority"] == "1") {
                     if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || item["Mức độ tình trạng"] == "x" || format(item["Mức độ tình trạng"]).match(/hủy/i) != null ) {
                         a1++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/sắp chậm/i) != null) {
+                    } else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null) {
                         b1++;
                     } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
                         c1++;
@@ -388,7 +363,7 @@
                 } else if (item["Priority"] == "" || item["Priority"] == "2" || item["Priority"] == "Medium" || item["Priority"] == "x" || typeof item["Priority"] === 'undefined') {
                     if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || item["Mức độ tình trạng"] == "x" || typeof item["Mức độ tình trạng"] === 'undefined' || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                         d1++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/sắp chậm/i) != null) {
+                    } else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null) {
                         e1++;
                     } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
                         f1++;
@@ -396,7 +371,7 @@
                 } else if (item["Priority"] == "3" || item["Priority"] == "Low") {
                     if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || format(item["Mức độ tình trạng"]).match(/hủy/i) != null || typeof item["Mức độ tình trạng"] === 'undefined') {
                         g1++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/sắp chậm/i) != null) {
+                    } else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null) {
                         h1++;
                     } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
                         i1++;
@@ -407,22 +382,50 @@
             });
 
         });
-        u1_t1_s1.innerHTML = a1;
-        u1_t2_s1.innerHTML = b1;
-        u1_t3_s1.innerHTML = c1;
+        u1_t1_s1.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_a1('+ a1 +')">'+ a1 + '</a>';
+        u1_t2_s1.innerHTML = '<a style="color:black;" href="#" onclick="return header_link_b1('+ b1 +')">'+ b1 + '</a>';
+        u1_t3_s1.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_c1('+ c1 +')">'+ c1 + '</a>';
 
-        u2_t1_s1.innerHTML = d1;
-        u2_t2_s1.innerHTML = e1;
-        u2_t3_s1.innerHTML = f1;
+        u2_t1_s1.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_d1('+ d1 +')">'+ d1 + '</a>';
+        u2_t2_s1.innerHTML = '<a style="color:black;" href="#" onclick="return header_link_e1('+ e1 +')">'+ e1 + '</a>';
+        u2_t3_s1.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_f1('+ f1 +')">'+ f1 + '</a>';
 
-        u3_t1_s1.innerHTML = g1;
-        u3_t2_s1.innerHTML = h1;
-        u3_t3_s1.innerHTML = i1;
+        u3_t1_s1.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_g1('+ g1 +')">'+ g1 + '</a>';
+        u3_t2_s1.innerHTML = '<a style="color:black;" href="#" onclick="return header_link_h1('+ h1 +')">'+ h1 + '</a>';
+        u3_t3_s1.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_i1('+ i1 +')">'+ i1 + '</a>';
 
     }
     oReqh_1.send();
 
-
+    function header_link_a1(sl){
+    	window.location.href = "h1_s1?u=1&t=1&sl="+sl;
+    };
+    function header_link_b1(sl){
+    	window.location.href = "h1_s1?u=1&t=2&sl="+sl;
+    };
+    function header_link_c1(sl){
+    	window.location.href = "h1_s1?u=1&t=3&sl="+sl;
+    };
+	
+    function header_link_d1(sl){
+    	window.location.href ="h1_s1?u=2&t=1&sl="+sl;
+    };
+    function header_link_e1(sl){
+    	window.location.href ="h1_s1?u=2&t=2&sl="+sl;
+    };
+    function header_link_f1(sl){
+    	window.location.href ="h1_s1?u=2&t=3&sl="+sl;
+    };
+    
+    function header_link_g1(sl){
+    	window.location.href ="h1_s1?u=3&t=1&sl="+sl;
+    };
+    function header_link_h1(sl){
+    	window.location.href ="h1_s1?u=3&t=2&sl="+sl;
+    };
+    function header_link_i1(sl){
+    	window.location.href ="h1_s1?u=3&t=3&sl="+sl;
+    };
 
     // Thống kê Sheet 2:
     let u1_t1_s2 = document.getElementById("u1_t1_s2");
@@ -474,26 +477,26 @@
                 if (item["Mức độ ưu tiên"] == "1") {
                     if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null ||  item["Mức độ tình trạng"] == "" || typeof item["Mức độ tình trạng"] === 'undefined' || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                         a2++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null ) {
-                        c2++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null ) {
+                    } else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null ) {
                         b2++;
+                    } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null ) {
+                        c2++;
                     }
                 } else if (item["Mức độ ưu tiên"] == "2") {
                     if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || item["Mức độ tình trạng"] == "" || typeof item["Mức độ tình trạng"] === 'undefined' || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                         d2++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null ) {
-                        f2++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null ) {
+                    } else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null ) {
                         e2++;
+                    } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null ) {
+                        f2++;
                     }
                 } else if (item["Mức độ ưu tiên"] == "3" || typeof item["Mức độ ưu tiên"] === 'undefined') {
                     if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || item["Mức độ tình trạng"] == "" || typeof item["Mức độ tình trạng"] === 'undefined' || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                         g2++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null ) {
-                        i2++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null ) {
+                    } else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null ) {
                         h2++;
+                    } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null ) {
+                        i2++;
                     }
                 }
 
@@ -566,28 +569,28 @@
                 if (item["Mức độ ưu tiên"] == "1") {
                     if (item["Mức độ tình trạng"] == "" || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || typeof item["Mức độ tình trạng"] === "undefined" || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                         a3++;
-                    } else if ( format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null) {
-                        c3++;
-                    } else if ( format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
+                    } else if ( format(item["Mức độ tình trạng"]).match(/sắp/i) != null) {
                         b3++;
+                    } else if ( format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
+                        c3++;
                     }
-                } else if (item["Mức độ ưu tiên"] == "2" || typeof item["Mức độ ưu tiên"] === "undefined") {
+                } else if (item["Mức độ ưu tiên"] == "2" ) {
                     if (item["Mức độ tình trạng"] == "" || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || typeof item["Mức độ tình trạng"] === "undefined" || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                         d3++;
-                    } else if ( format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null) {
-                        f3++;
-                    } else if ( format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
+                    } else if ( format(item["Mức độ tình trạng"]).match(/sắp/i) != null) {
                         e3++;
+                    } else if ( format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
+                        f3++;
                     }
-                } else if (item["Mức độ ưu tiên"] == "3") {
+                } else if (item["Mức độ ưu tiên"] == "3" || typeof item["Mức độ ưu tiên"] === "undefined") {
                     if (item["Mức độ tình trạng"] == "" || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || typeof item["Mức độ tình trạng"] === "undefined" || format(item["Mức độ tình trạng"]).match(/hủy/i) != null ) {
                         g3++;
                     }
-                    else if (format(item["Mức độ tình trạng"]).match(/rất chậm/i) != null ) {
-                        i3++;
+                    else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null ) {
+                        h3++;
                     }
                     else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null ) {
-                        h3++;
+                        i3++;
                     }
                 }
 

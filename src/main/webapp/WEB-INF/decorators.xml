@@ -68,7 +68,11 @@
 		<pattern>/bao_cao_sheet_3</pattern>
 	</decorator>
 	
+<!-- Decarator: Báo cáo header -->
 
+<decorator name="h1_s1" page="web.jsp">
+		<pattern>/h1_s1</pattern>
+	</decorator>
 
 	<!-- Phần của admin -->
 	<decorator name="home" page="admin.jsp">
