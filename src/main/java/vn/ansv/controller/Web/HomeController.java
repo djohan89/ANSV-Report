@@ -96,4 +96,16 @@ public class HomeController {
 		return mav;
 	}
 	
+	@RequestMapping(value = { "/h2_s2" }, method = RequestMethod.GET)
+	public ModelAndView h2_s2() {
+		ModelAndView mav = new ModelAndView("web/h2_s2");
+		return mav;
+	}
+	
+	@RequestMapping(value = { "/h3_s3" }, method = RequestMethod.GET)
+	public ModelAndView h3_s3() {
+		ModelAndView mav = new ModelAndView("web/h3_s3");
+		return mav;
+	}
+	
 }

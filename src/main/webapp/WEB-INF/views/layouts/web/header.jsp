@@ -504,21 +504,50 @@
             });
 
         });
-        u1_t1_s2.innerHTML = a2;
-        u1_t2_s2.innerHTML = b2;
-        u1_t3_s2.innerHTML = c2;
+        u1_t1_s2.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_a2('+ a2 +')">'+ a2 +'</a>';
+        u1_t2_s2.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_b2('+ b2 +')">'+ b2 +'</a>';
+        u1_t3_s2.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_c2('+ c2 +')">'+ c2 +'</a>';
 
-        u2_t1_s2.innerHTML = d2;
-        u2_t2_s2.innerHTML = e2;
-        u2_t3_s2.innerHTML = f2;
+        u2_t1_s2.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_d2('+ d2 +')">'+ d2 +'</a>';
+        u2_t2_s2.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_e2('+ e2 +')">'+ e2 +'</a>';
+        u2_t3_s2.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_f2('+ f2 +')">'+ f2 +'</a>';
 
-        u3_t1_s2.innerHTML = g2;
-        u3_t2_s2.innerHTML = h2;
-        u3_t3_s2.innerHTML = i2;
+        u3_t1_s2.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_g2('+ g2 +')">'+ g2 +'</a>';
+        u3_t2_s2.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_h2('+ h2 +')">'+ h2 +'</a>';
+        u3_t3_s2.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_i2('+ i2 +')">'+ i2 +'</a>';
 
     }
     oReqh_2.send();
 
+    function header_link_a2(sl){
+    	window.location.href = "h2_s2?u=1&t=1&sl="+sl;
+    };
+    function header_link_b2(sl){
+    	window.location.href = "h2_s2?u=1&t=2&sl="+sl;
+    };
+    function header_link_c2(sl){
+    	window.location.href = "h2_s2?u=1&t=3&sl="+sl;
+    };
+    
+    function header_link_d2(sl){
+    	window.location.href = "h2_s2?u=2&t=1&sl="+sl;
+    };
+    function header_link_e2(sl){
+    	window.location.href = "h2_s2?u=2&t=2&sl="+sl;
+    };
+    function header_link_f2(sl){
+    	window.location.href = "h2_s2?u=2&t=3&sl="+sl;
+    };
+    
+    function header_link_g2(sl){
+    	window.location.href = "h2_s2?u=3&t=1&sl="+sl;
+    };
+    function header_link_h2(sl){
+    	window.location.href = "h2_s2?u=3&t=2&sl="+sl;
+    };
+    function header_link_i2(sl){
+    	window.location.href = "h2_s2?u=3&t=3&sl="+sl;
+    };
 
 
     // Thống kê Sheet 3:
@@ -598,20 +627,51 @@
             });
 
         });
-        u1_t1_s3.innerHTML = a3;
-        u1_t2_s3.innerHTML = b3;
-        u1_t3_s3.innerHTML = c3;
+        u1_t1_s3.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_a3('+ a3 +')">'+ a3 +'</a>';
+        u1_t2_s3.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_b3('+ b3 +')">'+ b3 +'</a>';
+        u1_t3_s3.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_c3('+ c3 +')">'+ c3 +'</a>';
 
-        u2_t1_s3.innerHTML = d3;
-        u2_t2_s3.innerHTML = e3;
-        u2_t3_s3.innerHTML = f3;
+        u2_t1_s3.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_d3('+ d3 +')">'+ d3 +'</a>';
+        u2_t2_s3.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_e3('+ e3 +')">'+ e3 +'</a>';
+        u2_t3_s3.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_f3('+ f3 +')">'+ f3 +'</a>';
 
-        u3_t1_s3.innerHTML = g3;
-        u3_t2_s3.innerHTML = h3;
-        u3_t3_s3.innerHTML = i3;
+        u3_t1_s3.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_g3('+ g3 +')">'+ g3 +'</a>';
+        u3_t2_s3.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_h3('+ h3 +')">'+ h3 +'</a>';
+        u3_t3_s3.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_i3('+ i3 +')">'+ i3 +'</a>';
 
     }
     oReqh_3.send();
+    
+    function header_link_a3(sl){
+    	window.location.href = "h3_s3?u=1&t=1&sl="+sl;
+    };
+    function header_link_b3(sl){
+    	window.location.href = "h3_s3?u=1&t=2&sl="+sl;
+    };
+    function header_link_c3(sl){
+    	window.location.href = "h3_s3?u=1&t=3&sl="+sl;
+    };
+    
+    function header_link_d3(sl){
+    	window.location.href = "h3_s3?u=2&t=1&sl="+sl;
+    };
+    function header_link_e3(sl){
+    	window.location.href = "h3_s3?u=2&t=2&sl="+sl;
+    };
+    function header_link_f3(sl){
+    	window.location.href = "h3_s3?u=2&t=3&sl="+sl;
+    };
+    
+    function header_link_g3(sl){
+    	window.location.href = "h3_s3?u=3&t=1&sl="+sl;
+    };
+    function header_link_h3(sl){
+    	window.location.href = "h3_s3?u=3&t=2&sl="+sl;
+    };
+    function header_link_i3(sl){
+    	window.location.href = "h3_s3?u=3&t=3&sl="+sl;
+    };
+    
     
     function format(value){ 
     	if(value == 'x' ||value =="null" || value =="" || typeof value === 'undefined'){
