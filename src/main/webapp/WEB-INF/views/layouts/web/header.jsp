@@ -26,13 +26,13 @@
     <!-- === Thống kê === -->
     <div class="row" style="width: 100%; height: 120px;">
     	
-    	<div class="col-lg-3 d-flex" style="height: 30px;">
+    	<div class="col-lg-2" style="height: 30px;">
     		<font color="orange" style="font-size: 18px; padding-top: 1px">
     			<b>Báo cáo tuần:</b>
-    		</font>
+    		</font><br>
     		<select id="select_week"></select>
     	</div>
-        <div class="col-lg-9">
+        <div class="col-lg-10">
             <table class="table">
                 <tr>
                     <td class="font-size-thong-ke pt-1 pb-1" id="name_sheet_header_1">
@@ -505,15 +505,15 @@
 
         });
         u1_t1_s2.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_a2('+ a2 +')">'+ a2 +'</a>';
-        u1_t2_s2.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_b2('+ b2 +')">'+ b2 +'</a>';
+        u1_t2_s2.innerHTML = '<a style="color:black;" href="#" onclick="return header_link_b2('+ b2 +')">'+ b2 +'</a>';
         u1_t3_s2.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_c2('+ c2 +')">'+ c2 +'</a>';
 
         u2_t1_s2.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_d2('+ d2 +')">'+ d2 +'</a>';
-        u2_t2_s2.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_e2('+ e2 +')">'+ e2 +'</a>';
+        u2_t2_s2.innerHTML = '<a style="color:black;" href="#" onclick="return header_link_e2('+ e2 +')">'+ e2 +'</a>';
         u2_t3_s2.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_f2('+ f2 +')">'+ f2 +'</a>';
 
         u3_t1_s2.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_g2('+ g2 +')">'+ g2 +'</a>';
-        u3_t2_s2.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_h2('+ h2 +')">'+ h2 +'</a>';
+        u3_t2_s2.innerHTML = '<a style="color:black;" href="#" onclick="return header_link_h2('+ h2 +')">'+ h2 +'</a>';
         u3_t3_s2.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_i2('+ i2 +')">'+ i2 +'</a>';
 
     }
@@ -628,15 +628,15 @@
 
         });
         u1_t1_s3.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_a3('+ a3 +')">'+ a3 +'</a>';
-        u1_t2_s3.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_b3('+ b3 +')">'+ b3 +'</a>';
+        u1_t2_s3.innerHTML = '<a style="color:black;" href="#" onclick="return header_link_b3('+ b3 +')">'+ b3 +'</a>';
         u1_t3_s3.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_c3('+ c3 +')">'+ c3 +'</a>';
 
         u2_t1_s3.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_d3('+ d3 +')">'+ d3 +'</a>';
-        u2_t2_s3.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_e3('+ e3 +')">'+ e3 +'</a>';
+        u2_t2_s3.innerHTML = '<a style="color:black;" href="#" onclick="return header_link_e3('+ e3 +')">'+ e3 +'</a>';
         u2_t3_s3.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_f3('+ f3 +')">'+ f3 +'</a>';
 
         u3_t1_s3.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_g3('+ g3 +')">'+ g3 +'</a>';
-        u3_t2_s3.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_h3('+ h3 +')">'+ h3 +'</a>';
+        u3_t2_s3.innerHTML = '<a style="color:black;" href="#" onclick="return header_link_h3('+ h3 +')">'+ h3 +'</a>';
         u3_t3_s3.innerHTML = '<a style="color:white;" href="#" onclick="return header_link_i3('+ i3 +')">'+ i3 +'</a>';
 
     }
