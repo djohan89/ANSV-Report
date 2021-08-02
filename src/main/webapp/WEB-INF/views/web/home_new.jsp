@@ -57,17 +57,8 @@
 
 													</div>
 												</div>
-												<div class="modal-footer" style="border-top: none">
-													<button type="button" class="btn btn-secondary"
-														data-dismiss="modal">Close</button>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-default"
-													data-dismiss="modal">Close</button>
 											</div>
 										</div>
-
 									</div>
 								</div>
 							</div>
@@ -237,6 +228,7 @@
 	
 	.modal-body a:hover{
 		text-decoration: none;
+		color: #dc3545;
 	}
 
 	body .modal-content {
@@ -685,8 +677,8 @@ oReq_slide.onload = function(e) {
 		  			if(format(item["Mức độ tình trạng"]).match(/chậm/i) != null){
 		  				let row1 = '<div class="container tab-pane" ><br>' +
                         '<div>' +
-                        '<h5 class="pb-3"><b>Tên dự án:</b> <a href="bao_cao_sheet_1?id_p1=' + item["STT"] + '" onclick="return project_link_sheet_1(' + item["STT"] + ')"' +
-                        'target="_blank"> ' + format(item["Dự án/Gói thầu"]) + '</a></h5>' +
+                        '<h5 class="pb-3"><b>Tên dự án:</b> <a style="color:#dc3545;" href="bao_cao_sheet_1?id_p1=' + item["STT"] + '" onclick="return project_link_sheet_1(' + item["STT"] + ')"' +
+                        '> ' + format(item["Dự án/Gói thầu"]) + '</a></h5>' +
                         '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
                         '<p style="white-space: pre-wrap;"><b>Phạm vi cung cấp:</b> ' + format(item["Phạm vi cung cấp"]) + '</p>' +
                         '<p><b>Tổng giá trị:</b> ' + format(item["Tổng giá trị"]) + '</p>' +
