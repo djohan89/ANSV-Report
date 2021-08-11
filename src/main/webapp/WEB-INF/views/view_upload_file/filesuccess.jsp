@@ -120,10 +120,10 @@
 			                } );
 			            },
 						"createdRow" : function(row, data, dataIndex) {
-							if (format(data['Mức độ tình trạng']).match(/sắp chậm/i) != null) {
-			  	                $(row).addClass("highlight2");
-			  	            }else if(format(data['Mức độ tình trạng']).match(/chậm/i) != null){
-			  	            	$(row).addClass("highlight");
+							if (format(data['Mức độ tình trạng']).match(/chậm/i) != null) {
+			  	                $(row).addClass("highlight");
+			  	            }else if(format(data['Mức độ tình trạng']).match(/sắp/i) != null){
+			  	            	$(row).addClass("highlight2");
 			  	            }else{
 			  	            	$(row).addClass("highlight3");
 			  	            }
@@ -201,9 +201,9 @@
 			                } );
 			            },
 						"createdRow" : function(row, data, dataIndex) {
-							if (format(data['Mức độ tình trạng']).match(/rất chậm/i) !=null) {
+							if (format(data['Mức độ tình trạng']).match(/chậm/i) !=null) {
 			  	                $(row).addClass("highlight");
-			  	            } else if (format(data['Mức độ tình trạng']).match(/chậm/i) !=null) {
+			  	            } else if (format(data['Mức độ tình trạng']).match(/sắp/i) !=null) {
 			  	                $(row).addClass("highlight2");
 			  	            }else{
 			  	            	$(row).addClass("highlight3");
@@ -282,9 +282,9 @@
 			                } );
 			            },
 						"createdRow" : function(row, data, dataIndex) {
-							if (format(data['Mức độ tình trạng']).match(/rất chậm/i) !=null) {
+							if (format(data['Mức độ tình trạng']).match(/chậm/i) !=null) {
 			  	                $(row).addClass("highlight");
-			  	            } else if (format(data['Mức độ tình trạng']).match(/chậm/i) !=null) {
+			  	            } else if (format(data['Mức độ tình trạng']).match(/sắp/i) !=null) {
 			  	                $(row).addClass("highlight2");
 			  	            } else {
 			  	            	$(row).addClass("highlight3");

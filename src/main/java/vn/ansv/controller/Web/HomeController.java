@@ -27,7 +27,7 @@ public class HomeController {
 	 */
 	
 	
-/* Ä�áº§u: BÃ¡o cÃ¡o 1 */
+/* Đầu: Báo cáo 1 */
 	@RequestMapping(value = { "/sheet_1" }, method = RequestMethod.GET)
 	public ModelAndView sheet_1() {
 		ModelAndView mav = new ModelAndView("web/sheet_1");
@@ -45,31 +45,31 @@ public class HomeController {
 	 * ModelAndView vnpt_net2() { ModelAndView mav = new
 	 * ModelAndView("web/vnpt_net2"); return mav; }
 	 */
-/* Cuá»‘i: BÃ¡o cÃ¡o 1 */
+/* Cuối: Báo cáo 1 */
 	
 	
 	
-/* Ä�áº§u: BÃ¡o cÃ¡o 2 */
+/* Đầu: Báo cáo 2 */
 	@RequestMapping(value = { "/sheet_2" }, method = RequestMethod.GET)
 	public ModelAndView sheet_2() {
 		ModelAndView mav = new ModelAndView("web/sheet_2");
 		return mav;
 	}
-/* Cuá»‘i: BÃ¡o cÃ¡o 2 */
+/* Cuối: Báo cáo 2 */
 	
 	
 	
-/* Ä�áº§u: BÃ¡o cÃ¡o 3 */
+/* Ã„ï¿½Ã¡ÂºÂ§u: BÃƒÂ¡o cÃƒÂ¡o 3 */
 	@RequestMapping(value = { "/sheet_3" }, method = RequestMethod.GET)
 	public ModelAndView sheet_3() {
 		ModelAndView mav = new ModelAndView("web/sheet_3");
 		return mav;
 	}
-/* Cuá»‘i: BÃ¡o cÃ¡o 3 */
+/* Cuối: Báo cáo 3 */
 	
 	
 	
-/* Ä�áº§u: BÃ¡o cÃ¡o ngÆ°á»�i phá»¥ trÃ¡ch */
+/* Đầu: Báo cáo người phụ trách */
 	@RequestMapping(value = { "/bao_cao_sheet_1" }, method = RequestMethod.GET)
 	public ModelAndView bao_cao_sheet_1() {
 		ModelAndView mav = new ModelAndView("web/bao_cao_sheet_1");
@@ -87,6 +87,25 @@ public class HomeController {
 		ModelAndView mav = new ModelAndView("web/bao_cao_sheet_3");
 		return mav;
 	}
-/* Cuá»‘i: BÃ¡o cÃ¡o ngÆ°á»�i phá»¥ trÃ¡ch */
+/* Cuối: Báo cáo người phụ trách */
+	
+/* Đầu: Lọc các dự án trên header */
+	@RequestMapping(value = { "/h1_s1" }, method = RequestMethod.GET)
+	public ModelAndView h1_s1() {
+		ModelAndView mav = new ModelAndView("web/h1_s1");
+		return mav;
+	}
+	
+	@RequestMapping(value = { "/h2_s2" }, method = RequestMethod.GET)
+	public ModelAndView h2_s2() {
+		ModelAndView mav = new ModelAndView("web/h2_s2");
+		return mav;
+	}
+	
+	@RequestMapping(value = { "/h3_s3" }, method = RequestMethod.GET)
+	public ModelAndView h3_s3() {
+		ModelAndView mav = new ModelAndView("web/h3_s3");
+		return mav;
+	}
 	
 }

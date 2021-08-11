@@ -57,17 +57,8 @@
 
 													</div>
 												</div>
-												<div class="modal-footer" style="border-top: none">
-													<button type="button" class="btn btn-secondary"
-														data-dismiss="modal">Close</button>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-default"
-													data-dismiss="modal">Close</button>
 											</div>
 										</div>
-
 									</div>
 								</div>
 							</div>
@@ -237,12 +228,14 @@
 	
 	.modal-body a:hover{
 		text-decoration: none;
+		color: #dc3545;
 	}
 
 	body .modal-content {
 		width: 245%;
 		position: absolute;
 		left: -67%;
+		top: -40%; 
 	}
 </style>
 
@@ -251,7 +244,6 @@
 <script>
 	var data_view = ""; //Tạo biến data giả trước khi có data mới để truyền vào datatable
 	var groupColumn = 1; //Cột nhóm dữ liệu (cột số 2)
-
 
 
 	/* ===== Đầu: Datatable 1 - Báo cáo 1 ===== */
@@ -263,7 +255,7 @@
                 var n = format(row['Mức độ tình trạng']);
                	 /* var check_n = ["Chậm","chậm"]; */ 
                	if (n.match(/chậm/i) != null) {
-					var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+					var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["STT"]+'" class="tooltip_css"' + 
 								'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link_1('+row["STT"]+')">' +
 								data +
 								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tình trạng"]) + '</span>' +
@@ -311,10 +303,10 @@
             });
         },
         "createdRow": function(row, data, dataIndex) {
-            if (format(data['Mức độ tình trạng']).match(/sắp chậm/i) != null) {
-                $(row).addClass("highlight2");
-            }else if(format(data['Mức độ tình trạng']).match(/chậm/i) != null){
-            	$(row).addClass("highlight");
+            if (format(data['Mức độ tình trạng']).match(/chậm/i) != null) {
+                $(row).addClass("highlight");
+            }else if(format(data['Mức độ tình trạng']).match(/sắp/i) != null){
+            	$(row).addClass("highlight2");
             }else {
             	$(row).addClass("highlight3");
             }
@@ -343,7 +335,7 @@
             	var n = format(row['Mức độ tình trạng']);
                	 /* var check_n = ["Chậm","chậm"]; */ 
                	if (n.match(/chậm/i) != null) {
-					var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+					var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css"' + 
 								'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 								data +
 								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
@@ -391,9 +383,9 @@
             });
         },
         "createdRow": function(row, data, dataIndex) {
-            if (format(data['Mức độ tình trạng']).match(/rất chậm/i) !=null) {
+            if (format(data['Mức độ tình trạng']).match(/chậm/i) !=null) {
                 $(row).addClass("highlight");
-            } else if (format(data['Mức độ tình trạng']).match(/chậm/i) !=null) {
+            } else if (format(data['Mức độ tình trạng']).match(/sắp/i) !=null) {
                 $(row).addClass("highlight2");
             }else{
             	$(row).addClass("highlight3");
@@ -422,7 +414,7 @@
             render: function(data, type, row) {
             	var n = format(row['Mức độ tình trạng']); 
                	if (n.match(/chậm/i) != null) {
-					var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+					var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css"' + 
 								'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 								data +
 								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
@@ -470,9 +462,9 @@
             });
         },
         "createdRow": function(row, data, dataIndex) {
-        	if (format(data['Mức độ tình trạng']).match(/rất chậm/i) !=null) {
+        	if (format(data['Mức độ tình trạng']).match(/chậm/i) !=null) {
                 $(row).addClass("highlight");
-            } else if (format(data['Mức độ tình trạng']).match(/chậm/i) !=null) {
+            } else if (format(data['Mức độ tình trạng']).match(/sắp/i) !=null) {
                 $(row).addClass("highlight2");
             }else {
             	$(row).addClass("highlight3");
@@ -639,24 +631,24 @@
 
 
 	function project_link_1(id) {
-		window.open("bao_cao_sheet_1?id_p1="+id); //Link đến trang khác với tab mới
-		//window.location.href = "http://www.w3schools.com"; //Link đến trang khác ở tab hiện tại
+		//window.open("bao_cao_sheet_1?id_p1="+id); //Link đến trang khác với tab mới
+		window.location.href = "bao_cao_sheet_1?id_p1="+id; //Link đến trang khác ở tab hiện tại
 	  	//location.replace("https://www.w3schools.com"); //Link đến trang khác thay thế trang hiện tại
 	}
 
 
 
 	function project_link_2(id) {
-		window.open("bao_cao_sheet_2?id_p2="+id); //Link đến trang khác với tab mới
-		//window.location.href = "http://www.w3schools.com"; //Link đến trang khác ở tab hiện tại
+		//window.open("bao_cao_sheet_2?id_p2="+id); //Link đến trang khác với tab mới
+		window.location.href = "bao_cao_sheet_2?id_p2="+id; //Link đến trang khác ở tab hiện tại
 	  	//location.replace("https://www.w3schools.com"); //Link đến trang khác thay thế trang hiện tại
 	}
 
 
 
 	function project_link_3(id) {
-		window.open("bao_cao_sheet_3?id_p3="+id); //Link đến trang khác với tab mới
-		//window.location.href = "http://www.w3schools.com"; //Link đến trang khác ở tab hiện tại
+		//window.open("bao_cao_sheet_3?id_p3="+id); //Link đến trang khác với tab mới
+		window.location.href = "bao_cao_sheet_3?id_p3="+id; //Link đến trang khác ở tab hiện tại
 	  	//location.replace("https://www.w3schools.com"); //Link đến trang khác thay thế trang hiện tại
 	}
 </script>
@@ -687,8 +679,8 @@ oReq_slide.onload = function(e) {
 		  			if(format(item["Mức độ tình trạng"]).match(/chậm/i) != null){
 		  				let row1 = '<div class="container tab-pane" ><br>' +
                         '<div>' +
-                        '<h5 class="pb-3"><b>Tên dự án:</b> <a href="bao_cao_sheet_1?id_p1=' + item["STT"] + '" onclick="return project_link_sheet_1(' + item["STT"] + ')"' +
-                        'target="_blank"> ' + format(item["Dự án/Gói thầu"]) + '</a></h5>' +
+                        '<h5 class="pb-3"><b>Tên dự án:</b> <a style="color:#dc3545;" href="bao_cao_sheet_1?id_p1=' + item["STT"] + '" onclick="return project_link_sheet_1(' + item["STT"] + ')"' +
+                        '> ' + format(item["Dự án/Gói thầu"]) + '</a></h5>' +
                         '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
                         '<p style="white-space: pre-wrap;"><b>Phạm vi cung cấp:</b> ' + format(item["Phạm vi cung cấp"]) + '</p>' +
                         '<p><b>Tổng giá trị:</b> ' + format(item["Tổng giá trị"]) + '</p>' +
@@ -697,7 +689,7 @@ oReq_slide.onload = function(e) {
                     +
                     '</div>' +
                     '<div class="table-responsive">' +
-                    '<table class="table table-bordered table-dark">' +
+                    '<table class="table table-bordered table-hover">' +
                     '<thead>' +
                     '<tr>' +
                     '<th colspan="3">Kế hoạch nghiệm thu</th>' +
