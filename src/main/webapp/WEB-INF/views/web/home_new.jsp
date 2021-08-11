@@ -549,6 +549,8 @@
 
 		  	workbook.SheetNames.forEach(function(sheetName) {
 		  		var XL_row_object_1 = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+		  		
+		  		console.log("XL_row_object_1", XL_row_object_1);
 
 		  		// Thay thế dữ liệu mới lấy được (XL_row_object) truyền vào datatable (báo cáo 1)
 		    	example_1.clear().draw();
