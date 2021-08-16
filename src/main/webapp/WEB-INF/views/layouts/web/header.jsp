@@ -353,7 +353,7 @@
             XL_row_object.forEach(item => {
 					
                 if (item["Priority"] == "High" || item["Priority"] == "1") {
-                    if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || item["Mức độ tình trạng"] == "x" || format(item["Mức độ tình trạng"]).match(/hủy/i) != null ) {
+                    if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/ongoing/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || item["Mức độ tình trạng"] == "x" || format(item["Mức độ tình trạng"]).match(/hủy/i) != null ) {
                         a1++;
                     } else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null) {
                         b1++;
@@ -361,7 +361,7 @@
                         c1++;
                     }
                 } else if (item["Priority"] == "" || item["Priority"] == "2" || item["Priority"] == "Medium" || item["Priority"] == "x" || typeof item["Priority"] === 'undefined') {
-                    if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || item["Mức độ tình trạng"] == "x" || typeof item["Mức độ tình trạng"] === 'undefined' || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
+                    if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/ongoing/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || item["Mức độ tình trạng"] == "x" || typeof item["Mức độ tình trạng"] === 'undefined' || format(item["Mức độ tình trạng"]).match(/hủy/i) != null) {
                         d1++;
                     } else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null) {
                         e1++;
@@ -369,7 +369,7 @@
                         f1++;
                     }
                 } else if (item["Priority"] == "3" || item["Priority"] == "Low") {
-                    if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || format(item["Mức độ tình trạng"]).match(/hủy/i) != null || typeof item["Mức độ tình trạng"] === 'undefined') {
+                    if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/ongoing/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || format(item["Mức độ tình trạng"]).match(/hủy/i) != null || typeof item["Mức độ tình trạng"] === 'undefined') {
                         g1++;
                     } else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null) {
                         h1++;

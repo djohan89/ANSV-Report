@@ -134,27 +134,27 @@ color: #fff;}
 		                            '</tr>' +
 		                            '</thead>' +
 		                            '<tbody>' +
-		                            '<td>' + format_date(item["DAC"]) + '</td>' +
-		                                '<td>' + format_date(item["PAC"]) + '</td>' +
-		                                '<td>' + format_date(item["FAC"]) + '</td>' +
+		                            '<td>' + format_date(item["Kế hoạch GH DAC"]) + '</td>' +
+		                                '<td>' + format_date(item["Kế hoạch NT PAC"]) + '</td>' +
+		                                '<td>' + format_date(item["Kế hoạch NT FAC"]) + '</td>' +
 		                                '<!--Kế hoạch nghiệm thu -->' +
-		                                '<td>' + format(item["Số tiền thanh toán tạm ứng"]) + '</td>' +
+		                                '<td>' + format(item["Số tiền tạm ứng"]) + '</td>' +
 		                                '<td>' + format_date(item["Kế hoạch tạm ứng"]) + '</td>'
 
 		                            <!-- Thanh toán tạm ứng -->
 		                            +
-		                            '<td>' + format(item["Số tiền thanh toán DAC"]) + '</td>' +
-		                                '<td>' + format_date(item["Kế hoạch Thanh toán DAC"]) + '</td>'
+		                            '<td>' + format(item["Số tiền DAC"]) + '</td>' +
+		                                '<td>' + format_date(item["Kế hoạch TT DAC"]) + '</td>'
 
 		                            <!-- Thanh toán DAC -->
 		                            +
-		                            '<td>' + format(item["Số tiền Thanh toán PAC"]) + '</td>' +
-		                                '<td>' + format_date(item["Kế hoạch Thanh toán PAC"]) + '</td>'
+		                            '<td>' + format(item["Số tiền PAC"]) + '</td>' +
+		                                '<td>' + format_date(item["Kế hoạch TT PAC"]) + '</td>'
 
 		                            <!-- Thanh toán PAC -->
 		                            +
-		                            '<td>' + format(item["Số tiền Thanh toán FAC"]) + '</td>' +
-		                                '<td>' + format_date(item["Kế hoạch Thanh toán FAC"]) + '</td>'
+		                            '<td>' + format(item["Số tiền FAC"]) + '</td>' +
+		                                '<td>' + format_date(item["Kế hoạch TT FAC"]) + '</td>'
 
 		                            <!-- Thanh toán FAC -->
 		                            +
@@ -163,8 +163,8 @@ color: #fff;}
 		                            '</div>' +
 		                            '<div class="d-flex">' +
 		                            '<div style="width: 70%;">' +
-		                            '<p><b>Tình trạng:</b> </p>' +
-		                            '<p style="white-space: pre-wrap;"> ' + format(item["Tình trạng"]) + '</p>' +
+		                            '<p><b>Tình trạng & Kế hoạch chi tiết:</b> </p>' +
+		                            '<p style="white-space: pre-wrap;"> ' + format(item["Tình trạng & Kế hoạch chi tiết"]) + '</p>' +
 		                                '</div>' +
 		                                '<div class="pl-5">' +
 		                                '<p><b>Kết quả thực hiện kế hoạch:</b> </p>' +
@@ -210,27 +210,27 @@ color: #fff;}
 			                            '</tr>' +
 			                            '</thead>' +
 			                            '<tbody>' +
-			                            '<td>' + format_date(item["DAC"]) + '</td>' +
-			                                '<td>' + format_date(item["PAC"]) + '</td>' +
-			                                '<td>' + format_date(item["FAC"]) + '</td>' +
+			                            '<td>' + format_date(item["Kế hoạch GH DAC"]) + '</td>' +
+			                                '<td>' + format_date(item["Kế hoạch NT PAC"]) + '</td>' +
+			                                '<td>' + format_date(item["Kế hoạch NT FAC"]) + '</td>' +
 			                                '<!--Kế hoạch nghiệm thu -->' +
-			                                '<td>' + format(item["Số tiền thanh toán tạm ưng"]) + '</td>' +
+			                                '<td>' + format(item["Số tiền tạm ứng"]) + '</td>' +
 			                                '<td>' + format_date(item["Kế hoạch tạm ứng"]) + '</td>'
 
 			                            <!-- Thanh toán tạm ứng -->
 			                            +
-			                            '<td>' + format(item["Số tiền thanh toán DAC"]) + '</td>' +
-			                                '<td>' + format_date(item["Kế hoạch Thanh toán DAC"]) + '</td>'
+			                            '<td>' + format(item["Số tiền DAC"]) + '</td>' +
+			                                '<td>' + format_date(item["Kế hoạch TT DAC"]) + '</td>'
 
 			                            <!-- Thanh toán DAC -->
 			                            +
-			                            '<td>' + format(item["Số tiền Thanh toán PAC"]) + '</td>' +
-			                                '<td>' + format_date(item["Kế hoạch Thanh toán PAC"]) + '</td>'
+			                            '<td>' + format(item["Số tiền PAC"]) + '</td>' +
+			                                '<td>' + format_date(item["Kế hoạch TT PAC"]) + '</td>'
 
 			                            <!-- Thanh toán PAC -->
 			                            +
-			                            '<td>' + format(item["Số tiền Thanh toán FAC"]) + '</td>' +
-			                                '<td>' + format_date(item["Kế hoạch Thanh toán FAC"]) + '</td>'
+			                            '<td>' + format(item["Số tiền FAC"]) + '</td>' +
+			                                '<td>' + format_date(item["Kế hoạch TT FAC"]) + '</td>'
 
 			                            <!-- Thanh toán FAC -->
 			                            +
@@ -239,8 +239,8 @@ color: #fff;}
 			                            '</div>' +
 			                            '<div class="d-flex">' +
 			                            '<div style="width: 70%;">' +
-			                            '<p><b>Tình trạng:</b> </p>' +
-			                            '<p style="white-space: pre-wrap;"> ' + format(item["Tình trạng"]) + '</p>' +
+			                            '<p><b>Tình trạng & Kế hoạch chi tiết:</b> </p>' +
+			                            '<p style="white-space: pre-wrap;"> ' + format(item["Tình trạng & Kế hoạch chi tiết"]) + '</p>' +
 			                                '</div>' +
 			                                '<div class="pl-5">' +
 			                                '<p><b>Kết quả thực hiện kế hoạch:</b> </p>' +
