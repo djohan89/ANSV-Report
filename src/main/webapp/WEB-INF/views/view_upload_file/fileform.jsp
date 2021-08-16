@@ -167,6 +167,17 @@
 	  	filext = "." + filextension.slice(-1)[0];
 	  	valid = [".xlsx"];
 	  	
+	  	var check_tuan = filename.substring(filename.indexOf('tuần') + 5, filename.indexOf('tuần') + 7);
+	  	var xyz = parseInt(check_tuan);
+	  	console.log("Tên file này mới: ", check_tuan);
+	  	console.log(typeof(xyz));
+	  	
+	  	/* var check_chuoi_dau = filename.substring(0, filename.indexOf('tuần') + 4);
+	  	var check_chuoi_sau = filename.substring(filename.indexOf('tuần') + 8); */
+	  	
+	  	console.log("Tên chuỗi đầu này mới: ", file_upload_accept_chuoi_dau_1, file_upload_accept_chuoi_dau_2, file_upload_accept_chuoi_dau_3);
+	  	console.log("Tên chuỗi sau này mới: ", file_upload_accept_chuoi_sau);
+	  	
 	  	//Kiểm tra tên file theo tên quỷ chuẩn định sẵn
 	  	var compare_file_name_1 = file_upload_accept_1.localeCompare(filename);
 	  	var compare_file_name_2 = file_upload_accept_2.localeCompare(filename);
@@ -187,7 +198,13 @@
 
 		    $("#submitbtn").hide();
 		    $("#fakebtn").show();
-	  	} else if (compare_file_name_1 == 0 || compare_file_name_2 == 0 || compare_file_name_3 == 0) {
+	  	/* } else if (compare_file_name_1 == 0 || compare_file_name_2 == 0 || compare_file_name_3 == 0) { */
+	  	} else if (
+	  			( filename.includes(file_upload_accept_chuoi_dau_1) 
+	  			|| filename.includes(file_upload_accept_chuoi_dau_2) 
+	  			|| filename.includes(file_upload_accept_chuoi_dau_3) )
+	  			&& ( filename.includes(file_upload_accept_chuoi_sau) )
+	  			&& (xyz >= 1 && xyz <= tuan_nay)) {
 	  		//Trường hợp so sánh đúng với 1 trong 3 file đã định sẵn -> Cho phép thực hiện đẩy file
 	  		//if file is valid we show the green alert and show the valid submit
 		    $(".imgupload").hide("slow");

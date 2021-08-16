@@ -60,7 +60,8 @@
 		    	
 		    	//Kiểm tra tên file để in dữ liệu ra datatable tương ứng
 		    	var groupColumn = 1;
-		    	if (compare_file_name_upload_1 == 0) {
+		    	/* if (compare_file_name_upload_1 == 0) { */
+		    	if (ten_file_upload.includes(file_upload_accept_chuoi_dau_1)) {
 		    		var example_1 = $('#example_1').DataTable({
 			            data: XL_row_object,
 			            columns: [
@@ -139,7 +140,8 @@
 							example_1.order([ groupColumn, 'asc' ]).draw();
 						}
 					});
-		    	} else if (compare_file_name_upload_2 == 0) {
+		    	/* } else if (compare_file_name_upload_2 == 0) { */
+		    	} else if (ten_file_upload.includes(file_upload_accept_chuoi_dau_2)) {
 		    		var example_2 = $('#example_2').DataTable({
 			            data: XL_row_object,
 			            columns: [
