@@ -177,7 +177,7 @@ function return_header(u,t,sl){
 		
 		function format_t(t){
 			if(t==1){
-				return "hoàn thành" ;
+				return "ongoing" ;
 			}else if(t==2){
 				return "sắp";
 			}else{
