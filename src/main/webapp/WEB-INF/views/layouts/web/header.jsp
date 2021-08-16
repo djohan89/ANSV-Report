@@ -351,7 +351,7 @@
         workbook.SheetNames.forEach(function(sheetName) {
             var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
             XL_row_object.forEach(item => {
-					console.log(item);
+					
                 if (item["Priority"] == "High" || item["Priority"] == "1") {
                     if (format(item["Mức độ tình trạng"]).match(/hoàn thành/i) != null || format(item["Mức độ tình trạng"]).match(/ongoing/i) != null || format(item["Mức độ tình trạng"]).match(/đúng/i) != null || item["Mức độ tình trạng"] == "x" || format(item["Mức độ tình trạng"]).match(/hủy/i) != null ) {
                         a1++;
