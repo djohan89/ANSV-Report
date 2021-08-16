@@ -461,10 +461,10 @@
 	
 				   	            let row2 = '<li class="nav-item ">' +
 							   	                '<a href="#"' +
-							   	                ' onclick = "return project_link_menu_1(' + project_1[i][j]["STT"] + ') "' + //Lấy phần tử thứ i truongef dữ liệu thứ j
-							   	                'class="nav-link d-flex" id="project1-' + project_1[i][j]["STT"] + '">' +
+							   	                ' onclick = "return project_link_menu_1(' + project_1[i][j]["TT"] + ') "' + //Lấy phần tử thứ i truongef dữ liệu thứ j
+							   	                'class="nav-link d-flex" id="project1-' + project_1[i][j]["TT"] + '">' +
 								   	                '<i class="far fa-hand-point-right nav-icon" style="font-size: 1rem; margin-left: 6%;"></i>' +
-								   	                '<p>' +
+								   	                '<p>' + 
 								   	                	project_1[i][j]["Dự án/Gói thầu"] +
 								   	                '</p>' +
 							   	                '</a>' +
