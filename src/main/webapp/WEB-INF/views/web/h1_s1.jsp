@@ -150,7 +150,7 @@ function return_header(u,t,sl){
 	                    '<div class="d-flex">' +
 	                    '<div >' +
 	                    '<p><b>Tình trạng & Kế hoạch chi tiết:</b> </p>' +
-	                    '<p style="white-space: pre-wrap;"> ' + format(item["Tình trạng và Kế hoạch chi tiết"]) + '</p>' +
+	                    '<p style="white-space: pre-wrap;"> ' + format(item["Tình trạng & Kế hoạch chi tiết"]) + '</p>' +
 	                        '</div>' +
 	                        '<div class="pl-5">' +
 	                        '<p><b>Kết quả thực hiện kế hoạch:</b> </p>' +
