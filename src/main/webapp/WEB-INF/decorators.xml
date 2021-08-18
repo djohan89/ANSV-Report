@@ -21,6 +21,10 @@
 		<pattern>/test_2</pattern>
 	</decorator>
 	
+	<decorator name="test_test" page="web.jsp">
+		<pattern>/test_test</pattern>
+	</decorator>
+	
 	
 	
 <!-- Đầu Decarator: Báo cáo 1 -->

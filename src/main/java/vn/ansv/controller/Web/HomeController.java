@@ -20,6 +20,12 @@ public class HomeController {
 		return mav;
 	}
 	
+	@RequestMapping(value = { "/test_test" }, method = RequestMethod.GET)
+	public ModelAndView testTest() {
+		ModelAndView mav = new ModelAndView("web/test_test");
+		return mav;
+	}
+	
 	/*
 	 * @RequestMapping(value = { "/test" }, method = RequestMethod.GET) public
 	 * ModelAndView test() { ModelAndView mav = new ModelAndView("web/test"); return
