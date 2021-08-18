@@ -18,9 +18,9 @@
 	  	var compare_file_name_upload_2 = file_upload_accept_2.localeCompare(ten_file_upload);
 	  	var compare_file_name_upload_3 = file_upload_accept_3.localeCompare(ten_file_upload);
 		
-	  	document.getElementById("name_upload_1").innerHTML = file_upload_accept_1.replaceAll(".xlsx","");
-	  	document.getElementById("name_upload_2").innerHTML = file_upload_accept_2.replaceAll(".xlsx","");
-	  	document.getElementById("name_upload_3").innerHTML = file_upload_accept_3.replaceAll(".xlsx","");
+	  	document.getElementById("name_upload_1").innerHTML = file_view_1.replaceAll(".xlsx","");
+	  	document.getElementById("name_upload_2").innerHTML = file_view_2.replaceAll(".xlsx","");
+	  	document.getElementById("name_upload_3").innerHTML = file_view_3.replaceAll(".xlsx","");
 	  	
 		$(function () {
 		  	$('[data-toggle="tooltip"]').tooltip()

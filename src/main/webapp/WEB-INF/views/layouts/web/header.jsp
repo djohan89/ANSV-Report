@@ -173,7 +173,7 @@
     var numberOfDays = Math.floor((todaydate - oneJan) / (24 * 60 * 60 * 1000));
 
     // adding 1 since to current date and returns value starting from 0 
-    var result = Math.ceil((todaydate.getDay() + 1 + numberOfDays) / 7);
+    var result = Math.ceil((todaydate.getDay() + 1 + numberOfDays) / 7) - 1;
 
     var d = new Date();
     var m = d.getMonth();
