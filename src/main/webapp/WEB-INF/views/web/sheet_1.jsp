@@ -101,7 +101,7 @@ color: #fff;}
 		                            row2 += '<div id="' + idx + '" class="container tab-pane active" ><br>' +
 		                                '<div>' +
 		                                '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
-		                                '<p><b>Tên dự án:</b> <a href="bao_cao_sheet_1?id_p1=' + item["STT"] + '" onclick="return project_link_sheet_1(' + item["STT"] + ')"' +
+		                                '<p><b>Tên dự án:</b> <a href="bao_cao_sheet_1?id_p1=' + item["TT"] + '" onclick="return project_link_sheet_1(' + item["TT"] + ')"' +
 		                                '> ' + format(item["Dự án/Gói thầu"]) + '</a></p>' +
 		                                '<p style="white-space: pre-wrap;"><b>Phạm vi cung cấp:</b> ' + format(item["Phạm vi cung cấp"]) + '</p>' +
 		                                '<p><b>Tổng giá trị:</b> ' + format(item["Tổng giá trị"]) + '</p>' +
@@ -177,7 +177,7 @@ color: #fff;}
 			                            row2 += '<div id="' + idx + '" class="container tab-pane fade" ><br>' +
 			                                '<div>' +
 			                                '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
-			                                '<p><b>Tên dự án:</b><a href="bao_cao_sheet_1?id_p1=' + item["STT"] + '" onclick="return project_link_sheet_1(' + item["STT"] + ')"' +
+			                                '<p><b>Tên dự án:</b><a href="bao_cao_sheet_1?id_p1=' + item["TT"] + '" onclick="return project_link_sheet_1(' + item["TT"] + ')"' +
 			                                '> ' + format(item["Dự án/Gói thầu"]) + '</a></p>' +
 			                                '<p style="white-space: pre-wrap;"><b>Phạm vi cung cấp:</b> ' + format(item["Phạm vi cung cấp"]) + '</p>' +
 			                                '<p><b>Tổng giá trị:</b> ' + format(item["Tổng giá trị"]) + '</p>' +
