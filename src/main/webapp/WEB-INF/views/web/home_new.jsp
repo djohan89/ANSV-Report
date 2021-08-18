@@ -255,16 +255,16 @@
                 var n = format(row['Mức độ tình trạng']);
                	 /* var check_n = ["Chậm","chậm"]; */ 
                	if (n.match(/chậm/i) != null) {
-					var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["STT"]+'" class="tooltip_css"' + 
-								'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link_1('+row["STT"]+')">' +
+					var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["TT"]+'" class="tooltip_css"' + 
+								'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link_1('+row["TT"]+')">' +
 								data +
-								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tình trạng"]) + '</span>' +
+								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 							'</a>';
 				} else {
-					var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
-									'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link_1('+row["STT"]+')">' +
+					var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["TT"]+'" class="tooltip_css" target="_blank"' + 
+									'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link_1('+row["TT"]+')">' +
 									data +
-									'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tình trạng"]) + '</span>' +
+									'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 								'</a>';
 				}
 					
@@ -684,8 +684,8 @@ oReq_slide.onload = function(e) {
                         '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
                         '<p style="white-space: pre-wrap;"><b>Phạm vi cung cấp:</b> ' + format(item["Phạm vi cung cấp"]) + '</p>' +
                         '<p><b>Tổng giá trị:</b> ' + format(item["Tổng giá trị"]) + '</p>' +
-                        '<p><b>Mức độ ưu tiên:</b> ' + format(item["Priority"]) + '</p>'
-
+                        '<p><b>Mức độ ưu tiên:</b> ' + format(item["Priority"]) + '</p>' +
+                        '<p><b>Mức độ tình trạng:</b> ' + format(item["Mức độ tình trạng"]) + '</p>'
                     +
                     '</div>' +
                     '<div class="table-responsive">' +
