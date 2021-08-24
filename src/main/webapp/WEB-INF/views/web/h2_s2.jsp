@@ -17,7 +17,7 @@
 				<section class="col-lg-12">
 					<h4 id="name_header_2">Hello Test 33333333333</h4>
 					<div>
-						<p>Ở mức độ ưu tiên <span id = "u"></span> tình trạng <span id="t"></span> có <span id="sl"></span> dự án:</p>
+						<p>Ở mức độ ưu tiên <span id = "u"></span> mức độ cảnh báo <span id="t"></span> có <span id="sl"></span> dự án:</p>
 					</div>
 					<div class="owl-carousel owl-theme" id="detail_slide_s2">
 
@@ -29,11 +29,11 @@
 						document.getElementById("name_header_2").innerHTML = file_view_2;
 						document.getElementById("u").innerHTML = u;
 						if(t==1){
-							document.getElementById("t").innerHTML = "đang hoàn thành hoặc đúng tiến độ";
+							document.getElementById("t").innerHTML = "cao";
 						}else if(t==2){
-							document.getElementById("t").innerHTML = "sắp vượt quá thời gian dự kiến";
+							document.getElementById("t").innerHTML = "trung bình";
 						}else{
-							document.getElementById("t").innerHTML = "chậm tiến độ";
+							document.getElementById("t").innerHTML = "thấp";
 						}
 						
 						
@@ -62,7 +62,8 @@
 						    	 XL_row_object.forEach(item=>{
 						    		 if(item["Mức độ ưu tiên"]==u){
 						    			  var reg = new RegExp(format_t(t), 'gi');
-						    			  if(item["Mức độ tình trạng"].match(reg) != null){
+						    			  console.log(reg);
+						    			  if(item["Mức độ cảnh báo"].match(reg) != null){
 					    				 		 let row = '<div class="container tab-pane active" ><br>' +
 					                                '<div class="row ">' +
 					                                '<div class="text-center col-md-12">' +
@@ -72,16 +73,15 @@
 					                                '</div>'
 
 					                            +
-					                            '<p><b>Người phụ trách:</b> ' + format(item["Phụ trách"]) + '</p>' +
+					                            '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
 					                                '<p style="white-space: pre-wrap;"><b>Mô tả dự án:</b> ' + format(item["Mô tả dự án"]) + ' </p>' +
 					                                '<p><b>Tổng mức đầu tư:</b> ' + format(item["Tổng mức đầu tư"]) + '</p>' +
-					                                '<p><b>Đăng ký kế hoạch dự án:</b> ' + format_date(item["Đăng ký kế hoạch dự án"]) + '</p>' +
 					                                '<p><b>Hình thức đầu tư:</b> ' + format(item["Hình thức đầu tư"]) + '</p>' +
 					                                '<p><b>Mức độ ưu tiên:</b> ' + format(item["Mức độ ưu tiên"]) + '</p>' +
 					                                '<p><b>Mức độ khả thi:</b> ' + format(item["Mức độ khả thi"]) + ' </p>' +
-					                                '<p style="white-space: pre-wrap;"><b>Tình trạng:</b> ' + format(item["Tình trạng dự án"]) + '</p>' +
+					                                '<p style="white-space: pre-wrap;"><b>Tình trạng:</b> ' + format(item["Tình trạng & Kế hoạch chi tiết"]) + '</p>' +
+					                                '<p><b>Phân tích SWOT:</b> ' + format(item["Phân tích SWOT"]) + ' </p>'+
 					                                '<p><b>Kết quả thực hiện kế hoạch:</b> ' + format(item["Kết quả thực hiện kế hoạch"]) + '</p>' +
-					                                '<p><b>Tồn tại vướng mắc:</b> ' + format(item["Tồn tại, vướng mắc, đề xuất giải pháp"]) + ' </p>'+
 					                                '</div>';
 					                          detail_slide_s2.innerHTML += row;	
 						    			  } 
@@ -124,11 +124,11 @@
 		
 		function format_t(t){
 			if(t==1){
-				return "hoàn thành" ;
+				return "Thấp" , "Chờ CTĐT" ;
 			}else if(t==2){
-				return "sắp";
+				return "trung bình";
 			}else{
-				return "chậm";
+				return "cao";
 			}
 		}
 		

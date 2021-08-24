@@ -19,10 +19,8 @@
 	<div class="content-header">
 		<div class="container-fluid">
 			<div class="row mb-2">
-				<div class=" text-center col-md-12">				
-					<h3 id="title" class="m-0">
-					
-					</h3>
+				<div class=" text-center col-md-12">
+					<h3 id="title" class="m-0"></h3>
 				</div>
 				<!-- /.col -->
 				<div class="col-sm-6"></div>
@@ -38,7 +36,7 @@
 	<section class="content">
 		<div class="container-fluid" id="detail_data">
 
-<script>
+			<script>
 function return_id(id) {
 	var title = document.getElementById('title');
     var detail_data = document.getElementById("detail_data");
@@ -100,24 +98,20 @@ function return_id(id) {
 			                   		+'<div class="table-responsive-sm">'
 			                   			+'<table class="table table-bordered table-hover table-dark">'
 			                   			+'<tr>'
-			                               +'<th>Tồn tại, vướng mắc, đề xuất giải pháp</th>'
-			                               +'<td>'+format(item["Tồn tại, vướng mắc, đề xuất giải pháp"])+'</td>'
+			                               +'<th>Tình trạng & Kế hoạch chi tiết</th>'
+			                               +'<td>'+format(item["Tình trạng & Kế hoạch chi tiết"])+'</td>'
 			                           +'</tr>'
 			                           +'<tr>'
-		                               +'<th>Tình trạng dự án</th>'
-		                               	   +'<td style="white-space: pre-wrap;">'+format(item["Tình trạng dự án"])+'</td>'
+		                               +'<th>Phân tích SWOT</th>'
+		                               	   +'<td style="white-space: pre-wrap;">'+format(item["Phân tích SWOT"])+'</td>'
 		                           	   +'</tr>'
-			                           +'<tr>'
-			                               +'<th>Đăng ký kế hoạch dự án</th>'
-			                               +'<td>'+format_date(item["Đăng ký kế hoạch dự án"])+'</td>'
-			                           +'</tr>'
 				                           +'<tr>'
 				                               +'<th>Kết quả thực hiện kế hoạch</th>'
 				                               +'<td>'+format(item["Kết quả thực hiện kế hoạch"])+'</td>'
 				                           +'</tr>'
 				                           +'<tr>'
 				                               +'<th>Phụ trách</th>'
-				                               +'<td>'+format(item["Phụ trách"])+'</td>'
+				                               +'<td>'+format(item["PIC"])+'</td>'
 				                           +'</tr>'
 		                           		+'</table>'
 				                    +'</div>'

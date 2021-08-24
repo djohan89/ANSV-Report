@@ -515,7 +515,7 @@
 			   		            return rv;
 			   		        }, {});
 			   		    }; //Lấy dữ liệu theo key tùy chọn
-			   		    var groupedPIC2 = groupArrayOfObjects(XL_row_object, "Phụ trách"); // Nhóm theo người phụ trách
+			   		    var groupedPIC2 = groupArrayOfObjects(XL_row_object, "PIC"); // Nhóm theo người phụ trách
 	
 			   		    var dem_2 = Object.keys(groupedPIC2).length;
 			   		    var item_2 = Object.keys(groupedPIC2); //Lọc theo key của object
@@ -598,7 +598,7 @@
 			   		            return rv;
 			   		        }, {});
 			   		    }; //Lấy dữ liệu theo key tùy chọn
-			   		    var groupedPIC3 = groupArrayOfObjects(XL_row_object, "Phụ trách"); // Nhóm theo người phụ trách
+			   		    var groupedPIC3 = groupArrayOfObjects(XL_row_object, "PIC"); // Nhóm theo người phụ trách
 	
 			   		    var dem_3 = Object.keys(groupedPIC3).length;
 			   		    var item_3 = Object.keys(groupedPIC3); //Lọc theo key của object
