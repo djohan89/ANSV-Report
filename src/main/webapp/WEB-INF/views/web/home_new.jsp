@@ -334,13 +334,19 @@
             render: function(data, type, row) {
             	var n = format(row['Mức độ cảnh báo']);
                	 /* var check_n = ["Chậm","chậm"]; */ 
-               	if (n.match(/cao/i) != null) {
+               	if (n.match(/high/i) != null) {
 					var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css"' + 
 								'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 								data +
 								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 							'</a>';
-				} else {
+				}else if(n.match(/medium/i) != null){
+					var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+					'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+					data +
+					'<br><span class="tooltiptext" style="background-color: #ff9900;">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
+				'</a>';
+				}else {
 					var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
 									'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 									data +
@@ -413,13 +419,19 @@
             data: 'Dự án/Gói thầu',
             render: function(data, type, row) {
             	var n = format(row['Mức độ cảnh báo']); 
-               	if (n.match(/cao/i) != null) {
+               	if (n.match(/high/i) != null) {
 					var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css"' + 
 								'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 								data +
 								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 							'</a>';
-				} else {
+				}else if(n.match(/medium/i) != null){
+					var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+					'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+					data +
+					'<br><span class="tooltiptext" style="background-color: #ff9900;">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
+				'</a>';
+				}else {
 					var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
 									'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 									data +

@@ -26,14 +26,14 @@
 					</div>
 					<script type="text/javascript">
 					function return_header(u,t,sl){
-						document.getElementById("name_header_2").innerHTML = file_view_2;
+						document.getElementById("name_header_2").innerHTML = header_sheet_2_fix_2;
 						document.getElementById("u").innerHTML = u;
 						if(t==1){
-							document.getElementById("t").innerHTML = "cao";
+							document.getElementById("t").innerHTML = "thấp";
 						}else if(t==2){
 							document.getElementById("t").innerHTML = "trung bình";
 						}else{
-							document.getElementById("t").innerHTML = "thấp";
+							document.getElementById("t").innerHTML = "cao";
 						}
 						
 						
@@ -62,7 +62,6 @@
 						    	 XL_row_object.forEach(item=>{
 						    		 if(item["Mức độ ưu tiên"]==u){
 						    			  var reg = new RegExp(format_t(t), 'gi');
-						    			  console.log(reg);
 						    			  if(item["Mức độ cảnh báo"].match(reg) != null){
 					    				 		 let row = '<div class="container tab-pane active" ><br>' +
 					                                '<div class="row ">' +
@@ -80,8 +79,8 @@
 					                                '<p><b>Mức độ ưu tiên:</b> ' + format(item["Mức độ ưu tiên"]) + '</p>' +
 					                                '<p><b>Mức độ khả thi:</b> ' + format(item["Mức độ khả thi"]) + ' </p>' +
 					                                '<p style="white-space: pre-wrap;"><b>Tình trạng:</b> ' + format(item["Tình trạng & Kế hoạch chi tiết"]) + '</p>' +
-					                                '<p><b>Phân tích SWOT:</b> ' + format(item["Phân tích SWOT"]) + ' </p>'+
-					                                '<p><b>Kết quả thực hiện kế hoạch:</b> ' + format(item["Kết quả thực hiện kế hoạch"]) + '</p>' +
+					                                '<p style="white-space: pre-wrap;"><b>Phân tích SWOT:</b> ' + format(item["Phân tích SWOT"]) + ' </p>'+
+					                                '<p style="white-space: pre-wrap;"><b>Kết quả thực hiện kế hoạch:</b> ' + format(item["Kết quả thực hiện kế hoạch"]) + '</p>' +
 					                                '</div>';
 					                          detail_slide_s2.innerHTML += row;	
 						    			  } 
