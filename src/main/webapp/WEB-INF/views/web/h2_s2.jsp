@@ -124,11 +124,11 @@
 		
 		function format_t(t){
 			if(t==1){
-				return "Thấp" , "Chờ CTĐT" ;
+				return "low" ;
 			}else if(t==2){
-				return "trung bình";
+				return "medium";
 			}else{
-				return "cao";
+				return "high";
 			}
 		}
 		

@@ -481,27 +481,27 @@
             XL_row_object.forEach(item => {
 					
                 if (item["Mức độ ưu tiên"] == "1") {
-                    if (format(item["Mức độ cảnh báo"]).match(/thấp/i) != null || format(item["Mức độ cảnh báo"]).match(/Chờ CTĐT/i) != null ||  item["Mức độ cảnh báo"] == "" || typeof item["Mức độ cảnh báo"] === 'undefined' || format(item["Mức độ cảnh báo"]).match(/hủy/i) != null) {
+                    if (format(item["Mức độ cảnh báo"]).match(/low/i) != null || format(item["Mức độ cảnh báo"]).match(/Chờ CTĐT/i) != null ||  item["Mức độ cảnh báo"] == "" || typeof item["Mức độ cảnh báo"] === 'undefined' || format(item["Mức độ cảnh báo"]).match(/hủy/i) != null) {
                         a2++;
-                    } else if (format(item["Mức độ cảnh báo"]).match(/sắp/i) != null || format(item["Mức độ cảnh báo"]).match(/trung bình/i) != null) {
+                    } else if (format(item["Mức độ cảnh báo"]).match(/sắp/i) != null || format(item["Mức độ cảnh báo"]).match(/medium/i) != null) {
                         b2++;
-                    } else if (format(item["Mức độ cảnh báo"]).match(/chậm/i) != null || format(item["Mức độ cảnh báo"]).match(/cao/i) != null) {
+                    } else if (format(item["Mức độ cảnh báo"]).match(/chậm/i) != null || format(item["Mức độ cảnh báo"]).match(/high/i) != null) {
                         c2++;
                     }
                 } else if (item["Mức độ ưu tiên"] == "2") {
-                    if (format(item["Mức độ cảnh báo"]).match(/thấp/i) != null || format(item["Mức độ cảnh báo"]).match(/Chờ CTĐT/i) != null || item["Mức độ cảnh báo"] == "" || typeof item["Mức độ cảnh báo"] === 'undefined' || format(item["Mức độ cảnh báo"]).match(/hủy/i) != null) {
+                    if (format(item["Mức độ cảnh báo"]).match(/low/i) != null || format(item["Mức độ cảnh báo"]).match(/Chờ CTĐT/i) != null || item["Mức độ cảnh báo"] == "" || typeof item["Mức độ cảnh báo"] === 'undefined' || format(item["Mức độ cảnh báo"]).match(/hủy/i) != null) {
                         d2++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null || format(item["Mức độ cảnh báo"]).match(/trung bình/i) != null ) {
+                    } else if (format(item["Mức độ tình trạng"]).match(/sắp/i) != null || format(item["Mức độ cảnh báo"]).match(/medium/i) != null ) {
                         e2++;
-                    } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null || format(item["Mức độ cảnh báo"]).match(/cao/i) != null) {
+                    } else if (format(item["Mức độ tình trạng"]).match(/chậm/i) != null || format(item["Mức độ cảnh báo"]).match(/high/i) != null) {
                         f2++;
                     }
                 } else if (item["Mức độ ưu tiên"] == "3" || typeof item["Mức độ ưu tiên"] === 'undefined') {
-                    if (format(item["Mức độ cảnh báo"]).match(/thấp/i) != null || format(item["Mức độ cảnh báo"]).match(/Chờ CTĐT/i) != null || item["Mức độ cảnh báo"] == "" || typeof item["Mức độ cảnh báo"] === 'undefined' || format(item["Mức độ cảnh báo"]).match(/hủy/i) != null) {
+                    if (format(item["Mức độ cảnh báo"]).match(/low/i) != null || format(item["Mức độ cảnh báo"]).match(/Chờ CTĐT/i) != null || item["Mức độ cảnh báo"] == "" || typeof item["Mức độ cảnh báo"] === 'undefined' || format(item["Mức độ cảnh báo"]).match(/hủy/i) != null) {
                         g2++;
-                    } else if (format(item["Mức độ cảnh báo"]).match(/sắp/i) != null || format(item["Mức độ cảnh báo"]).match(/trung bình/i) != null) {
+                    } else if (format(item["Mức độ cảnh báo"]).match(/sắp/i) != null || format(item["Mức độ cảnh báo"]).match(/medium/i) != null) {
                         h2++;
-                    } else if (format(item["Mức độ cảnh báo"]).match(/chậm/i) != null || format(item["Mức độ cảnh báo"]).match(/cao/i) != null ) {
+                    } else if (format(item["Mức độ cảnh báo"]).match(/chậm/i) != null || format(item["Mức độ cảnh báo"]).match(/high/i) != null ) {
                         i2++;
                     }
                 }
@@ -602,29 +602,29 @@
             var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
             XL_row_object.forEach(item => {
                 if (item["Mức độ ưu tiên"] == "1") {
-                    if (item["Mức độ cảnh báo"] == "" || format(item["Mức độ cảnh báo"]).match(/thấp/i) != null || format(item["Mức độ cảnh báo"]).match(/Chờ CTĐT/i) != null || typeof item["Mức độ cảnh báo"] === "undefined" || format(item["Mức độ cảnh báo"]).match(/hủy/i) != null) {
+                    if (item["Mức độ cảnh báo"] == "" || format(item["Mức độ cảnh báo"]).match(/low/i) != null || format(item["Mức độ cảnh báo"]).match(/Chờ CTĐT/i) != null || typeof item["Mức độ cảnh báo"] === "undefined" || format(item["Mức độ cảnh báo"]).match(/hủy/i) != null) {
                         a3++;
-                    } else if ( format(item["Mức độ cảnh báo"]).match(/sắp/i) != null || format(item["Mức độ cảnh báo"]).match(/trung bình/i) != null) {
+                    } else if ( format(item["Mức độ cảnh báo"]).match(/sắp/i) != null || format(item["Mức độ cảnh báo"]).match(/medium/i) != null) {
                         b3++;
-                    } else if ( format(item["Mức độ cảnh báo"]).match(/chậm/i) != null) {
+                    } else if ( format(item["Mức độ cảnh báo"]).match(/high/i) != null) {
                         c3++;
                     }
                 } else if (item["Mức độ ưu tiên"] == "2" ) {
-                    if (item["Mức độ tình trạng"] == "" || format(item["Mức độ cảnh báo"]).match(/thấp/i) != null || format(item["Mức độ cảnh báo"]).match(/Chờ CTĐT/i) != null || typeof item["Mức độ cảnh báo"] === "undefined" || format(item["Mức độ cảnh báo"]).match(/hủy/i) != null) {
+                    if (item["Mức độ tình trạng"] == "" || format(item["Mức độ cảnh báo"]).match(/low/i) != null || format(item["Mức độ cảnh báo"]).match(/Chờ CTĐT/i) != null || typeof item["Mức độ cảnh báo"] === "undefined" || format(item["Mức độ cảnh báo"]).match(/hủy/i) != null) {
                         d3++;
-                    } else if ( format(item["Mức độ cảnh báo"]).match(/sắp/i) != null || format(item["Mức độ cảnh báo"]).match(/trung bình/i) != null) {
+                    } else if ( format(item["Mức độ cảnh báo"]).match(/sắp/i) != null || format(item["Mức độ cảnh báo"]).match(/medium/i) != null) {
                         e3++;
-                    } else if ( format(item["Mức độ cảnh báo"]).match(/chậm/i) != null || format(item["Mức độ cảnh báo"]).match(/cao/i) != null) {
+                    } else if ( format(item["Mức độ cảnh báo"]).match(/chậm/i) != null || format(item["Mức độ cảnh báo"]).match(/high/i) != null) {
                         f3++;
                     }
                 } else if (item["Mức độ ưu tiên"] == "3" || typeof item["Mức độ ưu tiên"] === "undefined") {
-                    if (item["Mức độ cảnh báo"] == "" || format(item["Mức độ cảnh báo"]).match(/thấp/i) != null || format(item["Mức độ cảnh báo"]).match(/Chờ CTĐT/i) != null || typeof item["Mức độ cảnh báo"] === "undefined" || format(item["Mức độ cảnh báo"]).match(/hủy/i) != null ) {
+                    if (item["Mức độ cảnh báo"] == "" || format(item["Mức độ cảnh báo"]).match(/low/i) != null || format(item["Mức độ cảnh báo"]).match(/Chờ CTĐT/i) != null || typeof item["Mức độ cảnh báo"] === "undefined" || format(item["Mức độ cảnh báo"]).match(/hủy/i) != null ) {
                         g3++;
                     }
-                    else if (format(item["Mức độ cảnh báo"]).match(/sắp/i) != null || format(item["Mức độ cảnh báo"]).match(/trung bình/i) != null) {
+                    else if (format(item["Mức độ cảnh báo"]).match(/sắp/i) != null || format(item["Mức độ cảnh báo"]).match(/medium/i) != null) {
                         h3++;
                     }
-                    else if (format(item["Mức độ cảnh báo"]).match(/chậm/i) != null || format(item["Mức độ cảnh báo"]).match(/cao/i) != null) {
+                    else if (format(item["Mức độ cảnh báo"]).match(/chậm/i) != null || format(item["Mức độ cảnh báo"]).match(/high/i) != null) {
                         i3++;
                     }
                 }

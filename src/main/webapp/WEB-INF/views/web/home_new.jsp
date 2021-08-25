@@ -383,9 +383,9 @@
             });
         },
         "createdRow": function(row, data, dataIndex) {
-            if (format(data['Mức độ cảnh báo']).match(/cao/i) !=null) {
+            if (format(data['Mức độ cảnh báo']).match(/high/i) !=null) {
                 $(row).addClass("highlight");
-            } else if (format(data['Mức độ cảnh báo']).match(/trung bình/i) !=null) {
+            } else if (format(data['Mức độ cảnh báo']).match(/medium/i) !=null) {
                 $(row).addClass("highlight2");
             }else{
             	$(row).addClass("highlight3");
@@ -432,7 +432,7 @@
             },
             { data: 'Khách hàng' },
             { data: 'Mức độ khả thi' },
-            { data: 'Phụ trách' }
+            { data: 'PIC' }
         ],
         "scrollY": 530,
         "scrollX": true,
@@ -462,9 +462,9 @@
             });
         },
         "createdRow": function(row, data, dataIndex) {
-        	if (format(data['Mức độ cảnh báo']).match(/cao/i) !=null) {
+        	if (format(data['Mức độ cảnh báo']).match(/high/i) !=null) {
                 $(row).addClass("highlight");
-            } else if (format(data['Mức độ cảnh báo']).match(/trung bình/i) !=null) {
+            } else if (format(data['Mức độ cảnh báo']).match(/medium/i) !=null) {
                 $(row).addClass("highlight2");
             }else {
             	$(row).addClass("highlight3");
