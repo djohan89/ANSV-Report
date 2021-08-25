@@ -332,19 +332,19 @@
         columns: [{
            	data: 'Dự án/Gói thầu',
             render: function(data, type, row) {
-            	var n = format(row['Mức độ tình trạng']);
+            	var n = format(row['Mức độ cảnh báo']);
                	 /* var check_n = ["Chậm","chậm"]; */ 
-               	if (n.match(/chậm/i) != null) {
+               	if (n.match(/cao/i) != null) {
 					var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css"' + 
 								'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 								data +
-								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
+								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 							'</a>';
 				} else {
 					var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
 									'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 									data +
-									'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
+									'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 								'</a>';
 				}
 					
@@ -353,7 +353,7 @@
             },
             { data: 'Khách hàng' },
             { data: 'Mức độ khả thi' },
-            { data: 'Phụ trách' }
+            { data: 'PIC' }
         ],
         "scrollY": 530,
         "scrollX": true,
@@ -383,9 +383,9 @@
             });
         },
         "createdRow": function(row, data, dataIndex) {
-            if (format(data['Mức độ tình trạng']).match(/chậm/i) !=null) {
+            if (format(data['Mức độ cảnh báo']).match(/cao/i) !=null) {
                 $(row).addClass("highlight");
-            } else if (format(data['Mức độ tình trạng']).match(/sắp/i) !=null) {
+            } else if (format(data['Mức độ cảnh báo']).match(/trung bình/i) !=null) {
                 $(row).addClass("highlight2");
             }else{
             	$(row).addClass("highlight3");
@@ -412,18 +412,18 @@
         columns: [{
             data: 'Dự án/Gói thầu',
             render: function(data, type, row) {
-            	var n = format(row['Mức độ tình trạng']); 
-               	if (n.match(/chậm/i) != null) {
+            	var n = format(row['Mức độ cảnh báo']); 
+               	if (n.match(/cao/i) != null) {
 					var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css"' + 
 								'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 								data +
-								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
+								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 							'</a>';
 				} else {
 					var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
 									'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 									data +
-									'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
+									'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 								'</a>';
 				}
 					
@@ -462,9 +462,9 @@
             });
         },
         "createdRow": function(row, data, dataIndex) {
-        	if (format(data['Mức độ tình trạng']).match(/chậm/i) !=null) {
+        	if (format(data['Mức độ cảnh báo']).match(/cao/i) !=null) {
                 $(row).addClass("highlight");
-            } else if (format(data['Mức độ tình trạng']).match(/sắp/i) !=null) {
+            } else if (format(data['Mức độ cảnh báo']).match(/trung bình/i) !=null) {
                 $(row).addClass("highlight2");
             }else {
             	$(row).addClass("highlight3");

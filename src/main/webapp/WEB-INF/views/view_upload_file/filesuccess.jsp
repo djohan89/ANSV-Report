@@ -75,16 +75,16 @@
 			                		var n = format(row['Mức độ tình trạng']);
 			  	                   	 /* var check_n = ["Chậm","chậm"]; */ 
 			  	                   	if (n.match(/chậm/i) != null) {
-										var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
-														'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+										var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["TT"]+'" class="tooltip_css" target="_blank"' + 
+														'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["TT"]+')">' +
 														data +
 														'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tình trạng"]) + '</span>' +
 													'</a>';
 									} else {
-										var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
-														'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+										var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["TT"]+'" class="tooltip_css" target="_blank"' + 
+														'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["TT"]+')">' +
 														data +
-														'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tình trạng"]) + '</span>' +
+														'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 													'</a>';
 									}
 										
@@ -160,13 +160,13 @@
 										var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
 														'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 														data +
-														'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
+														'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 													'</a>';
 									} else {
 										var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
 														'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 														data +
-														'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
+														'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 													'</a>';
 									}
 										
@@ -174,7 +174,7 @@
 								}
 			                },
 			                { data: 'Khách hàng' },
-			                { data: 'Mức độ tình trạng' },
+			                { data: 'Mức độ cảnh báo' },
 			                { data: 'PIC' } 
 			            ],
 			            "scrollY": 500,
@@ -203,9 +203,9 @@
 			                } );
 			            },
 						"createdRow" : function(row, data, dataIndex) {
-							if (format(data['Mức độ tình trạng']).match(/chậm/i) !=null) {
+							if (format(data['Mức độ cảnh báo']).match(/cao/i) !=null) {
 			  	                $(row).addClass("highlight");
-			  	            } else if (format(data['Mức độ tình trạng']).match(/sắp/i) !=null) {
+			  	            } else if (format(data['Mức độ cảnh báo']).match(/trung bình/i) !=null) {
 			  	                $(row).addClass("highlight2");
 			  	            }else{
 			  	            	$(row).addClass("highlight3");
@@ -241,13 +241,13 @@
 										var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
 														'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 														data +
-														'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
+														'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 													'</a>';
 									} else {
 										var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
 														'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 														data +
-														'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tồn tại, vướng mắc, đề xuất giải pháp"]) + '</span>' +
+														'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 													'</a>';
 									}
 										
@@ -255,7 +255,7 @@
 								}
 			                },
 			                { data: 'Khách hàng' },
-			                { data: 'Mức độ tình trạng' },
+			                { data: 'Mức độ cảnh báo' },
 			                { data: 'PIC' } 
 			            ],
 			            "scrollY": 500,
@@ -284,9 +284,9 @@
 			                } );
 			            },
 						"createdRow" : function(row, data, dataIndex) {
-							if (format(data['Mức độ tình trạng']).match(/chậm/i) !=null) {
+							if (format(data['Mức độ cảnh báo']).match(/cao/i) !=null) {
 			  	                $(row).addClass("highlight");
-			  	            } else if (format(data['Mức độ tình trạng']).match(/sắp/i) !=null) {
+			  	            } else if (format(data['Mức độ cảnh báo']).match(/trung bình/i) !=null) {
 			  	                $(row).addClass("highlight2");
 			  	            } else {
 			  	            	$(row).addClass("highlight3");
@@ -444,7 +444,7 @@
 									<tr>
 										<th><b>Dự án</b></th>
 										<th><b>Nhóm</b></th>
-										<th><b>Tình trạng</b></th>
+										<th><b>Mức độ cảnh báo</b></th>
 										<th><b>Phụ trách</b></th>
 									</tr>
 								</thead>
@@ -480,7 +480,7 @@
 									<tr>
 										<th><b>Dự án</b></th>
 										<th><b>Nhóm</b></th>
-										<th><b>Tình trạng</b></th>
+										<th><b>Mức độ cảnh báo</b></th>
 										<th><b>Phụ trách</b></th>
 									</tr>
 								</thead>

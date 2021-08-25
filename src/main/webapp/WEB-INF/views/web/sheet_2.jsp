@@ -105,16 +105,15 @@ color: #fff;}
 			                                '</div>'
 
 			                            +
-			                            '<p><b>Người phụ trách:</b> ' + format(item["Phụ trách"]) + '</p>' +
+			                            '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
 			                                '<p style="white-space: pre-wrap;"><b>Mô tả dự án:</b> ' + format(item["Mô tả dự án"]) + ' </p>' +
 			                                '<p><b>Tổng mức đầu tư:</b> ' + format(item["Tổng mức đầu tư"]) + '</p>' +
-			                                '<p><b>Đăng ký kế hoạch dự án:</b> ' + format_date(item["Đăng ký kế hoạch dự án"]) + '</p>' +
 			                                '<p><b>Hình thức đầu tư:</b> ' + format(item["Hình thức đầu tư"]) + '</p>' +
 			                                '<p><b>Mức độ ưu tiên:</b> ' + format(item["Mức độ ưu tiên"]) + '</p>' +
 			                                '<p><b>Mức độ khả thi:</b> ' + format(item["Mức độ khả thi"]) + ' </p>' +
-			                                '<p style="white-space: pre-wrap;"><b>Tình trạng:</b> ' + format(item["Tình trạng dự án"]) + '</p>' +
+			                                '<p style="white-space: pre-wrap;"><b>Tình trạng & Kế hoạch chi tiết:</b> ' + format(item["Tình trạng & Kế hoạch chi tiết"]) + '</p>' +
+			                                '<p><b>Phân tích SWOT:</b> ' + format(item["Phân tích SWOT"]) + ' </p>' +
 			                                '<p><b>Kết quả thực hiện kế hoạch:</b> ' + format(item["Kết quả thực hiện kế hoạch"]) + '</p>' +
-			                                '<p><b>Tồn tại vướng mắc:</b> ' + format(item["Tồn tại, vướng mắc, đề xuất giải pháp"]) + ' </p>' +
 			                                '</div>';
 
 			                        } else {
@@ -127,16 +126,15 @@ color: #fff;}
 			                                '</div>'
 
 			                            +
-			                            '<p><b>Người phụ trách:</b> ' + format(item["Phụ trách"]) + '</p>' +
+			                            '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
 			                                '<p style="white-space: pre-wrap;"><b>Mô tả dự án:</b> ' + format(item["Mô tả dự án"]) + ' </p>' +
 			                                '<p><b>Tổng mức đầu tư:</b> ' + format(item["Tổng mức đầu tư"]) + '</p>' +
-			                                '<p><b>Đăng ký kế hoạch dự án:</b> ' + format(item["Đăng ký kế hoạch dự án"]) + '</p>' +
 			                                '<p><b>Hình thức đầu tư:</b> ' + format(item["Hình thức đầu tư"]) + '</p>' +
 			                                '<p><b>Mức độ ưu tiên:</b> ' + format(item["Mức độ ưu tiên"]) + '</p>' +
 			                                '<p><b>Mức độ khả thi:</b> ' + format(item["Mức độ khả thi"]) + ' </p>' +
-			                                '<p style="white-space: pre-wrap;"><b>Tình trạng:</b> ' + format(item["Tình trạng dự án"]) + '</p>' +
+			                                '<p style="white-space: pre-wrap;"><b>Tình trạng & Kế hoạch chi tiết:</b> ' + format(item["Tình trạng & Kế hoạch chi tiết"]) + '</p>' +
+			                                '<p><b>Phân tích SWOT:</b> ' + format(item["Phân tích SWOT"]) + ' </p>' +
 			                                '<p><b>Kết quả thực hiện kế hoạch:</b> ' + format(item["Kết quả thực hiện kế hoạch"]) + '</p>' +
-			                                '<p><b>Tồn tại vướng mắc:</b> ' + format(item["Tồn tại, vướng mắc, đề xuất giải pháp"]) + ' </p>' +
 			                                '</div>';
 
 			                        }
