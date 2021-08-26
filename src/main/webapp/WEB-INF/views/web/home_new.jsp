@@ -334,13 +334,19 @@
             render: function(data, type, row) {
             	var n = format(row['Mức độ cảnh báo']);
                	 /* var check_n = ["Chậm","chậm"]; */ 
-               	if (n.match(/cao/i) != null) {
+               	if (n.match(/high/i) != null) {
 					var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css"' + 
 								'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 								data +
 								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 							'</a>';
-				} else {
+				}else if(n.match(/medium/i) != null){
+					var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+					'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+					data +
+					'<br><span class="tooltiptext" style="background-color: #ff9900;">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
+				'</a>';
+				}else {
 					var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
 									'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 									data +
@@ -383,9 +389,9 @@
             });
         },
         "createdRow": function(row, data, dataIndex) {
-            if (format(data['Mức độ cảnh báo']).match(/cao/i) !=null) {
+            if (format(data['Mức độ cảnh báo']).match(/high/i) !=null) {
                 $(row).addClass("highlight");
-            } else if (format(data['Mức độ cảnh báo']).match(/trung bình/i) !=null) {
+            } else if (format(data['Mức độ cảnh báo']).match(/medium/i) !=null) {
                 $(row).addClass("highlight2");
             }else{
             	$(row).addClass("highlight3");
@@ -413,13 +419,19 @@
             data: 'Dự án/Gói thầu',
             render: function(data, type, row) {
             	var n = format(row['Mức độ cảnh báo']); 
-               	if (n.match(/cao/i) != null) {
+               	if (n.match(/high/i) != null) {
 					var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css"' + 
 								'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 								data +
 								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 							'</a>';
-				} else {
+				}else if(n.match(/medium/i) != null){
+					var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
+					'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+					data +
+					'<br><span class="tooltiptext" style="background-color: #ff9900;">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
+				'</a>';
+				}else {
 					var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
 									'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 									data +
@@ -432,7 +444,7 @@
             },
             { data: 'Khách hàng' },
             { data: 'Mức độ khả thi' },
-            { data: 'Phụ trách' }
+            { data: 'PIC' }
         ],
         "scrollY": 530,
         "scrollX": true,
@@ -462,9 +474,9 @@
             });
         },
         "createdRow": function(row, data, dataIndex) {
-        	if (format(data['Mức độ cảnh báo']).match(/cao/i) !=null) {
+        	if (format(data['Mức độ cảnh báo']).match(/high/i) !=null) {
                 $(row).addClass("highlight");
-            } else if (format(data['Mức độ cảnh báo']).match(/trung bình/i) !=null) {
+            } else if (format(data['Mức độ cảnh báo']).match(/medium/i) !=null) {
                 $(row).addClass("highlight2");
             }else {
             	$(row).addClass("highlight3");

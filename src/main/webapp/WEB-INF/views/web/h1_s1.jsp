@@ -45,7 +45,7 @@
 
 <script type="text/javascript">
 function return_header(u,t,sl){
-	document.getElementById("name_header_1").innerHTML = file_view_1;
+	document.getElementById("name_header_1").innerHTML = header_sheet_1_fix_2;
 	document.getElementById("u").innerHTML = u;
 	var string_t = format_t(t);
 	if(t==1){
@@ -79,13 +79,12 @@ function return_header(u,t,sl){
 	  		var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
 			/* console.log(XL_row_object); */
 	    	 XL_row_object.forEach(item=>{
-	    		  console.log(item["Khách hàng"] +"," +item["TT"]); 
 	    		 if(item["Priority"]==u){
 	    			  var reg = new RegExp(string_t, 'gi');
 	    			  if(format(item["Mức độ tình trạng"]).match(reg) != null){
 	    				  let row1 = '<div class="container tab-pane" ><br>' +
 	                        '<div>' +
-	                        '<h5 class="pb-3"><b>Tên dự án:</b> <a class="name" href="bao_cao_sheet_1?id_p1=' + item["STT"] + '" onclick="return project_link_sheet_1(' + item["STT"] + ')"' +
+	                        '<h5 class="pb-3"><b>Tên dự án:</b> <a class="name" href="bao_cao_sheet_1?id_p1=' + item["TT"] + '" onclick="return project_link_sheet_1(' + item["STT"] + ')"' +
 	                        '> ' + format(item["Dự án/Gói thầu"]) + '</a></h5>' +
 	                        '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
 	                        '<p style="white-space: pre-wrap;"><b>Phạm vi cung cấp:</b> ' + format(item["Phạm vi cung cấp"]) + '</p>' +

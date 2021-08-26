@@ -214,16 +214,17 @@
 					       		    var groupedPeople1 = groupArrayOfObjects(XL_row_object, "Khách hàng");
 					       		  	var dem1 = Object.keys(groupedPeople1).length;
 					       	    	var item1 = Object.keys(groupedPeople1);
+					       	    	var value1 = Object.values(groupedPeople1);
 				       	    /* console.log(item); */
 						       	    for (let i = 0; i < dem1; i++) {
 						       	        let row = '<li class="nav-item">' +
 									       	            '<a href="sheet_1?kh_s1_id=' + item1[i] + '" class="nav-link d-flex"' +
 									       	            'id="sheet1-' + item1[i] + '" data-toggle="tooltip"  data-html="true"' +
-									       	            'onclick = "return menu_link(' + item1[i] + ') " title="<p>Tổng số dự án: 2</p>' +
-										       	            '<p>Số dự án chậm tiến độ: 0</p><p>Số dự án bị hủy: 0</p>">' +
+									       	            'onclick = "return menu_link(' + item1[i] + ') " ' +
 										       	            '<i class="nav-icon far fa-hand-point-right" style="font-size: 1rem; margin-left: 6%;"></i>' +
 										       	            '<p style="font-size: 13px;">' +
 											       	            item1[i] +
+											       	         '<span class="badge badge-info right">' + value1[i].length + '</span>' +
 											       	            	/* ' <span class="badge badge-pill badge-danger">0</span>' +
 											       	            	' <span class="badge badge-pill badge-warning">0</span>' +
 											       	            	' <span class="badge badge-pill badge-secondary">2</span> / ' +
@@ -295,16 +296,17 @@
 						   		 	var groupedPeople2 = groupArrayOfObjects(XL_row_object, "Khách hàng");
 							   		var dem2 = Object.keys(groupedPeople2).length;
 							   		var item2 = Object.keys(groupedPeople2);
+							   		var value2 = Object.values(groupedPeople2);
 	
 							   		for (let i = 0; i < dem2; i++) {
 							   		     let row = '<li class="nav-item">' +
 										   		         '<a href="sheet_2?kh_s2_id=' + item2[i] + '" class="nav-link d-flex"' +
 										   		         'id="sheet2-' + item2[i] + '" data-toggle="tooltip"  data-html="true"' +
-										   		         'onclick = "return menu_link2(' + item2[i] + ') " title="<p>Tổng số dự án: 2</p>' +
-											   		         '<p>Số dự án chậm tiến độ: 0</p><p>Số dự án bị hủy: 0</p>">' +
+										   		         'onclick = "return menu_link2(' + item2[i] + ') " ' +
 											   		         '<i class="nav-icon far fa-hand-point-right" style="font-size: 1rem; margin-left: 6%;"></i>' +
 											   		         '<p style="font-size: 13px;">' +
 												   		         item2[i] +
+												   		      '<span class="badge badge-info right">' + value2[i].length + '</span>' +
 												   		         /* ' <span class="badge badge-pill badge-danger">0</span>' +
 												   		         ' <span class="badge badge-pill badge-warning">0</span>' +
 												   		         ' <span class="badge badge-pill badge-secondary">2</span> / ' +
@@ -375,6 +377,7 @@
 							   		var groupedPeople3 = groupArrayOfObjects(XL_row_object, "Khách hàng");
 							   		var dem3 = Object.keys(groupedPeople3).length;
 							   		var item3 = Object.keys(groupedPeople3);
+							   		var value3 = Object.values(groupedPeople3);
 
 							   		for (let i = 0; i < dem3; i++) {
 							   			if(item3[i].match(/&/i) != null){
@@ -383,11 +386,11 @@
 							   		    let row ='<li class="nav-item">' +
 									   		        '<a href="sheet_3?kh_s3_id=' + item3[i] + '" class="nav-link d-flex"' +
 									   		        'id="sheet3-' + item3[i] + '" data-toggle="tooltip"  data-html="true"' +
-									   		        'onclick = "return menu_link3(' + item3[i] + ') " title="<p>Tổng số dự án: 2</p>' +
-									   		        	'<p>Số dự án chậm tiến độ: 0</p><p>Số dự án bị hủy: 0</p>">' +
+									   		        'onclick = "return menu_link3(' + item3[i] + ') " ' +
 									   		        	'<i class="nav-icon far fa-hand-point-right" style="font-size: 1rem; margin-left: 6%;"></i>' +
 									   		        	'<p style="font-size: 13px;">' +
 									   		       			 item3[i] +
+									   		       		'<span class="badge badge-info right">' + value3[i].length + '</span>' +
 									   		       /*  ' <span class="badge badge-pill badge-danger">0</span>' +
 									   		        ' <span class="badge badge-pill badge-warning">0</span>' +
 									   		        ' <span class="badge badge-pill badge-secondary">2</span> / ' +

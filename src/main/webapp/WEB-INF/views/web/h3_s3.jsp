@@ -17,7 +17,7 @@
 				<section class="col-lg-12">
 					<h4 id="name_header_3">Hello Test 33333333333</h4>
 					<div>
-						<p>Ở mức độ ưu tiên <span id = "u"></span> tình trạng <span id="t"></span> có <span id="sl"></span> dự án:</p>
+						<p>Ở mức độ ưu tiên <span id = "u"></span> mức độ cảnh báo <span id="t"></span> có <span id="sl"></span> dự án:</p>
 					</div>
 					<div class="owl-carousel owl-theme" id="detail_slide_s3">
 
@@ -26,14 +26,14 @@
 					</div>
 					<script type="text/javascript">
 					function return_header(u,t,sl){
-						document.getElementById("name_header_3").innerHTML = file_view_3;
+						document.getElementById("name_header_3").innerHTML = header_sheet_3_fix_2;
 						document.getElementById("u").innerHTML = u;
-						if(t==1){
-							document.getElementById("t").innerHTML = "đang hoàn thành hoặc đúng tiến độ";
+						if(t==1){ 
+							document.getElementById("t").innerHTML = "thấp";
 						}else if(t==2){
-							document.getElementById("t").innerHTML = "sắp vượt quá thời gian dự kiến";
+							document.getElementById("t").innerHTML = "trung bình";
 						}else{
-							document.getElementById("t").innerHTML = "chậm tiến độ";
+							document.getElementById("t").innerHTML = "cao";
 						}
 						
 						
@@ -62,28 +62,27 @@
 						    	 XL_row_object.forEach(item=>{
 						    		 if(item["Mức độ ưu tiên"]==u){
 						    			  var reg = new RegExp(format_t(t), 'gi');
-						    			  if(item["Mức độ tình trạng"].match(reg) != null){
-					    				 		 let row = '<div class="container tab-pane active" ><br>' +
+						    			  if(item["Mức độ cảnh báo"].match(reg) != null){
+					    				 		 let row3 = '<div class="container tab-pane active" ><br>' +
 					                                '<div class="row ">' +
 					                                '<div class="text-center col-md-12">' +
-					                                '<h4><a class="name" href="bao_cao_sheet_2?id_p2=' + item["STT"] + '" onclick="return project_link_2(' + item["STT"] + ')"' +
+					                                '<h4><a class="name" href="bao_cao_sheet_3?id_p3=' + item["STT"] + '" onclick="return project_link_3(' + item["STT"] + ')"' +
 					                                '> ' + format(item["Dự án/Gói thầu"]) + '</a></h4>' +
 					                                '</div>' +
 					                                '</div>'
 
 					                            +
-					                            '<p><b>Người phụ trách:</b> ' + format(item["Phụ trách"]) + '</p>' +
+					                            '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
 					                                '<p style="white-space: pre-wrap;"><b>Mô tả dự án:</b> ' + format(item["Mô tả dự án"]) + ' </p>' +
 					                                '<p><b>Tổng mức đầu tư:</b> ' + format(item["Tổng mức đầu tư"]) + '</p>' +
-					                                '<p><b>Đăng ký kế hoạch dự án:</b> ' + format_date(item["Đăng ký kế hoạch dự án"]) + '</p>' +
 					                                '<p><b>Hình thức đầu tư:</b> ' + format(item["Hình thức đầu tư"]) + '</p>' +
 					                                '<p><b>Mức độ ưu tiên:</b> ' + format(item["Mức độ ưu tiên"]) + '</p>' +
 					                                '<p><b>Mức độ khả thi:</b> ' + format(item["Mức độ khả thi"]) + ' </p>' +
-					                                '<p style="white-space: pre-wrap;"><b>Tình trạng:</b> ' + format(item["Tình trạng dự án"]) + '</p>' +
-					                                '<p><b>Kết quả thực hiện kế hoạch:</b> ' + format(item["Kết quả thực hiện kế hoạch"]) + '</p>' +
-					                                '<p><b>Tồn tại vướng mắc:</b> ' + format(item["Tồn tại, vướng mắc, đề xuất giải pháp"]) + ' </p>'+
+					                                '<p style="white-space: pre-wrap;"><b>Tình trạng:</b> ' + format(item["Tình trạng & Kế hoạch chi tiết"]) + '</p>' +
+					                                '<p style="white-space: pre-wrap;"><b>Phân tích SWOT:</b> ' + format(item["Phân tích SWOT"]) + ' </p>'+
+					                                '<p style="white-space: pre-wrap;"><b>Kết quả thực hiện kế hoạch:</b> ' + format(item["Kết quả thực hiện kế hoạch"]) + '</p>' +
 					                                '</div>';
-					                          detail_slide_s3.innerHTML += row;	
+					                          detail_slide_s3.innerHTML += row3;	
 						    			  } 
 						    		 };
 						    	 });
@@ -124,11 +123,11 @@
 		
 		function format_t(t){
 			if(t==1){
-				return "hoàn thành" ;
+				return "low" ;
 			}else if(t==2){
-				return "sắp";
+				return "medium";
 			}else{
-				return "chậm";
+				return "high";
 			}
 		}
 		
