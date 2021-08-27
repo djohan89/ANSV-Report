@@ -33,10 +33,11 @@ color: #fff;}
 	<!-- /.content-header -->
 
 	<!-- Main content -->
-	<section class="content">
-		<div class="container-fluid ">
-			<h2 id="title"></h2>
-    <div class="container bg-dark text-white">
+	<section class="">
+		<div class=" ">
+			
+    <div class="bg-dark text-white" style="height: 100vh">
+    	<h2 id="title"></h2>
         <nav>
             <ul class="nav nav-tabs" id="data_ul">
             </ul>
@@ -98,7 +99,7 @@ color: #fff;}
 		                        let row2 = "";
 		                        if (idx == 1) {
 
-		                            row2 += '<div id="' + idx + '" class="container tab-pane active" ><br>' +
+		                            row2 += '<div id="' + idx + '" class="pl-5 tab-pane active" ><br>' +
 		                                '<div>' +
 		                                '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
 		                                '<p><b>Tên dự án:</b> <a href="bao_cao_sheet_1?id_p1=' + item["TT"] + '" onclick="return project_link_sheet_1(' + item["TT"] + ')"' +
@@ -174,7 +175,7 @@ color: #fff;}
 		                                '</div>';
 
 			                      	} else {
-			                            row2 += '<div id="' + idx + '" class="container tab-pane fade" ><br>' +
+			                            row2 += '<div id="' + idx + '" class="pl-5 tab-pane fade" ><br>' +
 			                                '<div>' +
 			                                '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
 			                                '<p><b>Tên dự án:</b><a href="bao_cao_sheet_1?id_p1=' + item["TT"] + '" onclick="return project_link_sheet_1(' + item["TT"] + ')"' +
