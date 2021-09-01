@@ -31,10 +31,11 @@ color: #fff;}
 	<!-- /.content-header -->
 
 	<!-- Main content -->
-	<section class="content">
-		<div class="container-fluid ">
-			<h2 id="title"></h2>
-    <div class="container bg-dark text-white">
+	<section class="">
+		<div class=" ">
+			
+    <div class="pl-5 bg-dark text-white" style="height: 100vh">
+    	<h2 id="title"></h2>
         <nav>
             <ul class="nav nav-tabs" id="data_ul">
             </ul>
@@ -95,7 +96,7 @@ color: #fff;}
 	                        data_ul.innerHTML += row1;
 	                        let row2 = "";
 	                        if (idx == 1) {
-	                            row2 += '<div id="' + idx + '" class="container tab-pane active" ><br>' +
+	                            row2 += '<div id="' + idx + '" class="pl-5 tab-pane active" ><br>' +
 		                                	'<div class="row ">' +
 		                                	'<div class="text-center col-md-12">' +
 			                                '<h4><a href="bao_cao_sheet_2?id_p2=' + item["STT"] + '" onclick="return project_link_2(' + item["STT"] + ')"' +
@@ -109,13 +110,13 @@ color: #fff;}
 		                                '<p><b>Hình thức đầu tư:</b> '+format(item["Hình thức đầu tư"]) + '</p>' +
 		                                '<p><b>Mức độ ưu tiên:</b> '+format(item["Mức độ ưu tiên"]) + '</p>' +
 		                                '<p><b>Mức độ khả thi:</b> '+format(item["Mức độ khả thi"]) + ' </p>' +
-		                                '<p style="white-space: pre-wrap;"><b>Tình trạng:</b> '+format(item["Tình trạng & Kế hoạch chi tiết"]) + '</p>' +
-		                                '<p><b>Tồn tại vướng mắc:</b> '+format(item["Phân tích SWOT"]) + ' </p>' +
-		                                '<p><b>Kết quả thực hiện kế hoạch:</b> '+format(item["Kết quả thực hiện kế hoạch"]) + '</p>' +
+		                                '<p style="white-space: pre-wrap;"><b>Tình trạng & Kế hoạch chi tiết:</b> '+format(item["Tình trạng & Kế hoạch chi tiết"]) + '</p>' +
+		                                '<p style="white-space: pre-wrap;"><b>Phân tích SWOT:</b> '+format(item["Phân tích SWOT"]) + ' </p>' +
+		                                '<p style="white-space: pre-wrap;"><b>Kết quả thực hiện kế hoạch:</b> '+format(item["Kết quả thực hiện kế hoạch"]) + '</p>' +
 		                                '</div>';
 
 		                        } else {
-		                            row2 += '<div id="' + idx + '" class="container tab-pane fade" ><br>' +
+		                            row2 += '<div id="' + idx + '" class="pl-5 tab-pane fade" ><br>' +
 		                                '<div class="row ">' +
 		                                '<div class="text-center col-md-12">' +
 		                                '<h4><a href="bao_cao_sheet_2?id_p2=' + item["STT"] + '" onclick="return project_link_2(' + item["STT"] + ')"' +
@@ -130,9 +131,9 @@ color: #fff;}
 		                                '<p><b>Hình thức đầu tư:</b> ' + format(item["Hình thức đầu tư"]) + '</p>' +
 		                                '<p><b>Mức độ ưu tiên:</b> ' + format(item["Mức độ ưu tiên"]) + '</p>' +
 		                                '<p><b>Mức độ khả thi:</b> ' + format(item["Mức độ khả thi"]) + ' </p>' +
-		                                '<p style="white-space: pre-wrap;"><b>Tình trạng:</b> ' + format(item["Tình trạng & Kế hoạch chi tiết"]) + '</p>' +
-		                                '<p><b>Tồn tại vướng mắc:</b> '+format(item["Phân tích SWOT"]) + ' </p>' +
-		                                '<p><b>Kết quả thực hiện kế hoạch:</b> ' + format(item["Kết quả thực hiện kế hoạch"]) + '</p>' +
+		                                '<p style="white-space: pre-wrap;"><b>Tình trạng & Kế hoạch chi tiết:</b> ' + format(item["Tình trạng & Kế hoạch chi tiết"]) + '</p>' +
+		                                '<p style="white-space: pre-wrap;"><b>Phân tích SWOT:</b> '+format(item["Phân tích SWOT"]) + ' </p>' +
+		                                '<p style="white-space: pre-wrap;"><b>Kết quả thực hiện kế hoạch:</b> ' + format(item["Kết quả thực hiện kế hoạch"]) + '</p>' +
 		                                '</div>';
 
 		                        }

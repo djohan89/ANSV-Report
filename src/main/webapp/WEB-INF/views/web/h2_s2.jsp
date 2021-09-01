@@ -63,7 +63,7 @@
 						    		 if(item["Mức độ ưu tiên"]==u){
 						    			  var reg = new RegExp(format_t(t), 'gi');
 						    			  if(item["Mức độ cảnh báo"].match(reg) != null){
-					    				 		 let row = '<div class="container tab-pane active" ><br>' +
+					    				 		 let row = '<div class="pl-5 tab-pane active" ><br>' +
 					                                '<div class="row ">' +
 					                                '<div class="text-center col-md-12">' +
 					                                '<h4><a class="name" href="bao_cao_sheet_2?id_p2=' + item["STT"] + '" onclick="return project_link_2(' + item["STT"] + ')"' +

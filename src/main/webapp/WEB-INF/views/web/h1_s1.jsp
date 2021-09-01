@@ -82,7 +82,7 @@ function return_header(u,t,sl){
 	    		 if(item["Priority"]==u){
 	    			  var reg = new RegExp(string_t, 'gi');
 	    			  if(format(item["Mức độ tình trạng"]).match(reg) != null){
-	    				  let row1 = '<div class="container tab-pane" ><br>' +
+	    				  let row1 = '<div class="pl-5 tab-pane" ><br>' +
 	                        '<div>' +
 	                        '<h5 class="pb-3"><b>Tên dự án:</b> <a class="name" href="bao_cao_sheet_1?id_p1=' + item["TT"] + '" onclick="return project_link_sheet_1(' + item["STT"] + ')"' +
 	                        '> ' + format(item["Dự án/Gói thầu"]) + '</a></h5>' +
