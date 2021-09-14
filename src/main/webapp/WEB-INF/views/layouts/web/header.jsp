@@ -163,19 +163,7 @@
 
 
 <script>
-	//define a date object variable that will take the current system date
-    todaydate = new Date();
-
-    //find the year of the current date
-    var oneJan = new Date(todaydate.getFullYear(), 0, 1);
-
-    // calculating number of days in given year before a given date 
-    var numberOfDays = Math.floor((todaydate - oneJan) / (24 * 60 * 60 * 1000));
-
-    // adding 1 since to current date and returns value starting from 0 
-    var result = Math.ceil((todaydate.getDay() + 1 + numberOfDays) / 7) - 1;
-
-    var d = new Date();
+	var d = new Date();
     var m = d.getMonth();
     var y = d.getFullYear();
 
@@ -183,7 +171,10 @@
     var file_year = y;
 
 // Khai báo tuần hiện tại
-	var tuan_nay = result + 1;
+	let now = new Date();
+    let onejan = new Date(now.getFullYear(), 0, 1);
+    let tuan_nay = Math.ceil((((now.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() - 1) / 7);
+	var result = tuan_nay - 1;
 
     // Khai báo tên đúng của file muốn thực hiện upload: File muốn upload là báo cáo của tuần này
     var file_upload_accept_chuoi_dau_1 = "Báo cáo KH Triển khai tuần";
