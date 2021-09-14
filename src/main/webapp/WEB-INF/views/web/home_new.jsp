@@ -665,6 +665,7 @@
 	}
 </script>
 <script type="text/javascript">
+
 var detail_slide = document.getElementById("detail_slide");
 var modal_title = document.getElementById("modal_title");
 
@@ -691,7 +692,7 @@ oReq_slide.onload = function(e) {
 		  			if(format(item["Mức độ tình trạng"]).match(/chậm/i) != null){
 		  				let row1 = '<div class="container tab-pane" ><br>' +
                         '<div>' +
-                        '<h5 class="pb-3"><b>Tên dự án:</b> <a style="color:#dc3545;" href="bao_cao_sheet_1?id_p1=' + item["STT"] + '" onclick="return project_link_sheet_1(' + item["STT"] + ')"' +
+                        '<h5 class="pb-3"><b>Tên dự án:</b> <a style="color:#dc3545;" href="bao_cao_sheet_1?id_p1=' + item["TT"] + '" onclick="return project_link_sheet_1(' + item["TT"] + ')"' +
                         '> ' + format(item["Dự án/Gói thầu"]) + '</a></h5>' +
                         '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
                         '<p style="white-space: pre-wrap;"><b>Phạm vi cung cấp:</b> ' + format(item["Phạm vi cung cấp"]) + '</p>' +
@@ -772,6 +773,7 @@ oReq_slide.onload = function(e) {
 oReq_slide.send();
 
 $(document).ready(function(){
+	
 	$('#myModal').modal('show');
     
     var owl = $('.owl-carousel');

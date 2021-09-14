@@ -34,7 +34,7 @@ color: #fff;}
 	<section class="">
 		<div>
 			
-    <div class="bg-dark text-white" style="height: 100vh">
+    <div class="bg-dark text-white" style="height: 100%">
     	<h2 class="pl-5" id="title"></h2>
         <nav>
             <ul class="nav nav-tabs" id="data_ul">
