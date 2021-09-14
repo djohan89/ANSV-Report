@@ -164,7 +164,11 @@
 
 <script>
 
+
     var d = new Date();
+
+	var d = new Date();
+
     var m = d.getMonth();
     var y = d.getFullYear();
 
@@ -176,7 +180,10 @@
     let onejan = new Date(now.getFullYear(), 0, 1);
     let tuan_nay = Math.ceil((((now.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() - 1) / 7);
 	var result = tuan_nay - 1;
+
 	
+
+
 
     // Khai báo tên đúng của file muốn thực hiện upload: File muốn upload là báo cáo của tuần này
     var file_upload_accept_chuoi_dau_1 = "Báo cáo KH Triển khai tuần";
