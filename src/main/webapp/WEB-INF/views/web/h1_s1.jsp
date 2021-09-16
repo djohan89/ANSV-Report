@@ -7,8 +7,7 @@
 	href="<c:url value="/assets/user/vendor/dist/assets/owl.theme.default.min.css" />">
 <link rel="stylesheet"
 	href="<c:url value="/assets/user/vendor/dist/assets/owl.carousel.min.css" />">
-<script src="<c:url value="/assets/user/vendor/dist/owl.carousel.min.js" />"></script>
-<script src="<c:url value="/assets/user/vendor/dist/jquery.mousewheel.min.js" />"></script>
+
 
 <div class="content-wrapper" >
 	<!-- Main content -->
@@ -31,6 +30,8 @@
 		</div>
 	</section>
 </div>
+<script src="<c:url value="/assets/user/vendor/dist/owl.carousel.min.js" />"></script>
+			<script src="<c:url value="/assets/user/vendor/dist/jquery.mousewheel.min.js" />"></script>
 
 <style>
 	.danger{
@@ -42,6 +43,7 @@
 	
 
 </style>
+
 
 <script type="text/javascript">
 function return_header(u,t,sl){
@@ -169,6 +171,7 @@ function return_header(u,t,sl){
 
 </script>
 <script type="text/javascript">
+	
 		let params = (new URL(document.location)).searchParams;
 		let u = params.get("u");
 		let t = params.get("t");
@@ -186,6 +189,7 @@ function return_header(u,t,sl){
 			}
 		}
 		$(document).ready(function(){
+			
 			var owl = $('.owl-carousel');
 		    owl.owlCarousel({
 		       items: 1,
@@ -223,5 +227,7 @@ function return_header(u,t,sl){
 		        }
 		        e.preventDefault();
 		    }) */
+		    
 		});
+		
 </script>

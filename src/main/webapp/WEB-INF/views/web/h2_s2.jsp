@@ -60,7 +60,7 @@
 						  		var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
 								/* console.log(XL_row_object); */
 						    	 XL_row_object.forEach(item=>{
-						    		 if(item["Mức độ ưu tiên"]==u){
+						    		 if(item["Priority"]==u){
 						    			  var reg = new RegExp(format_t(t), 'gi');
 						    			  if(item["Mức độ cảnh báo"].match(reg) != null){
 					    				 		 let row = '<div class="pl-5 tab-pane active" ><br>' +

@@ -24,75 +24,7 @@
 						<!-- ===== Phần chèn thêm HTML ===== -->
 
 					</div>
-					<script type="text/javascript">
-					function return_header(u,t,sl){
-						document.getElementById("name_header_3").innerHTML = header_sheet_3_fix_2;
-						document.getElementById("u").innerHTML = u;
-						if(t==1){ 
-							document.getElementById("t").innerHTML = "thấp";
-						}else if(t==2){
-							document.getElementById("t").innerHTML = "trung bình";
-						}else{
-							document.getElementById("t").innerHTML = "cao";
-						}
-						
-						
-						document.getElementById("sl").innerHTML = sl;
-						/* console.log("u = " + u +" t = " + t +" sl = "+ sl); */
-						var oReq = new XMLHttpRequest();
-
-						oReq.open("GET", url3, true);
-						oReq.responseType = "arraybuffer";
-
-						oReq.onload = function(e) {
-							var arraybuffer = oReq.response;
-
-						  	/* convert data to binary string */
-						  	var data = new Uint8Array(arraybuffer);
-						  	var arr = new Array();
-						  	for(var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
-						  	var bstr = arr.join("");
-
-						  	/* Call XLSX */
-						  	var workbook = XLSX.read(bstr, {type:"binary"});
-						  	/* DO SOMETHING WITH workbook HERE */
-						  	workbook.SheetNames.forEach(function(sheetName) {
-						  		var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
-								/* console.log(XL_row_object); */
-						    	 XL_row_object.forEach(item=>{
-						    		 if(item["Mức độ ưu tiên"]==u){
-						    			  var reg = new RegExp(format_t(t), 'gi');
-						    			  if(item["Mức độ cảnh báo"].match(reg) != null){
-					    				 		 let row3 = '<div class="pl-5 tab-pane active" ><br>' +
-					                                '<div class="row ">' +
-					                                '<div class="text-center col-md-12">' +
-					                                '<h4><a class="name" href="bao_cao_sheet_3?id_p3=' + item["STT"] + '" onclick="return project_link_3(' + item["STT"] + ')"' +
-					                                '> ' + format(item["Dự án/Gói thầu"]) + '</a></h4>' +
-					                                '</div>' +
-					                                '</div>'
-
-					                            +
-					                            '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
-					                                '<p style="white-space: pre-wrap;"><b>Mô tả dự án:</b> ' + format(item["Mô tả dự án"]) + ' </p>' +
-					                                '<p><b>Tổng mức đầu tư:</b> ' + format(item["Tổng mức đầu tư"]) + '</p>' +
-					                                '<p><b>Hình thức đầu tư:</b> ' + format(item["Hình thức đầu tư"]) + '</p>' +
-					                                '<p><b>Mức độ ưu tiên:</b> ' + format(item["Mức độ ưu tiên"]) + '</p>' +
-					                                '<p><b>Mức độ khả thi:</b> ' + format(item["Mức độ khả thi"]) + ' </p>' +
-					                                '<p style="white-space: pre-wrap;"><b>Tình trạng:</b> ' + format(item["Tình trạng & Kế hoạch chi tiết"]) + '</p>' +
-					                                '<p style="white-space: pre-wrap;"><b>Phân tích SWOT:</b> ' + format(item["Phân tích SWOT"]) + ' </p>'+
-					                                '<p style="white-space: pre-wrap;"><b>Kết quả thực hiện kế hoạch:</b> ' + format(item["Kết quả thực hiện kế hoạch"]) + '</p>' +
-					                                '</div>';
-					                          detail_slide_s3.innerHTML += row3;	
-						    			  } 
-						    		 };
-						    	 });
-						  	});
-							
-						}
-						oReq.send();
-					};
 					
-					</script>
 				</section>
 			</div>
 		</div>
@@ -130,8 +62,75 @@
 				return "high";
 			}
 		}
+		function return_header(u,t,sl){
+			document.getElementById("name_header_3").innerHTML = header_sheet_3_fix_2;
+			document.getElementById("u").innerHTML = u;
+			if(t==1){ 
+				document.getElementById("t").innerHTML = "thấp";
+			}else if(t==2){
+				document.getElementById("t").innerHTML = "trung bình";
+			}else{
+				document.getElementById("t").innerHTML = "cao";
+			}
+			
+			
+			document.getElementById("sl").innerHTML = sl;
+			/* console.log("u = " + u +" t = " + t +" sl = "+ sl); */
+			var oReq = new XMLHttpRequest();
+
+			oReq.open("GET", url3, true);
+			oReq.responseType = "arraybuffer";
+
+			oReq.onload = function(e) {
+				var arraybuffer = oReq.response;
+
+			  	/* convert data to binary string */
+			  	var data = new Uint8Array(arraybuffer);
+			  	var arr = new Array();
+			  	for(var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
+			  	var bstr = arr.join("");
+
+			  	/* Call XLSX */
+			  	var workbook = XLSX.read(bstr, {type:"binary"});
+			  	/* DO SOMETHING WITH workbook HERE */
+			  	workbook.SheetNames.forEach(function(sheetName) {
+			  		var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+					/* console.log(XL_row_object); */
+			    	 XL_row_object.forEach(item=>{
+			    		 if(item["Priority"]==u){
+			    			  var reg = new RegExp(format_t(t), 'gi');
+			    			  if(item["Mức độ cảnh báo"].match(reg) != null){
+		    				 		 let row3 = '<div class="pl-5 tab-pane active" ><br>' +
+		                                '<div class="row ">' +
+		                                '<div class="text-center col-md-12">' +
+		                                '<h4><a class="name" href="bao_cao_sheet_3?id_p3=' + item["STT"] + '" onclick="return project_link_3(' + item["STT"] + ')"' +
+		                                '> ' + format(item["Dự án/Gói thầu"]) + '</a></h4>' +
+		                                '</div>' +
+		                                '</div>'
+
+		                            +
+		                            '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
+		                                '<p style="white-space: pre-wrap;"><b>Mô tả dự án:</b> ' + format(item["Mô tả dự án"]) + ' </p>' +
+		                                '<p><b>Tổng mức đầu tư:</b> ' + format(item["Tổng mức đầu tư"]) + '</p>' +
+		                                '<p><b>Hình thức đầu tư:</b> ' + format(item["Hình thức đầu tư"]) + '</p>' +
+		                                '<p><b>Mức độ ưu tiên:</b> ' + format(item["Mức độ ưu tiên"]) + '</p>' +
+		                                '<p><b>Mức độ khả thi:</b> ' + format(item["Mức độ khả thi"]) + ' </p>' +
+		                                '<p style="white-space: pre-wrap;"><b>Tình trạng:</b> ' + format(item["Tình trạng & Kế hoạch chi tiết"]) + '</p>' +
+		                                '<p style="white-space: pre-wrap;"><b>Phân tích SWOT:</b> ' + format(item["Phân tích SWOT"]) + ' </p>'+
+		                                '<p style="white-space: pre-wrap;"><b>Kết quả thực hiện kế hoạch:</b> ' + format(item["Kết quả thực hiện kế hoạch"]) + '</p>' +
+		                                '</div>';
+		                          detail_slide_s3.innerHTML += row3;	
+			    			  } 
+			    		 };
+			    	 });
+			  	});
+				
+			}
+			oReq.send();
+		};
 		
 		$(document).ready(function(){
+			
 			var owl = $('.owl-carousel');
 		    owl.owlCarousel({
 		       items: 1,
