@@ -1,16 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-
-
 <!-- ======= Header ======= -->
 <!-- <nav class="main-header navbar navbar-expand navbar-white navbar-light bg-dark"> -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light bg-dark pb-0 mb-0" 
-	style="border-bottom: 0px solid #343a40; height: 130px;">
+<nav class="main-header navbar navbar-expand navbar-white navbar-light pb-0 mb-0" 
+	style="border-bottom: 0px solid #343a40; height: 130px; background: #DCDCDC;">
     <!-- Left navbar links -->
     <ul class="navbar-nav" style="margin-top: -6%;">
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button">
-            	<i class="fas fa-bars" style="color: white; font-size: 25px;"></i>
+            	<i class="fas fa-bars" style="color: black; font-size: 25px;"></i>
             </a>
     </ul>
 
@@ -18,7 +16,7 @@
     <ul class="navbar-nav" style="margin-top: -6%;">
         <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-            	<i class="fas fa-expand-arrows-alt" style="color: white; font-size: 25px;"></i>
+            	<i class="fas fa-expand-arrows-alt" style="color: black; font-size: 25px;"></i>
             </a>
         </li>
     </ul>
@@ -35,21 +33,22 @@
         <div class="col-lg-10">
             <table class="table">
                 <tr>
-                    <td class="font-size-thong-ke pt-1 pb-1" id="name_sheet_header_1">
+                    <td class="font-size-thong-ke pt-1 pb-1" id="name_sheet_header_1" style="font-weight: bold;">
                         BÁO CÁO VƯỚNG MẮC TUẦN 4-THÁNG 4
                     </td>
                     <td class="pt-0 pb-1">
-                        <span class="badge badge-info right" id="u1_t1_s1"></span>
+                    	<!-- <span class="badge badge-info right" id="u1_t1_s1"></span> -->
+                        <span class="badge badge-success right" id="u1_t1_s1"></span>
                         <span class="badge badge-warning right " id="u1_t2_s1"></span>
                         <span class="badge badge-danger right" id="u1_t3_s1"></span>
                     </td>
                     <td class="pt-0 pb-1">
-                        <span class="badge badge-info right" id="u2_t1_s1"></span>
+                        <span class="badge badge-success right" id="u2_t1_s1"></span>
                         <span class="badge badge-warning right" id="u2_t2_s1"></span>
                         <span class="badge badge-danger right" id="u2_t3_s1"></span>
                     </td>
                     <td class="pt-0 pb-1">
-                        <span class="badge badge-info right" id="u3_t1_s1"></span>
+                        <span class="badge badge-success right" id="u3_t1_s1"></span>
                         <span class="badge badge-warning right" id="u3_t2_s1"></span>
                         <span class="badge badge-danger right" id="u3_t3_s1"></span>
                     </td>
@@ -58,21 +57,21 @@
 
 
                 <tr>
-                    <td class="font-size-thong-ke pt-1 pb-1" id="name_sheet_header_2">
+                    <td class="font-size-thong-ke pt-1 pb-1" id="name_sheet_header_2" style="font-weight: bold;">
                         DỰ ÁN KINH DOANH TUẦN 21.17 (AM-BDC)
                     </td>
                     <td class="pt-0 pb-1">
-                        <span class="badge badge-info right" id="u1_t1_s2"></span>
+                        <span class="badge badge-success right" id="u1_t1_s2"></span>
                         <span class="badge badge-warning right" id="u1_t2_s2"></span>
                         <span class="badge badge-danger right" id="u1_t3_s2"></span>
                     </td>
                     <td class="pt-0 pb-1">
-                        <span class="badge badge-info right" id="u2_t1_s2"></span>
+                        <span class="badge badge-success right" id="u2_t1_s2"></span>
                         <span class="badge badge-warning right" id="u2_t2_s2"></span>
                         <span class="badge badge-danger right" id="u2_t3_s2"></span>
                     </td>
                     <td class="pt-0 pb-1">
-                        <span class="badge badge-info right" id="u3_t1_s2"></span>
+                        <span class="badge badge-success right" id="u3_t1_s2"></span>
                         <span class="badge badge-warning right" id="u3_t2_s2"></span>
                         <span class="badge badge-danger right" id="u3_t3_s2"></span>
                     </td>
@@ -81,21 +80,21 @@
 
 
                 <tr>
-                    <td class="font-size-thong-ke pt-1 pb-1" id="name_sheet_header_3">
+                    <td class="font-size-thong-ke pt-1 pb-1" id="name_sheet_header_3" style="font-weight: bold;">
                         DỰ ÁN KINH DOANH TUẦN 21.17 (A.Khanh + A.Tú + A. Đoàn Tuấn)
                     </td>
                     <td class="pt-0 pb-1">
-                        <span class="badge badge-info right" id="u1_t1_s3"></span>
+                        <span class="badge badge-success right" id="u1_t1_s3"></span>
                         <span class="badge badge-warning right" id="u1_t2_s3"></span>
                         <span class="badge badge-danger right" id="u1_t3_s3"></span>
                     </td>
                     <td class="pt-0 pb-1">
-                        <span class="badge badge-info right" id="u2_t1_s3"></span>
+                        <span class="badge badge-success right" id="u2_t1_s3"></span>
                         <span class="badge badge-warning right" id="u2_t2_s3"></span>
                         <span class="badge badge-danger right" id="u2_t3_s3"></span>
                     </td>
                     <td class="pt-0 pb-1">
-                        <span class="badge badge-info right" id="u3_t1_s3"></span>
+                        <span class="badge badge-success right" id="u3_t1_s3"></span>
                         <span class="badge badge-warning right" id="u3_t2_s3"></span>
                         <span class="badge badge-danger right" id="u3_t3_s3"></span>
                     </td>
@@ -114,8 +113,6 @@
 
 
 <style>
-  
-    
     .box_radius {
         border-radius: 15px 15px;
         margin-left: -7%;
@@ -163,12 +160,7 @@
 
 
 <script>
-
-
-    var d = new Date();
-
 	var d = new Date();
-
     var m = d.getMonth();
     var y = d.getFullYear();
 
@@ -179,11 +171,8 @@
 	let now = new Date();
     let onejan = new Date(now.getFullYear(), 0, 1);
     let tuan_nay = Math.ceil((((now.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() - 1) / 7);
+	/* var tuan_nay = result + 1; */
 	var result = tuan_nay - 1;
-
-	
-
-
 
     // Khai báo tên đúng của file muốn thực hiện upload: File muốn upload là báo cáo của tuần này
     var file_upload_accept_chuoi_dau_1 = "Báo cáo KH Triển khai tuần";
@@ -267,7 +256,16 @@
         var url1_new = '<c:url value="/assets/user/upload/' + file_view_1_new + '" />';
         var url2_new = '<c:url value="/assets/user/upload/' + file_view_2_new + '" />';
         var url3_new = '<c:url value="/assets/user/upload/' + file_view_3_new + '" />';
-        show_data(url1_new, url2_new, url3_new, week_selected);
+        
+        // So sánh với tuần được chọn, kiểm trả file báo cáo có tồn tại hay không
+        $.get(url1_new).done(function() { 
+        	// Nếu tồn tại -> cho phép gọi đến hàm thay thế dữ liệu
+        	show_data(url1_new, url2_new, url3_new, week_selected);
+        }).fail(function() { 
+        	// Nếu không tồn tại -> thông báo lại và dừng hành động
+        	alertify.error('Không tồn tại báo cáo tuần ' + week_selected + "!");
+        })
+        
     });
 	
 	/*$('#select_week').on('select2:select', function (e) {
@@ -406,7 +404,6 @@
     function header_link_a1(sl){
     	window.location.href = "h1_s1?u=1&t=1&sl="+sl;
     };
-    
     function header_link_b1(sl){
     	window.location.href = "h1_s1?u=1&t=2&sl="+sl;
     };

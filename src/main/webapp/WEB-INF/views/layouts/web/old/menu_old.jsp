@@ -4,12 +4,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!-- ===== Menu ===== -->
 <style>
-	.logo_center {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		width: 50%;
-	}
 	
 	a.nav-link d-flex {
 		padding-left: 5px;
@@ -26,15 +20,10 @@
 	}
 </style>
 
-<aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #04355d; color: white;">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #04355d;">
 	<!-- Brand Logo -->
-	<!-- <a href="trang_chu" class="brand-link pt-1 pb-2" 
-		style="background-image: url('assets/user/img/khung-hinh-dep-cho-powerpoint_105319973.jpg'); background-size: 100%;"> --> 
-	<a href="trang_chu" class="brand-link pt-1 pb-2">
-		<%-- <img src="<c:url value="/assets/user/img/ANSV_logo.png" />" alt="ANSV Logo" class="brand-image"
-			style="opacity: 0.8; width: 70px; height: 33px; margin-left: -5px;">
-		<span class="brand-text font-weight-light">Company</span> --%>
-		<img src="<c:url value="/assets/user/img/ANSV_logo.png" />" alt="ANSV Logo" class="logo_center"
+	<a href="trang_chu" class="brand-link"> 
+		<img src="<c:url value="/assets/user/img/ANSV_logo.png" />" alt="ANSV Logo" class="center"
 			style="opacity: 0.8; width: 140px;">
 	</a>
 
@@ -174,7 +163,9 @@
 				data-widget="treeview" id="ul_global" role="menu" data-accordion="false">
 				<!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-				<li class="nav-header">Báo cáo</li>
+				<li class="nav-header">
+					<font size="+1">Báo cáo</font>
+				</li>
 				<!-- <li class="nav-item menu-open"><a href="#"
 					class="nav-link d-flex active"> <i class="nav-icon fas fa-table"></i> -->
 				<li class="nav-item">

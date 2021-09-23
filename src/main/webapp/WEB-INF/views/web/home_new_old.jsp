@@ -5,26 +5,19 @@
 
 <title>Trang chủ</title>
 
-<link rel="stylesheet"
-	href="<c:url value="/assets/user/vendor/dist/assets/owl.theme.default.min.css" />">
-<link rel="stylesheet"
-	href="<c:url value="/assets/user/vendor/dist/assets/owl.carousel.min.css" />">
-<script src="<c:url value="/assets/user/vendor/dist/owl.carousel.min.js" />"></script>
-<script src="<c:url value="/assets/user/vendor/dist/jquery.mousewheel.min.js" />"></script> <!-- Thư viện sử dụng con lăn chuột -->
 
 
 <div class="content-wrapper">
 	<!-- Main content -->
+	<section class="content pt-3" id="content_dashboard" style="background-color: lightgray;">
 	<!-- <section class="content pt-3" id="content_dashboard"
-		style="background-image: url('assets/user/img/10.jpg'); background-position: center; min-height: 576px;"> -->
-	<section class="content pt-3" id="content_dashboard"
-		style="background-color: #C0C0C0;">												
+		style="background-image: url('assets/user/img/10.jpg'); background-position: center; min-height: 576px;"> -->												
 		<div class="container-fluid">
 			<div class="row">
 				<section class="col-lg-4">
 					<!-- Sheet 1 card -->
 					<div class="card"
-						style="margin-left: -2%; margin-right: -2%; background: white">
+						style="margin-left: -2%; margin-right: -2%; background: #DCDCDC;">
 						<div class="card-header border-0">
 							<h3 class="card-title d-flex">
 								<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i>
@@ -35,7 +28,7 @@
 							<div class="card-tools">
 								<div class="container">
 									<!-- Trigger the modal with a button -->
-									<button type="button" class="btn btn-danger btn-sm"
+									<button type="button" class="btn btn-primary btn-sm"
 										data-toggle="modal" data-target="#myModal">
 										<!-- <i class="fas fa-exclamation-triangle"></i> -->
 										<i class="fas fa-play"></i>
@@ -65,10 +58,11 @@
 							</div>
 						</div>
 
-						<table id="example_1" class="table" style="width: 100%;">
+						<table id="example_1" class="table bg-primary"
+							style="color: white; width: 100%;">
 							<thead>
-								<tr style="background-color: #D3D3D3;">
-									<th><b>Dự án</b></th>
+								<tr>
+									<th width="180px"><b>Dự án</b></th>
 									<th><b>Nhóm</b></th>
 									<th><b>Tình trạng</b></th>
 									<th style="width: 22%;"><b>PIC</b></th>
@@ -82,7 +76,7 @@
 				<section class="col-lg-4">
 					<!-- Sheet 2 card -->
 					<div class="card"
-						style="margin-left: -2%; margin-right: -2%;">
+						style="margin-left: -2%; margin-right: -2%; background: #D3D3D3;">
 						<div class="card-header border-0">
 							<h3 class="card-title d-flex">
 								<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i>
@@ -100,12 +94,13 @@
 							<!-- /.card-tools -->
 						</div>
 
-						<table id="example_2" class="table" style="width: 100%;">
+						<table id="example_2" class="table bg-gradient-dark"
+							style="color: white; width: 100%;">
 							<thead>
-								<tr style="background-color: #D3D3D3;">
+								<tr>
 									<th><b>Dự án</b></th>
 									<th><b>Nhóm</b></th>
-									<th><b>Khả thi</b></th>
+									<th style="width: 22%;"><b>Khả thi</b></th>
 									<th><b>PIC</b></th>
 								</tr>
 							</thead>
@@ -118,7 +113,7 @@
 				<section class="col-lg-4">
 					<!-- Sheet 3 card -->
 					<div class="card"
-						style="margin-left: -2%; margin-right: -2%;">
+						style="margin-left: -2%; margin-right: -2%; background: rgba(192, 192, 192, 0.3);">
 						<div class="card-header border-0">
 							<h3 class="card-title d-flex">
 								<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i>
@@ -135,9 +130,10 @@
 							</div>
 							<!-- /.card-tools -->
 						</div>
-						<table id="example_3" class="table" style="width: 100%;">
+						<table id="example_3" class="table bg-gradient-dark"
+							style="color: white; width: 100%;">
 							<thead>
-								<tr style="background-color: #D3D3D3;">
+								<tr>
 									<th><b>Dự án</b></th>
 									<th><b>Nhóm</b></th>
 									<th style="width: 22%;"><b>Khả thi</b></th>
@@ -173,16 +169,16 @@
 	.highlight {
 		font-weight: bold;
 		/* color: #FE2E2E; */
-		/* background-color: #FF3333; */
+		background-color: #FE2E2E;
 	}
 	.highlight2 {
 		font-weight: bold;
-		/* background-color: #FF9900; */
+		background-color: #ff9900;
 	}
 	
 	.highlight3 {
 		font-weight: bold;
-		/* background-color: #00CC33; */
+		background-color: #006633;
 	}
 	.change_font_size {
 		font-size: 11px;
@@ -248,45 +244,29 @@
 	var example_1 = $('#example_1').DataTable({
         data: data_view,
         columns: [{
-	            data: 'Dự án/Gói thầu',
-	            render: function(data, type, row) {
-	                var n = format(row['Mức độ tình trạng']);
-	               	 /* var check_n = ["Chậm","chậm"]; */ 
-	               	if (n.match(/chậm/i) != null) {
-						var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["TT"]+'" class="tooltip_css"' + 
-									'style="font-weight: bold;" data-html="true" onclick="return project_link_1('+row["TT"]+')">' +
+            data: 'Dự án/Gói thầu',
+            render: function(data, type, row) {
+                var n = format(row['Mức độ tình trạng']);
+               	 /* var check_n = ["Chậm","chậm"]; */ 
+               	if (n.match(/chậm/i) != null) {
+					var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["TT"]+'" class="tooltip_css"' + 
+								'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link_1('+row["TT"]+')">' +
+								data +
+								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
+							'</a>';
+				} else {
+					var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["TT"]+'" class="tooltip_css" target="_blank"' + 
+									'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link_1('+row["TT"]+')">' +
 									data +
-									'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
+									'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 								'</a>';
-					} else {
-						var html = 	'<a href="bao_cao_sheet_1?id_p1='+row["TT"]+'" class="tooltip_css" target="_blank"' + 
-										'style="font-weight: bold;" data-html="true" onclick="return project_link_1('+row["TT"]+')">' +
-										data +
-										'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
-									'</a>';
-					}
-						
-					return html;
+				}
+					
+				return html;
                 }
             },
             { data: 'Khách hàng' },
-            { 
-            	data: 'Mức độ tình trạng',
-	            render: function(data, type, row) {
-	                var n = format(row['Mức độ tình trạng']);
-	               	if (n.match(/chậm/i) != null) {
-						var html =	'<button type="button" class="btn btn-danger mt-0 pt-0 pb-0 pl-1 pr-1" style="width: 65px;">' + 
-										'<font size="-1">' + data + '</font>' + 
-									'</button>';
-					} else {
-						var html = 	'<button type="button" class="btn btn-success pt-0 pb-0 pl-1 pr-1" style="width: 65px;">' + 
-										'<font size="-1">' + data + '</font>' + 
-									'</button>';
-					}
-						
-					return html;
-                }
-            },
+            { data: 'Mức độ tình trạng' },
             { data: 'PIC' }
         ],
         "scrollY": 530,
@@ -295,8 +275,7 @@
         "paging": false,
         "columnDefs": [
             { "visible": false, "targets": groupColumn },
-            { "targets": '_all', "defaultContent": "" },
-            { "width": "25%", "targets": 2 }
+            { "targets": '_all', "defaultContent": "" }
         ],
         "order": [
             [groupColumn, 'asc']
@@ -310,11 +289,7 @@
             api.column(groupColumn, { page: 'current' }).data().each(function(group, i) {
                 if (last !== group) {
                     $(rows).eq(i).before(
-                        '<tr class="group">' + 
-                        	'<td colspan="18" align="center" style="background-color: #D3D3D3;">' + 
-                        		'<b>----- ' + group + ' -----</b>' + 
-                        	'</td>' + 
-                        '</tr>'
+                        '<tr class="group"><td colspan="18" style="background-color: black; color: white;">' + group + '</td></tr>'
                     );
 
                     last = group;
@@ -355,30 +330,21 @@
                	 /* var check_n = ["Chậm","chậm"]; */ 
                	if (n.match(/high/i) != null) {
 					var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css"' + 
-									'style="font-weight: bold;" data-html="true" ' + 
-									'onclick="return project_link('+row["STT"]+')">' +
-									data + '<br>' + 
-									'<span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + 
-										format(row["Tình trạng & Kế hoạch chi tiết"]) + 
-									'</span>' +
-								'</a>';
+								'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+								data +
+								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
+							'</a>';
 				}else if(n.match(/medium/i) != null){
 					var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
-									'style="font-weight: bold;" data-html="true" ' + 
-									'onclick="return project_link('+row["STT"]+')">' +
-									data + '<br>' + 
-									'<span class="tooltiptext" style="background-color: #ff9900;">' + 
-										format(row["Tình trạng & Kế hoạch chi tiết"]) + 
-									'</span>' +
-								'</a>';
+					'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+					data +
+					'<br><span class="tooltiptext" style="background-color: #ff9900;">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
+				'</a>';
 				}else {
 					var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
-									'style="font-weight: bold;" data-html="true" ' + 
-									'onclick="return project_link('+row["STT"]+')">' +
-									data + '<br>' + 
-									'<span class="tooltiptext" style="background-color: #262626;">' + 
-										format(row["Tình trạng & Kế hoạch chi tiết"]) + 
-									'</span>' +
+									'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+									data +
+									'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 								'</a>';
 				}
 					
@@ -386,31 +352,7 @@
                 }
             },
             { data: 'Khách hàng' },
-            { 
-            	data: 'Mức độ khả thi',
-	            render: function(data, type, row) {
-	                var n = format(row['Mức độ cảnh báo']);
-	                if (typeof data !== 'undefined') {
-	                	if (n.match(/high/i) != null) {
-							var html =	'<button type="button" class="btn btn-danger mt-0 pt-0 pb-0 pl-1 pr-1" style="width: 65px;">' + 
-											'<font size="-1">' + data + '</font>' + 
-										'</button>';
-						} else if (n.match(/medium/i) != null) {
-							var html =	'<button type="button" class="btn btn-warning mt-0 pt-0 pb-0 pl-1 pr-1" style="width: 65px;">' + 
-											'<font size="-1">' + data + '</font>' + 
-										'</button>';
-						} else {
-							var html = 	'<button type="button" class="btn btn-success pt-0 pb-0 pl-1 pr-1" style="width: 65px;">' + 
-											'<font size="-1">' + data + '</font>' + 
-										'</button>';
-						}
-	                } else {
-	                	var html = 	'<button type="button" class="btn btn-success" style="width: 65px; height: 26px;"></button>';
-	                }
-						
-					return html;
-                }
-            },
+            { data: 'Mức độ khả thi' },
             { data: 'PIC' }
         ],
         "scrollY": 530,
@@ -419,8 +361,7 @@
         "paging": false,
         "columnDefs": [
             { "visible": false, "targets": groupColumn },
-            { "targets": '_all', "defaultContent": "" },
-            { "width": "23%", "targets": 2}
+            { "targets": '_all', "defaultContent": "" }
         ],
         "order": [
             [groupColumn, 'asc']
@@ -434,11 +375,7 @@
             api.column(groupColumn, { page: 'current' }).data().each(function(group, i) {
                 if (last !== group) {
                     $(rows).eq(i).before(
-                    	'<tr class="group">' + 
-                        	'<td colspan="18" align="center" style="background-color: #D3D3D3;">' + 
-                        		'<b>----- ' + group + ' -----</b>' + 
-                        	'</td>' + 
-                        '</tr>'
+                        '<tr class="group"><td colspan="18" style="background-color: black; color: white;">' + group + '</td></tr>'
                     );
 
                     last = group;
@@ -478,19 +415,19 @@
             	var n = format(row['Mức độ cảnh báo']); 
                	if (n.match(/high/i) != null) {
 					var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css"' + 
-								'style="font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+								'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 								data +
 								'<br><span class="tooltiptext" style="background-color: rgb(230, 46, 51);">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 							'</a>';
 				}else if(n.match(/medium/i) != null){
 					var html = 	'<a href="bao_cao_sheet_2?id_p2='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
-					'style="font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+					'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 					data +
 					'<br><span class="tooltiptext" style="background-color: #ff9900;">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 				'</a>';
 				}else {
 					var html = 	'<a href="bao_cao_sheet_3?id_p3='+row["STT"]+'" class="tooltip_css" target="_blank"' + 
-									'style="font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
+									'style="color: white; font-weight: bold;" data-html="true" onclick="return project_link('+row["STT"]+')">' +
 									data +
 									'<br><span class="tooltiptext" style="background-color: #262626;">' + format(row["Tình trạng & Kế hoạch chi tiết"]) + '</span>' +
 								'</a>';
@@ -500,31 +437,7 @@
                 }
             },
             { data: 'Khách hàng' },
-            { 
-            	data: 'Mức độ khả thi',
-	            render: function(data, type, row) {
-	                var n = format(row['Mức độ cảnh báo']);
-	                if (typeof data !== 'undefined') {
-	                	if (n.match(/high/i) != null) {
-							var html =	'<button type="button" class="btn btn-danger mt-0 pt-0 pb-0" style="width: 65px;">' + 
-											'<font size="-1">' + data + '</font>' + 
-										'</button>';
-						} else if (n.match(/medium/i) != null) {
-							var html =	'<button type="button" class="btn btn-warning mt-0 pt-0 pb-0" style="width: 65px;">' + 
-											'<font size="-1">' + data + '</font>' + 
-										'</button>';
-						} else {
-							var html = 	'<button type="button" class="btn btn-success pt-0 pb-0" style="width: 65px;">' + 
-											'<font size="-1">' + data + '</font>' + 
-										'</button>';
-						}
-	                } else {
-	                	var html = 	'<button type="button" class="btn btn-success" style="width: 65px; height: 26px;"></button>';
-	                }
-						
-					return html;
-                }
-            },
+            { data: 'Mức độ khả thi' },
             { data: 'PIC' }
         ],
         "scrollY": 530,
@@ -533,8 +446,7 @@
         "paging": false,
         "columnDefs": [
             { "visible": false, "targets": groupColumn },
-            { "targets": '_all', "defaultContent": "" },
-            { "width": "23%", "targets": 2 }
+            { "targets": '_all', "defaultContent": "" }
         ],
         "order": [
             [groupColumn, 'asc']
@@ -548,11 +460,7 @@
             api.column(groupColumn, { page: 'current' }).data().each(function(group, i) {
                 if (last !== group) {
                     $(rows).eq(i).before(
-                        '<tr class="group">' + 
-                        	'<td colspan="18" align="center" style="background-color: #D3D3D3;">' + 
-                        		'<b>----- ' + group + ' -----</b>' +
-                        	'</td>' + 
-                        '</tr>'
+                        '<tr class="group"><td colspan="18" style="background-color: black; color: white;">' + group + '</td></tr>'
                     );
 
                     last = group;
@@ -620,9 +528,6 @@
 		Function đọc file excel, có thể gọi nhiều lần để thay thế dữ liệu truyền vào datatable =====*/
 	function show_data(url1, url2, url3, week_selected) {
 		console.log(url1, url2, url3);
-		
-		
-		
 		/*===== Đầu: Tìm kiếm dữ liệu cho datatable 1 (báo cáo 1) =====*/
 		var oReqs1 = new XMLHttpRequest();
 		oReqs1.open("GET", url1, true);
@@ -754,6 +659,7 @@
 	}
 </script>
 <script type="text/javascript">
+
 var detail_slide = document.getElementById("detail_slide");
 var modal_title = document.getElementById("modal_title");
 
@@ -777,94 +683,94 @@ oReq_slide.onload = function(e) {
   	workbook.SheetNames.forEach(function(sheetName) {
   		var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
   		XL_row_object.forEach(item=>{
-  			if(format(item["Mức độ tình trạng"]).match(/chậm/i) != null){
-  				let row1 = 	'<div class="container tab-pane" ><br>' +
-				                '<div>' +
-				                '<h5 class="pb-2 pt-1 pl-3" style="background-color: red; border-radius: 30px;">' + 
-				                	'<b>Tên dự án:</b> ' + 
-				                	'<a style="color: white;" href="bao_cao_sheet_1?id_p1=' + item["TT"] + '" ' + 
-				                		'onclick="return project_link_sheet_1(' + item["TT"] + ')"> ' + 
-				                		format(item["Dự án/Gói thầu"]) + 
-				                	'</a>' + 
-				                '</h5>' +
-				                '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
-				                '<p style="white-space: pre-wrap;"><b>Phạm vi cung cấp:</b> ' + format(item["Phạm vi cung cấp"]) + '</p>' +
-				                '<p><b>Tổng giá trị:</b> ' + format(item["Tổng giá trị"]) + '</p>' +
-				                '<p><b>Mức độ ưu tiên:</b> ' + format(item["Priority"]) + '</p>' +
-				                '<p><b>Mức độ tình trạng:</b> ' + format(item["Mức độ tình trạng"]) + '</p>'
-				            +
-				            '</div>' +
-				            '<div class="table-responsive">' +
-				            '<table class="table table-bordered table-hover">' +
-				            '<thead>' +
-				            '<tr>' +
-				            '<th colspan="3">Kế hoạch nghiệm thu</th>' +
-				            '<th colspan="2">Thanh toán tạm ứng</th>' +
-				            '<th colspan="2">Thanh toán DAC</th>' +
-				            '<th colspan="2">Thanh toán PAC</th>' +
-				            '<th colspan="2">Thanh toán FAC</th>' +
-				            '</tr>' +
-				            '<tr>' +
-				            '<th>DAC</th>' +
-				            '<th>PAC</th>' +
-				            '<th>FAC</th>' +
-				            '<th>Số tiền</th>' +
-				            '<th>Kế hoạch</th>' +
-				            '<th>Số tiền</th>' +
-				            '<th>Kế hoạch</th>' +
-				            '<th>Số tiền</th>' +
-				            '<th>Kế hoạch</th>' +
-				            '<th>Số tiền</th>' +
-				            '<th>Kế hoạch</th>' +
-				            '</tr>' +
-				            '</thead>' +
-				            '<tbody>' +
-				            '<td>' + format_date(item["DAC"]) + '</td>' +
-				                '<td>' + format_date(item["PAC"]) + '</td>' +
-				                '<td>' + format_date(item["FAC"]) + '</td>' +
-				                '<!--Kế hoạch nghiệm thu -->' +
-				                '<td>' + format(item["Số tiền thanh toán tạm ứng"]) + '</td>' +
-				                '<td>' + format_date(item["Kế hoạch tạm ứng"]) + '</td>'
-				
-				            <!-- Thanh toán tạm ứng -->
-				            +
-				            '<td>' + format(item["Số tiền thanh toán DAC"]) + '</td>' +
-				                '<td>' + format_date(item["Kế hoạch Thanh toán DAC"]) + '</td>'
-				
-				            <!-- Thanh toán DAC -->
-				            +
-				            '<td>' + format(item["Số tiền Thanh toán PAC"]) + '</td>' +
-				                '<td>' + format_date(item["Kế hoạch Thanh toán PAC"]) + '</td>'
-				
-				            <!-- Thanh toán PAC -->
-				            +
-				            '<td>' + format(item["Số tiền Thanh toán FAC"]) + '</td>' +
-				                '<td>' + format_date(item["Kế hoạch Thanh toán FAC"]) + '</td>'
-				
-				            <!-- Thanh toán FAC -->
-				            +
-				            '</tbody>' +
-				            '</table>' +
-				            '</div>' +
-				            '<div class="d-flex">' +
-				            '<div >' +
-				            '<p><b>Tình trạng:</b> </p>' +
-				            '<p style="white-space: pre-wrap;"> ' + format(item["Tình trạng & Kế hoạch chi tiết"]) + '</p>' +
-				                '</div>' +
-				                '<div class="pl-5">' +
-				                '<p><b>Kết quả thực hiện kế hoạch:</b> </p>' +
-				                '<p style="white-space: pre-wrap;"> ' + format(item["Kết quả thực hiện kế hoạch"]) + '</p>' +
-				                '</div>' +
-				                '</div>' +
-				                '</div>';
-             	detail_slide.innerHTML += row1;
+  			if(format(item["Mức độ tình trạng"]).match(/chậm/i) != null) {
+  				let row1 = '<div class="container tab-pane" ><br>' +
+                      '<div>' +
+                      '<h5 class="pb-2 pt-1 pl-3" style="background-color: red; border-radius: 30px;">' + 
+                      	'<b>Tên dự án:</b> ' + 
+                      	'<a style="color: white;" href="bao_cao_sheet_1?id_p1=' + item["TT"] + '" ' + 
+                      		'onclick="return project_link_sheet_1(' + item["TT"] + ')"> ' + 
+                      		format(item["Dự án/Gói thầu"]) + 
+                      	'</a>' + 
+                      '</h5>' +
+                      '<p><b>Người phụ trách:</b> ' + format(item["PIC"]) + '</p>' +
+                      '<p style="white-space: pre-wrap;"><b>Phạm vi cung cấp:</b> ' + format(item["Phạm vi cung cấp"]) + '</p>' +
+                      '<p><b>Tổng giá trị:</b> ' + format(item["Tổng giá trị"]) + '</p>' +
+                      '<p><b>Mức độ ưu tiên:</b> ' + format(item["Priority"]) + '</p>' +
+                      '<p><b>Mức độ tình trạng:</b> ' + format(item["Mức độ tình trạng"]) + '</p>'
+                  +
+                  '</div>' +
+                  '<div class="table-responsive">' +
+                  '<table class="table table-bordered table-hover">' +
+                  '<thead>' +
+                  '<tr>' +
+                  '<th colspan="3">Kế hoạch nghiệm thu</th>' +
+                  '<th colspan="2">Thanh toán tạm ứng</th>' +
+                  '<th colspan="2">Thanh toán DAC</th>' +
+                  '<th colspan="2">Thanh toán PAC</th>' +
+                  '<th colspan="2">Thanh toán FAC</th>' +
+                  '</tr>' +
+                  '<tr>' +
+                  '<th>DAC</th>' +
+                  '<th>PAC</th>' +
+                  '<th>FAC</th>' +
+                  '<th>Số tiền</th>' +
+                  '<th>Kế hoạch</th>' +
+                  '<th>Số tiền</th>' +
+                  '<th>Kế hoạch</th>' +
+                  '<th>Số tiền</th>' +
+                  '<th>Kế hoạch</th>' +
+                  '<th>Số tiền</th>' +
+                  '<th>Kế hoạch</th>' +
+                  '</tr>' +
+                  '</thead>' +
+                  '<tbody>' +
+                  '<td>' + format_date(item["DAC"]) + '</td>' +
+                      '<td>' + format_date(item["PAC"]) + '</td>' +
+                      '<td>' + format_date(item["FAC"]) + '</td>' +
+                      '<!--Kế hoạch nghiệm thu -->' +
+                      '<td>' + format(item["Số tiền thanh toán tạm ứng"]) + '</td>' +
+                      '<td>' + format_date(item["Kế hoạch tạm ứng"]) + '</td>'
+
+                  <!-- Thanh toán tạm ứng -->
+                  +
+                  '<td>' + format(item["Số tiền thanh toán DAC"]) + '</td>' +
+                      '<td>' + format_date(item["Kế hoạch Thanh toán DAC"]) + '</td>'
+
+                  <!-- Thanh toán DAC -->
+                  +
+                  '<td>' + format(item["Số tiền Thanh toán PAC"]) + '</td>' +
+                      '<td>' + format_date(item["Kế hoạch Thanh toán PAC"]) + '</td>'
+
+                  <!-- Thanh toán PAC -->
+                  +
+                  '<td>' + format(item["Số tiền Thanh toán FAC"]) + '</td>' +
+                      '<td>' + format_date(item["Kế hoạch Thanh toán FAC"]) + '</td>'
+
+                  <!-- Thanh toán FAC -->
+                  +
+                  '</tbody>' +
+                  '</table>' +
+                  '</div>' +
+                  '<div class="d-flex">' +
+                  '<div >' +
+                  '<p><b>Tình trạng:</b> </p>' +
+                  '<p style="white-space: pre-wrap;"> ' + format(item["Tình trạng & Kế hoạch chi tiết"]) + '</p>' +
+                      '</div>' +
+                      '<div class="pl-5">' +
+                      '<p><b>Kết quả thực hiện kế hoạch:</b> </p>' +
+                      '<p style="white-space: pre-wrap;"> ' + format(item["Kết quả thực hiện kế hoạch"]) + '</p>' +
+                      '</div>' +
+                      '</div>' +
+                      '</div>';
+                  detail_slide.innerHTML += row1;
            	}
   			
   		});
   	});
-    
-    var owl = $('.owl-carousel');
-    owl.owlCarousel({
+  	
+  	var owl = $('.owl-carousel');
+  	owl.owlCarousel({
        items: 1,
        loop: true,
        nav: true,
@@ -873,8 +779,9 @@ oReq_slide.onload = function(e) {
        autoplayTimeout: 5000,
        responsiveClass: true,
        autoplayHoverPause: true
-   });
-    owl.on('mousewheel', '.owl-stage', function (e) {
+   	});
+    
+  	owl.on('mousewheel', '.owl-stage', function (e) {
         if (e.deltaY>0) {
             owl.trigger('next.owl');
         } else {
@@ -883,7 +790,13 @@ oReq_slide.onload = function(e) {
         e.preventDefault();
     });
     
-    $('#myModal').modal('show');
+    
+    
 }
 oReq_slide.send();
+
+$(document).ready(function(){
+	$('#myModal').modal('show');
+});
+
 </script>

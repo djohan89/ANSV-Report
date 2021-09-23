@@ -172,6 +172,12 @@
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/assets/user/dist/js/demo.js" />"></script>
 	
+	<link rel="stylesheet"
+		href="<c:url value="/assets/user/vendor/dist/assets/owl.theme.default.min.css" />">
+	<link rel="stylesheet"
+		href="<c:url value="/assets/user/vendor/dist/assets/owl.carousel.min.css" />">
+	<script src="<c:url value="/assets/user/vendor/dist/owl.carousel.min.js" />"></script>
+	<script src="<c:url value="/assets/user/vendor/dist/jquery.mousewheel.min.js" />"></script> <!-- Thư viện sử dụng con lăn chuột -->
 	
 </body>
 </html>

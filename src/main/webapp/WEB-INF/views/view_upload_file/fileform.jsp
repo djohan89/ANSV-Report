@@ -10,7 +10,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
-					<h1 class="white">Upload báo cáo lên Server</h1>
+					<h1 class="dark"><b>Upload báo cáo lên Server</b></h1>
 				</div>
 			</div>
 			
@@ -72,7 +72,8 @@
 <style>
 	/*just bg and body style*/
 	.content-wrapper {
-	  	background-color: #1e2832;
+	  	/* background-color: #1e2832; */
+	  	background-color: lightgray;
 	  	padding-top: 15px;
 	}
 	.center {
