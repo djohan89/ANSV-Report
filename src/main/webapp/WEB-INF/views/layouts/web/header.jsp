@@ -39,7 +39,7 @@
                     <td class="pt-0 pb-1">
                     	<!-- <span class="badge badge-info right" id="u1_t1_s1"></span> -->
                         <span class="badge badge-success right" id="u1_t1_s1"></span>
-                        <span class="badge badge-warning right " id="u1_t2_s1"></span>
+                        <span class="badge badge-warning right" id="u1_t2_s1"></span>
                         <span class="badge badge-danger right" id="u1_t3_s1"></span>
                     </td>
                     <td class="pt-0 pb-1">
@@ -218,6 +218,11 @@
 	document.getElementById("select_week").innerHTML = week_option;
 
     $("#select_week").change(function() {
+    	
+    	var url1_new = "";
+        var url2_new = "";
+        var url3_new = "";
+    	
         var week_selected = document.getElementById("select_week").value;
 
         var file_view_1_new = "Báo cáo KH Triển khai tuần " + week_selected + " tháng " + file_month + " năm " + file_year + ".xlsx";
@@ -261,12 +266,29 @@
         $.get(url1_new).done(function() { 
         	// Nếu tồn tại -> cho phép gọi đến hàm thay thế dữ liệu
         	show_data(url1_new, url2_new, url3_new, week_selected);
+        	change_slide(url1_new);
+        	
+        	/* var url_trong = "";
+        	oReq_slide.open("GET", url_trong, true);
+    		oReq_slide.send(); */
+        	
+        	
+        	
+        	
+        	
+        	/* var replace_slides = "<h1>Hello world123!!!</h1>";
+        	$("#detail_slide").replaceWith( replace_slides ); */
         }).fail(function() { 
         	// Nếu không tồn tại -> thông báo lại và dừng hành động
         	alertify.error('Không tồn tại báo cáo tuần ' + week_selected + "!");
         })
         
     });
+    
+    function change_slide(url_slide){
+		oReq_slide.open("GET", url_slide, true);
+		oReq_slide.send();
+    };
 	
 	/*$('#select_week').on('select2:select', function (e) {
 		tuan_nay = document.getElementById("select_week").value;
