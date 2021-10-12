@@ -755,26 +755,6 @@
 </script>
 <script type="text/javascript">
 
-var owl = $('.owl-carousel');
-owl.owlCarousel({
-   items: 1,
-   loop: true,
-   nav: true,
-   margin: 10,
-   autoplay: true,
-   autoplayTimeout: 5000,
-   responsiveClass: true,
-   autoplayHoverPause: true
-});
-owl.on('mousewheel', '.owl-stage', function (e) {
-    if (e.deltaY>0) {
-        owl.trigger('next.owl');
-    } else {
-        owl.trigger('prev.owl');
-    }
-    e.preventDefault();
-});
-
 var detail_slide = document.getElementById("detail_slide");
 var modal_title = document.getElementById("modal_title");
 
@@ -876,8 +856,31 @@ oReq_slide.onload = function(e) {
   			
   		});
   	});
+  	
+  	var owl = $('.owl-carousel');
+  	owl.owlCarousel({
+       items: 1,
+       loop: true,
+       nav: true,
+       margin: 10,
+       autoplay: true,
+       autoplayTimeout: 5000,
+       responsiveClass: true,
+       autoplayHoverPause: true
+   	});
     
-    $('#myModal').modal('show');
+  	owl.on('mousewheel', '.owl-stage', function (e) {
+        if (e.deltaY>0) {
+            owl.trigger('next.owl');
+        } else {
+            owl.trigger('prev.owl');
+        }
+        e.preventDefault();
+    });
 }
 oReq_slide.send();
+
+$(document).ready(function(){
+	$('#myModal').modal('show');
+});
 </script>
